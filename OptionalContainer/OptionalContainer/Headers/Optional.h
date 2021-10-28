@@ -13,30 +13,35 @@ template <class T>
 class Optional
 {
 public:
-	Optional<T>()
+	
+	Optional<T>() : hasValue(false), value(T()), accessMutex()
 	{
-		hasValue = false;
-		value = T();
-	};
+	}
 
-	Optional<T>(T v)
+	Optional<T>(T v) : hasValue(true), value(v), accessMutex()
 	{
-		hasValue = true;
-		value = v;
-	};
+	}
+
+	// Copy constructor
+	Optional<T>(const Optional& other) : hasValue(false), value(T()), accessMutex()
+	{
+		std::scoped_lock<std::mutex> lock(other.accessMutex);
+		hasValue = other.hasValue;
+		value = other.value;
+	}	
 
 	bool isSet()
 	{
 		std::scoped_lock<std::mutex> lock(accessMutex);
 		return hasValue;
-	};
+	}
 
 	void set(T newValue)
 	{
 		std::scoped_lock<std::mutex> lock(accessMutex);
 		value = newValue;
 		hasValue = true;
-	};
+	}
 
 	// Return the value or, if empty, the provded "empty" value
 	T get_or(T emptyValue)
@@ -50,7 +55,7 @@ public:
 		{
 			return emptyValue;
 		}
-	};
+	}
 
 	void clear()
 	{
@@ -62,5 +67,5 @@ public:
 private:
 	bool hasValue;
 	T value;
-	std::mutex accessMutex;
+	mutable std::mutex accessMutex;
 };
