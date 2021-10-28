@@ -14,4 +14,5 @@ class BOMBERMAN3D_API ABomberMan3DGameModeBase : public AGameModeBase
 {
 	GENERATED_BODY()
 	
+	virtual void StartPlay() override;
 };
