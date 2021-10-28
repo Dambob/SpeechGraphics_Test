@@ -28,7 +28,18 @@ public:
 		std::scoped_lock<std::mutex> lock(other.accessMutex);
 		hasValue = other.hasValue;
 		value = other.value;
-	}	
+	}
+
+	// Copy Assignment
+	Optional<T> operator=(const Optional& other)
+	{
+		if (this != &other)
+		{
+			std::scoped_lock<std::mutex, std::mutex>> lock(accessMutex, other.accessMutex);	// Lock both mutexes
+			hasValue = other.hasValue;
+			value = other.value;
+		}
+	}
 
 	bool isSet()
 	{
