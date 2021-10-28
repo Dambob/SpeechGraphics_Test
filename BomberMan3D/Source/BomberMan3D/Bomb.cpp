@@ -17,6 +17,7 @@ void ABomb::BeginPlay()
 {
 	Super::BeginPlay();
 	
+	// Start timer for fuse
 	GetWorldTimerManager().SetTimer(fuseTimerHandle, this, &ABomb::Explode, fuseTime, false);
 }
 
@@ -28,7 +29,12 @@ void ABomb::Tick(float DeltaTime)
 
 void ABomb::Explode()
 {
+	// ToDo:
+	//Add in explosion mechanics here
+
+	// Remove timer
 	GetWorldTimerManager().ClearTimer(fuseTimerHandle);
 
+	// Remove bomb
 	Destroy();
 }
