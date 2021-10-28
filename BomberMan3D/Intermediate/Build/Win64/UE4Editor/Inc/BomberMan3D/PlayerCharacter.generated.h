@@ -14,8 +14,18 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define BOMBERMAN3D_PlayerCharacter_generated_h
 
 #define BomberMan3D_Source_BomberMan3D_PlayerCharacter_h_12_SPARSE_DATA
-#define BomberMan3D_Source_BomberMan3D_PlayerCharacter_h_12_RPC_WRAPPERS
-#define BomberMan3D_Source_BomberMan3D_PlayerCharacter_h_12_RPC_WRAPPERS_NO_PURE_DECLS
+#define BomberMan3D_Source_BomberMan3D_PlayerCharacter_h_12_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execMoveRight); \
+	DECLARE_FUNCTION(execMoveUpward);
+
+
+#define BomberMan3D_Source_BomberMan3D_PlayerCharacter_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execMoveRight); \
+	DECLARE_FUNCTION(execMoveUpward);
+
+
 #define BomberMan3D_Source_BomberMan3D_PlayerCharacter_h_12_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAPlayerCharacter(); \

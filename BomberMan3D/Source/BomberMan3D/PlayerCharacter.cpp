@@ -35,5 +35,24 @@ void APlayerCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCom
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
+	// Add movement bindings
+	PlayerInputComponent->BindAxis("MoveUpward", this, &APlayerCharacter::MoveUpward);
+	PlayerInputComponent->BindAxis("MoveRight", this, &APlayerCharacter::MoveRight);
+}
+
+// Up/down movement
+void APlayerCharacter::MoveUpward(float value)
+{
+	// Find out which way is "forward" and record that the player wants to move that way.
+	FVector Direction = FRotationMatrix(Controller->GetControlRotation()).GetScaledAxis(EAxis::X);
+	AddMovementInput(Direction, value);
+}
+
+// Left/right movement
+void APlayerCharacter::MoveRight(float value)
+{
+	// Find out which way is "right" and record that the player wants to move that way.
+	FVector Direction = FRotationMatrix(Controller->GetControlRotation()).GetScaledAxis(EAxis::Y);
+	AddMovementInput(Direction, value);
 }
 
