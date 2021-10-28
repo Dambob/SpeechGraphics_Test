@@ -37,4 +37,6 @@ public:
 	//Camera Actor which the Actor Volume blends to
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	TSubclassOf<ACameraActor> camera;
+
+
 };
