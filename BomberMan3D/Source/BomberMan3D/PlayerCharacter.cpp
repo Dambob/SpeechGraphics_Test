@@ -4,6 +4,7 @@
 #include "PlayerCharacter.h"
 #include "Kismet/GameplayStatics.h"
 #include "Camera/CameraActor.h"
+#include "DMActorWidgetComponent.h"
 
 // Sets default values
 APlayerCharacter::APlayerCharacter()
@@ -11,6 +12,20 @@ APlayerCharacter::APlayerCharacter()
  	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
+	name = FText::FromString("Character");
+
+	static ConstructorHelpers::FClassFinder<UUserWidget> nameplateWidget(TEXT("/Game/Blueprints/UMG/BPFloatingName"));
+
+	if (nameplateWidget.Succeeded())
+	{
+		nameWidgetClass = nameplateWidget.Class;
+	}
+	else
+	{
+		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, TEXT("No nameplate widget found."));
+	}
+
+	showDebugMessages = true;
 }
 
 // Called when the game starts or when spawned
@@ -38,13 +53,71 @@ void APlayerCharacter::BeginPlay()
 		//Sets Player Controller view to the first CameraActor found
 		playerController->SetViewTargetWithBlend(FoundActors[0], 2.f, EViewTargetBlendFunction::VTBlend_Linear);
 	}
+
+	SetupNameplate();	
+}
+
+void APlayerCharacter::SetupNameplate()
+{
+	nameplate = NewObject<UDMActorWidgetComponent>(this);
+
+	if (nameplate)
+	{
+		if (nameWidgetClass)
+		{
+			nameplate->SetWidgetClass(nameWidgetClass);
+		}
+		else
+		{
+			// Debug
+			if (showDebugMessages)
+			{
+				GEngine->AddOnScreenDebugMessage(-1, 10.0f, FColor::Red, TEXT("Name WidgetClass is null."));
+			}
+		}
+
+		if (nameplate->GetClass())
+		{
+			// Debug
+			if (showDebugMessages)
+			{
+				GEngine->AddOnScreenDebugMessage(-1, 10.0f, FColor::Red, TEXT("Name WidgetClass Set."));
+			}
+		}
+		else
+		{
+			// Debug
+			if (showDebugMessages)
+			{
+				GEngine->AddOnScreenDebugMessage(-1, 10.0f, FColor::Red, TEXT("Name WidgetClass not set."));
+			}
+		}
+
+		nameplate->InitWidget();
+		nameplate->SetupAttachment(RootComponent);
+		nameplate->SetRelativeLocation(FVector(0.0f, 0.0f, 120.0f));
+
+		nameplate->RegisterComponent();
+	}
+	else
+	{
+		// Debug
+		if (showDebugMessages)
+		{
+			GEngine->AddOnScreenDebugMessage(-1, 10.0f, FColor::Red, TEXT("Nameplate is null."));
+		}
+	}
 }
 
 // Called every frame
 void APlayerCharacter::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+}
 
+void APlayerCharacter::PostInitializeComponents()
+{
+	Super::PostInitializeComponents();
 }
 
 // Called to bind functionality to input
@@ -54,18 +127,25 @@ void APlayerCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCom
 
 	APlayerController* playerController = dynamic_cast<APlayerController*>(GetController());
 
-
 	if (playerController)
 	{
 		// Controls for Player 1
 		if (playerController->GetLocalPlayer()->GetControllerId() == 0)
 		{
+			// Set player name
+			name = FText::FromString("Player 1");
+
+			GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, TEXT("P1 name is set now"));
+
 			// Add movement bindings
 			PlayerInputComponent->BindAxis("MoveUpward_P1", this, &APlayerCharacter::MoveUpward);
 			PlayerInputComponent->BindAxis("MoveRight_P1", this, &APlayerCharacter::MoveRight);
 		}
 		else // Controls for Player 2
 		{
+			// Set player name
+			name = FText::FromString("Player 2");
+
 			// Add movement bindings
 			PlayerInputComponent->BindAxis("MoveUpward_P2", this, &APlayerCharacter::MoveUpward);
 			PlayerInputComponent->BindAxis("MoveRight_P2", this, &APlayerCharacter::MoveRight);

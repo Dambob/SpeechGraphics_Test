@@ -6,6 +6,9 @@
 #include "GameFramework/Character.h"
 #include "PlayerCharacter.generated.h"
 
+// Forward declarations
+class UDMActorWidgetComponent;
+
 UCLASS()
 class BOMBERMAN3D_API APlayerCharacter : public ACharacter
 {
@@ -23,6 +26,8 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
+	void PostInitializeComponents() override;
+
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
@@ -38,5 +43,22 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	TSubclassOf<ACameraActor> camera;
 
+	UFUNCTION()
+	FText GetName() { return name; };
 
+protected:
+	// Reference UMG Asset in the Editor
+	TSubclassOf<UUserWidget> nameWidgetClass;
+
+	// Instance of the nameplate widget  
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Widgets")
+	UDMActorWidgetComponent* nameplate;
+
+	// Character Name
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Character")
+	FText name;
+
+	bool showDebugMessages;
+
+	void SetupNameplate();
 };

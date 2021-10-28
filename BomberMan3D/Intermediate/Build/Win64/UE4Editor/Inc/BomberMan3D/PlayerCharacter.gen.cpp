@@ -19,7 +19,15 @@ void EmptyLinkFunctionForGeneratedCodePlayerCharacter() {}
 	UPackage* Z_Construct_UPackage__Script_BomberMan3D();
 	COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
 	ENGINE_API UClass* Z_Construct_UClass_ACameraActor_NoRegister();
+	BOMBERMAN3D_API UClass* Z_Construct_UClass_UDMActorWidgetComponent_NoRegister();
 // End Cross Module References
+	DEFINE_FUNCTION(APlayerCharacter::execGetName)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		*(FText*)Z_Param__Result=P_THIS->GetName();
+		P_NATIVE_END;
+	}
 	DEFINE_FUNCTION(APlayerCharacter::execMoveRight)
 	{
 		P_GET_PROPERTY(FFloatProperty,Z_Param_value);
@@ -40,10 +48,43 @@ void EmptyLinkFunctionForGeneratedCodePlayerCharacter() {}
 	{
 		UClass* Class = APlayerCharacter::StaticClass();
 		static const FNameNativePtrPair Funcs[] = {
+			{ "GetName", &APlayerCharacter::execGetName },
 			{ "MoveRight", &APlayerCharacter::execMoveRight },
 			{ "MoveUpward", &APlayerCharacter::execMoveUpward },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
+	}
+	struct Z_Construct_UFunction_APlayerCharacter_GetName_Statics
+	{
+		struct PlayerCharacter_eventGetName_Parms
+		{
+			FText ReturnValue;
+		};
+		static const UE4CodeGen_Private::FTextPropertyParams NewProp_ReturnValue;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UE4CodeGen_Private::FTextPropertyParams Z_Construct_UFunction_APlayerCharacter_GetName_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UE4CodeGen_Private::EPropertyGenFlags::Text, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(PlayerCharacter_eventGetName_Parms, ReturnValue), METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_APlayerCharacter_GetName_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_APlayerCharacter_GetName_Statics::NewProp_ReturnValue,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_APlayerCharacter_GetName_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "PlayerCharacter.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_APlayerCharacter_GetName_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_APlayerCharacter, nullptr, "GetName", nullptr, nullptr, sizeof(PlayerCharacter_eventGetName_Parms), Z_Construct_UFunction_APlayerCharacter_GetName_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_APlayerCharacter_GetName_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_APlayerCharacter_GetName_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_APlayerCharacter_GetName_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_APlayerCharacter_GetName()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_APlayerCharacter_GetName_Statics::FuncParams);
+		}
+		return ReturnFunction;
 	}
 	struct Z_Construct_UFunction_APlayerCharacter_MoveRight_Statics
 	{
@@ -128,6 +169,14 @@ void EmptyLinkFunctionForGeneratedCodePlayerCharacter() {}
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_camera_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FClassPropertyParams NewProp_camera;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_nameplate_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_nameplate;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_name_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FTextPropertyParams NewProp_name;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
@@ -137,6 +186,7 @@ void EmptyLinkFunctionForGeneratedCodePlayerCharacter() {}
 		(UObject* (*)())Z_Construct_UPackage__Script_BomberMan3D,
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_APlayerCharacter_Statics::FuncInfo[] = {
+		{ &Z_Construct_UFunction_APlayerCharacter_GetName, "GetName" }, // 4041814545
 		{ &Z_Construct_UFunction_APlayerCharacter_MoveRight, "MoveRight" }, // 916103735
 		{ &Z_Construct_UFunction_APlayerCharacter_MoveUpward, "MoveUpward" }, // 333176419
 	};
@@ -156,8 +206,29 @@ void EmptyLinkFunctionForGeneratedCodePlayerCharacter() {}
 	};
 #endif
 	const UE4CodeGen_Private::FClassPropertyParams Z_Construct_UClass_APlayerCharacter_Statics::NewProp_camera = { "camera", nullptr, (EPropertyFlags)0x0014000000000005, UE4CodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(APlayerCharacter, camera), Z_Construct_UClass_ACameraActor_NoRegister, Z_Construct_UClass_UClass, METADATA_PARAMS(Z_Construct_UClass_APlayerCharacter_Statics::NewProp_camera_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_APlayerCharacter_Statics::NewProp_camera_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_APlayerCharacter_Statics::NewProp_nameplate_MetaData[] = {
+		{ "Category", "Widgets" },
+		{ "Comment", "// Instance of the nameplate widget  \n" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "PlayerCharacter.h" },
+		{ "ToolTip", "Instance of the nameplate widget" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_APlayerCharacter_Statics::NewProp_nameplate = { "nameplate", nullptr, (EPropertyFlags)0x002008000008000d, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(APlayerCharacter, nameplate), Z_Construct_UClass_UDMActorWidgetComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_APlayerCharacter_Statics::NewProp_nameplate_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_APlayerCharacter_Statics::NewProp_nameplate_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_APlayerCharacter_Statics::NewProp_name_MetaData[] = {
+		{ "Category", "Character" },
+		{ "Comment", "// Character Name\n" },
+		{ "ModuleRelativePath", "PlayerCharacter.h" },
+		{ "ToolTip", "Character Name" },
+	};
+#endif
+	const UE4CodeGen_Private::FTextPropertyParams Z_Construct_UClass_APlayerCharacter_Statics::NewProp_name = { "name", nullptr, (EPropertyFlags)0x0020080000000005, UE4CodeGen_Private::EPropertyGenFlags::Text, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(APlayerCharacter, name), METADATA_PARAMS(Z_Construct_UClass_APlayerCharacter_Statics::NewProp_name_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_APlayerCharacter_Statics::NewProp_name_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_APlayerCharacter_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APlayerCharacter_Statics::NewProp_camera,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APlayerCharacter_Statics::NewProp_nameplate,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APlayerCharacter_Statics::NewProp_name,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_APlayerCharacter_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<APlayerCharacter>::IsAbstract,
@@ -186,7 +257,7 @@ void EmptyLinkFunctionForGeneratedCodePlayerCharacter() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(APlayerCharacter, 3221166696);
+	IMPLEMENT_CLASS(APlayerCharacter, 476999863);
 	template<> BOMBERMAN3D_API UClass* StaticClass<APlayerCharacter>()
 	{
 		return APlayerCharacter::StaticClass();
