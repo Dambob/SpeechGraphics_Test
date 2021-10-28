@@ -13,16 +13,21 @@ class Optional
 public:
 	Optional<T>()
 	{
-		isSet = false;
+		set = false;
 	};
 
 	Optional<T>(T v)
 	{
-		isSet = false;
+		set = true;
 		value = v;
 	};
 
+	bool isSet()
+	{
+		return set;
+	}
+
 private:
-	bool isSet;
+	bool set;
 	T value;
 };
