@@ -13,21 +13,47 @@ class Optional
 public:
 	Optional<T>()
 	{
-		set = false;
+		hasValue = false;
+		value = T();
 	};
 
 	Optional<T>(T v)
 	{
-		set = true;
+		hasValue = true;
 		value = v;
 	};
 
 	bool isSet()
 	{
-		return set;
+		return hasValue;
+	};
+
+	void set(T newValue)
+	{
+		value = newValue;
+		hasValue = true;
+	};
+
+	// Return the value or, if empty, the provded "empty" value
+	T get_or(T emptyValue)
+	{
+		if (hasValue)
+		{
+			return value;
+		}
+		else
+		{
+			return emptyValue;
+		}
+	};
+
+	void clear()
+	{
+		hasValue = false;
+		value = T();
 	}
 
 private:
-	bool set;
+	bool hasValue;
 	T value;
 };
