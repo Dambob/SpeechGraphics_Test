@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "BomberMan3D",
+			"Path": "D:\\Users\\Damien\\Documents\\Development\\SpeechGraphics_Test\\BomberMan3D\\Source\\BomberMan3D.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "BomberMan3DEditor",
+			"Path": "D:\\Users\\Damien\\Documents\\Development\\SpeechGraphics_Test\\BomberMan3D\\Source\\BomberMan3DEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}
