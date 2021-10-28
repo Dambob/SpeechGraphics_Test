@@ -16,6 +16,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define BomberMan3D_Source_BomberMan3D_PlayerCharacter_h_16_SPARSE_DATA
 #define BomberMan3D_Source_BomberMan3D_PlayerCharacter_h_16_RPC_WRAPPERS \
  \
+	DECLARE_FUNCTION(execBindBombExploded); \
 	DECLARE_FUNCTION(execPlaceBomb); \
 	DECLARE_FUNCTION(execGetName); \
 	DECLARE_FUNCTION(execMoveRight); \
@@ -24,6 +25,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
 #define BomberMan3D_Source_BomberMan3D_PlayerCharacter_h_16_RPC_WRAPPERS_NO_PURE_DECLS \
  \
+	DECLARE_FUNCTION(execBindBombExploded); \
 	DECLARE_FUNCTION(execPlaceBomb); \
 	DECLARE_FUNCTION(execGetName); \
 	DECLARE_FUNCTION(execMoveRight); \
@@ -74,7 +76,8 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(APlayerCharacter); \
 
 #define BomberMan3D_Source_BomberMan3D_PlayerCharacter_h_16_PRIVATE_PROPERTY_OFFSET \
 	FORCEINLINE static uint32 __PPO__nameplate() { return STRUCT_OFFSET(APlayerCharacter, nameplate); } \
-	FORCEINLINE static uint32 __PPO__name() { return STRUCT_OFFSET(APlayerCharacter, name); }
+	FORCEINLINE static uint32 __PPO__name() { return STRUCT_OFFSET(APlayerCharacter, name); } \
+	FORCEINLINE static uint32 __PPO__bombCount() { return STRUCT_OFFSET(APlayerCharacter, bombCount); }
 
 
 #define BomberMan3D_Source_BomberMan3D_PlayerCharacter_h_13_PROLOG

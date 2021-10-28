@@ -69,4 +69,10 @@ protected:
 
 	// Reference BP Asset in the Editor
 	TSubclassOf<ABomb> bombBPClass;
+
+	UFUNCTION()
+	void BindBombExploded();
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Character")
+	int bombCount;
 };

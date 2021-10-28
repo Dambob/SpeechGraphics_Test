@@ -32,6 +32,9 @@ void ABomb::Explode()
 	// ToDo:
 	//Add in explosion mechanics here
 
+	// Broadcast delegate
+	OnBombExplosion.Execute();
+
 	// Remove timer
 	GetWorldTimerManager().ClearTimer(fuseTimerHandle);
 

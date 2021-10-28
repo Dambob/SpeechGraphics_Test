@@ -12,6 +12,8 @@ APlayerCharacter::APlayerCharacter()
  	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
+	bombCount = 1;
+
 	name = FText::FromString("Character");
 
 	static ConstructorHelpers::FClassFinder<UUserWidget> nameplateWidget(TEXT("/Game/Blueprints/UMG/BPFloatingName"));
@@ -186,9 +188,23 @@ void APlayerCharacter::MoveRight(float value)
 
 void APlayerCharacter::PlaceBomb()
 {
-	GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, TEXT("Bomb placed by: ") + name.ToString());
+	if (bombCount > 0)
+	{
 
-	FVector location = this->GetActorLocation();	
+		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, TEXT("Bomb placed by: ") + name.ToString());
 
-	ABomb* bomb = (ABomb*) GetWorld()->SpawnActor(bombBPClass, &location);
+		FVector location = this->GetActorLocation();
+
+		ABomb* bomb = (ABomb*)GetWorld()->SpawnActor(bombBPClass, &location);
+		bomb->OnBombExplosion.BindUFunction(this, FName("BindBombExploded"));
+
+		bombCount--;
+	}
+}
+
+void APlayerCharacter::BindBombExploded()
+{
+	GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, TEXT("Bomb placed by: ") + name.ToString() + TEXT(" has now exploded."));
+
+	bombCount++;
 }

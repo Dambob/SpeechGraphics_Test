@@ -10,6 +10,8 @@ UCLASS()
 class BOMBERMAN3D_API ABomb : public AActor
 {
 	GENERATED_BODY()
+
+		DECLARE_DYNAMIC_DELEGATE(FBombExploded);
 	
 public:	
 	// Sets default values for this actor's properties
@@ -17,6 +19,8 @@ public:
 
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
+
+	FBombExploded OnBombExplosion;
 
 protected:
 	// Called when the game starts or when spawned
@@ -26,10 +30,7 @@ protected:
 	float fuseTime;
 
 	// Timer for fuse
-	FTimerHandle fuseTimerHandle;
-
-	void FuseTick(float DeltaTime);
+	FTimerHandle fuseTimerHandle;	
 
 	void Explode();
-
 };

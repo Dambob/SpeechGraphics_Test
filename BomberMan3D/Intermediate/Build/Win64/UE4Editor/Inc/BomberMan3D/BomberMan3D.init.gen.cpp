@@ -11,6 +11,7 @@
 #endif
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeBomberMan3D_init() {}
+	BOMBERMAN3D_API UFunction* Z_Construct_UDelegateFunction_ABomb_BombExploded__DelegateSignature();
 	BOMBERMAN3D_API UFunction* Z_Construct_UDelegateFunction_BomberMan3D_OnOwningActorChanged__DelegateSignature();
 	UPackage* Z_Construct_UPackage__Script_BomberMan3D()
 	{
@@ -18,6 +19,7 @@ void EmptyLinkFunctionForGeneratedCodeBomberMan3D_init() {}
 		if (!ReturnPackage)
 		{
 			static UObject* (*const SingletonFuncArray[])() = {
+				(UObject* (*)())Z_Construct_UDelegateFunction_ABomb_BombExploded__DelegateSignature,
 				(UObject* (*)())Z_Construct_UDelegateFunction_BomberMan3D_OnOwningActorChanged__DelegateSignature,
 			};
 			static const UE4CodeGen_Private::FPackageParams PackageParams = {
@@ -25,8 +27,8 @@ void EmptyLinkFunctionForGeneratedCodeBomberMan3D_init() {}
 				SingletonFuncArray,
 				UE_ARRAY_COUNT(SingletonFuncArray),
 				PKG_CompiledIn | 0x00000000,
-				0x2BE8A34A,
-				0x651E3266,
+				0xD2BFB78E,
+				0x235C6159,
 				METADATA_PARAMS(nullptr, 0)
 			};
 			UE4CodeGen_Private::ConstructUPackage(ReturnPackage, PackageParams);

@@ -13,6 +13,13 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define BOMBERMAN3D_Bomb_generated_h
 
+#define BomberMan3D_Source_BomberMan3D_Bomb_h_14_DELEGATE \
+static inline void FBombExploded_DelegateWrapper(const FScriptDelegate& BombExploded) \
+{ \
+	BombExploded.ProcessDelegate<UObject>(NULL); \
+}
+
+
 #define BomberMan3D_Source_BomberMan3D_Bomb_h_12_SPARSE_DATA
 #define BomberMan3D_Source_BomberMan3D_Bomb_h_12_RPC_WRAPPERS
 #define BomberMan3D_Source_BomberMan3D_Bomb_h_12_RPC_WRAPPERS_NO_PURE_DECLS

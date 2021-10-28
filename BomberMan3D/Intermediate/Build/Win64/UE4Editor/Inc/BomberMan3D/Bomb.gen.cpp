@@ -13,11 +13,34 @@
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeBomb() {}
 // Cross Module References
-	BOMBERMAN3D_API UClass* Z_Construct_UClass_ABomb_NoRegister();
+	BOMBERMAN3D_API UFunction* Z_Construct_UDelegateFunction_ABomb_BombExploded__DelegateSignature();
 	BOMBERMAN3D_API UClass* Z_Construct_UClass_ABomb();
+	BOMBERMAN3D_API UClass* Z_Construct_UClass_ABomb_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_AActor();
 	UPackage* Z_Construct_UPackage__Script_BomberMan3D();
 // End Cross Module References
+	struct Z_Construct_UDelegateFunction_ABomb_BombExploded__DelegateSignature_Statics
+	{
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UDelegateFunction_ABomb_BombExploded__DelegateSignature_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Bomb.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UDelegateFunction_ABomb_BombExploded__DelegateSignature_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ABomb, nullptr, "BombExploded__DelegateSignature", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00120000, 0, 0, METADATA_PARAMS(Z_Construct_UDelegateFunction_ABomb_BombExploded__DelegateSignature_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_ABomb_BombExploded__DelegateSignature_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UDelegateFunction_ABomb_BombExploded__DelegateSignature()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UDelegateFunction_ABomb_BombExploded__DelegateSignature_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
 	void ABomb::StaticRegisterNativesABomb()
 	{
 	}
@@ -28,6 +51,9 @@ void EmptyLinkFunctionForGeneratedCodeBomb() {}
 	struct Z_Construct_UClass_ABomb_Statics
 	{
 		static UObject* (*const DependentSingletons[])();
+#if WITH_EDITOR
+		static const FClassFunctionLinkInfo FuncInfo[];
+#endif //WITH_EDITOR
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
@@ -43,6 +69,11 @@ void EmptyLinkFunctionForGeneratedCodeBomb() {}
 		(UObject* (*)())Z_Construct_UClass_AActor,
 		(UObject* (*)())Z_Construct_UPackage__Script_BomberMan3D,
 	};
+#if WITH_EDITOR
+	const FClassFunctionLinkInfo Z_Construct_UClass_ABomb_Statics::FuncInfo[] = {
+		{ &Z_Construct_UDelegateFunction_ABomb_BombExploded__DelegateSignature, "BombExploded__DelegateSignature" }, // 373718540
+	};
+#endif //WITH_EDITOR
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABomb_Statics::Class_MetaDataParams[] = {
 		{ "IncludePath", "Bomb.h" },
@@ -67,11 +98,11 @@ void EmptyLinkFunctionForGeneratedCodeBomb() {}
 		"Engine",
 		&StaticCppClassTypeInfo,
 		DependentSingletons,
-		nullptr,
+		IF_WITH_EDITOR(FuncInfo, nullptr),
 		Z_Construct_UClass_ABomb_Statics::PropPointers,
 		nullptr,
 		UE_ARRAY_COUNT(DependentSingletons),
-		0,
+		IF_WITH_EDITOR(UE_ARRAY_COUNT(FuncInfo), 0),
 		UE_ARRAY_COUNT(Z_Construct_UClass_ABomb_Statics::PropPointers),
 		0,
 		0x009000A4u,
@@ -86,7 +117,7 @@ void EmptyLinkFunctionForGeneratedCodeBomb() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ABomb, 1464515439);
+	IMPLEMENT_CLASS(ABomb, 3648533360);
 	template<> BOMBERMAN3D_API UClass* StaticClass<ABomb>()
 	{
 		return ABomb::StaticClass();
