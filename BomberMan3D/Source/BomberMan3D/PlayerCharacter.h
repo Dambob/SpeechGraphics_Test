@@ -33,4 +33,8 @@ public:
 	// Left/right movement
 	UFUNCTION()
 	void MoveRight(float value);
+
+	//Camera Actor which the Actor Volume blends to
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	TSubclassOf<ACameraActor> camera;
 };

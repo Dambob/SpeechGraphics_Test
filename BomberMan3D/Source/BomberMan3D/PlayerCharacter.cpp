@@ -2,6 +2,8 @@
 
 
 #include "PlayerCharacter.h"
+#include "Kismet/GameplayStatics.h"
+#include "Camera/CameraActor.h"
 
 // Sets default values
 APlayerCharacter::APlayerCharacter()
@@ -21,6 +23,20 @@ void APlayerCharacter::BeginPlay()
 	// Display a debug message for five seconds. 
 	// The -1 "Key" value argument prevents the message from being updated or refreshed.
 	GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, TEXT("We are using PlayerCharacter."));
+
+	APlayerController* playerController = UGameplayStatics::GetPlayerController(this, 0);
+
+	if (playerController && camera)
+	{
+		//Array to contain found Camera Actors
+		TArray<AActor*> FoundActors;
+
+		//Utility function to populate array with all Camera Actors in the level
+		UGameplayStatics::GetAllActorsOfClass(GetWorld(), camera, FoundActors);
+
+		//Sets Player Controller view to the first CameraActor found
+		playerController->SetViewTargetWithBlend(FoundActors[0], 2.f, EViewTargetBlendFunction::VTBlend_Linear);
+	}
 }
 
 // Called every frame
