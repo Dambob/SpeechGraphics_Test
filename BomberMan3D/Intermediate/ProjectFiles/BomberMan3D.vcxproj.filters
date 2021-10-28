@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\BomberMan3D.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{9A2FACD6-24FF-44DA-AB18-F2D039CFF725}</UniqueIdentifier>
+      <UniqueIdentifier>{AE1EA5C8-2A0A-4A82-ADF4-15B66D7D27AD}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\BomberMan3D.Target.cs">
       <Filter>Source</Filter>
@@ -12,7 +12,7 @@
       <Filter>Source</Filter>
     </None>
     <Filter Include="Config">
-      <UniqueIdentifier>{BED284A3-3CE6-42CC-AC94-625E9615A6CD}</UniqueIdentifier>
+      <UniqueIdentifier>{FDD79CB9-69D5-4AD8-BF8E-051218820D76}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -23,8 +23,11 @@
     <None Include="..\..\Config\DefaultGame.ini">
       <Filter>Config</Filter>
     </None>
+    <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
     <Filter Include="Source\BomberMan3D">
-      <UniqueIdentifier>{4EBF1BB0-0E88-45BD-B2AB-42177FDECF49}</UniqueIdentifier>
+      <UniqueIdentifier>{E9752926-1705-4BA5-ACCD-C8177A0800BE}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\BomberMan3D\BomberMan3D.Build.cs">
       <Filter>Source\BomberMan3D</Filter>
@@ -39,6 +42,12 @@
       <Filter>Source\BomberMan3D</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\BomberMan3D\BomberMan3DGameModeBase.h">
+      <Filter>Source\BomberMan3D</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\BomberMan3D\LocalMPViewportClient.cpp">
+      <Filter>Source\BomberMan3D</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\BomberMan3D\LocalMPViewportClient.h">
       <Filter>Source\BomberMan3D</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\BomberMan3D\PlayerCharacter.cpp">

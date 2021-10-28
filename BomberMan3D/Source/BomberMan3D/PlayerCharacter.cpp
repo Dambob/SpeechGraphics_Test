@@ -24,7 +24,8 @@ void APlayerCharacter::BeginPlay()
 	// The -1 "Key" value argument prevents the message from being updated or refreshed.
 	GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, TEXT("We are using ") + this->GetClass()->GetFName().ToString());
 
-	APlayerController* playerController = UGameplayStatics::GetPlayerController(this, 0);
+	//APlayerController* playerController = UGameplayStatics::GetPlayerController(this, 0);
+	APlayerController* playerController = dynamic_cast<APlayerController*>(GetController());
 
 	if (playerController && camera)
 	{
@@ -51,9 +52,25 @@ void APlayerCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCom
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
-	// Add movement bindings
-	PlayerInputComponent->BindAxis("MoveUpward", this, &APlayerCharacter::MoveUpward);
-	PlayerInputComponent->BindAxis("MoveRight", this, &APlayerCharacter::MoveRight);
+	APlayerController* playerController = dynamic_cast<APlayerController*>(GetController());
+
+
+	if (playerController)
+	{
+		// Controls for Player 1
+		if (playerController->GetLocalPlayer()->GetControllerId() == 0)
+		{
+			// Add movement bindings
+			PlayerInputComponent->BindAxis("MoveUpward_P1", this, &APlayerCharacter::MoveUpward);
+			PlayerInputComponent->BindAxis("MoveRight_P1", this, &APlayerCharacter::MoveRight);
+		}
+		else // Controls for Player 2
+		{
+			// Add movement bindings
+			PlayerInputComponent->BindAxis("MoveUpward_P2", this, &APlayerCharacter::MoveUpward);
+			PlayerInputComponent->BindAxis("MoveRight_P2", this, &APlayerCharacter::MoveRight);
+		}
+	}
 }
 
 // Up/down movement
