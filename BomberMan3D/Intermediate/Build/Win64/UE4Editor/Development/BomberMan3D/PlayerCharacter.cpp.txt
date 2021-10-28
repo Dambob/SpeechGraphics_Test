@@ -1,0 +1,9 @@
+D:\Users\Damien\Documents\Development\SpeechGraphics_Test\BomberMan3D\Intermediate\Build\Win64\UE4Editor\Development\BomberMan3D\Definitions.BomberMan3D.h
+D:\Users\Damien\Documents\Development\SpeechGraphics_Test\BomberMan3D\Source\BomberMan3D\PlayerCharacter.h
+D:\Program Files\Epic Games\UE_4.26\Engine\Source\Runtime\Engine\Classes\GameFramework/Character.h
+D:\Program Files\Epic Games\UE_4.26\Engine\Source\Runtime\Engine\Classes\GameFramework/CharacterMovementReplication.h
+D:\Program Files\Epic Games\UE_4.26\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\CharacterMovementReplication.generated.h
+D:\Program Files\Epic Games\UE_4.26\Engine\Source\Runtime\Engine\Classes\GameFramework/RootMotionSource.h
+D:\Program Files\Epic Games\UE_4.26\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\RootMotionSource.generated.h
+D:\Program Files\Epic Games\UE_4.26\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\Character.generated.h
+D:\Users\Damien\Documents\Development\SpeechGraphics_Test\BomberMan3D\Intermediate\Build\Win64\UE4Editor\Inc\BomberMan3D\PlayerCharacter.generated.h
