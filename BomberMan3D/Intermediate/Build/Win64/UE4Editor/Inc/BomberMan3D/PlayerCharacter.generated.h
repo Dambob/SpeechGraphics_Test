@@ -16,6 +16,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define BomberMan3D_Source_BomberMan3D_PlayerCharacter_h_15_SPARSE_DATA
 #define BomberMan3D_Source_BomberMan3D_PlayerCharacter_h_15_RPC_WRAPPERS \
  \
+	DECLARE_FUNCTION(execPlaceBomb); \
 	DECLARE_FUNCTION(execGetName); \
 	DECLARE_FUNCTION(execMoveRight); \
 	DECLARE_FUNCTION(execMoveUpward);
@@ -23,6 +24,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
 #define BomberMan3D_Source_BomberMan3D_PlayerCharacter_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
  \
+	DECLARE_FUNCTION(execPlaceBomb); \
 	DECLARE_FUNCTION(execGetName); \
 	DECLARE_FUNCTION(execMoveRight); \
 	DECLARE_FUNCTION(execMoveUpward);

@@ -46,6 +46,10 @@ public:
 	UFUNCTION()
 	FText GetName() { return name; };
 
+	// Left/right movement
+	UFUNCTION()
+	void PlaceBomb();
+
 protected:
 	// Reference UMG Asset in the Editor
 	TSubclassOf<UUserWidget> nameWidgetClass;

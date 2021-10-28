@@ -135,11 +135,12 @@ void APlayerCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCom
 			// Set player name
 			name = FText::FromString("Player 1");
 
-			GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, TEXT("P1 name is set now"));
-
 			// Add movement bindings
 			PlayerInputComponent->BindAxis("MoveUpward_P1", this, &APlayerCharacter::MoveUpward);
 			PlayerInputComponent->BindAxis("MoveRight_P1", this, &APlayerCharacter::MoveRight);
+
+			// Add bomb binding
+			PlayerInputComponent->BindAction("PlaceBomb_P1", IE_Pressed, this, &APlayerCharacter::PlaceBomb);
 		}
 		else // Controls for Player 2
 		{
@@ -149,6 +150,9 @@ void APlayerCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCom
 			// Add movement bindings
 			PlayerInputComponent->BindAxis("MoveUpward_P2", this, &APlayerCharacter::MoveUpward);
 			PlayerInputComponent->BindAxis("MoveRight_P2", this, &APlayerCharacter::MoveRight);
+
+			// Add bomb binding
+			PlayerInputComponent->BindAction("PlaceBomb_P2", IE_Pressed, this, &APlayerCharacter::PlaceBomb);
 		}
 	}
 }
@@ -169,3 +173,7 @@ void APlayerCharacter::MoveRight(float value)
 	AddMovementInput(Direction, value);
 }
 
+void APlayerCharacter::PlaceBomb()
+{
+	GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, TEXT("Bomb placed by: ") + name.ToString());
+}
