@@ -31,6 +31,23 @@ namespace ContainerTests
 			Assert::AreEqual(o.get_or(emptyValue), value);		// Check that the value has been set 
 		}
 
+		TEST_METHOD(ConstructorCopy)
+		{
+			// Setup
+			int value = 10,
+				emptyValue = -1;
+			Optional<int> o(value);
+
+			// Work
+			Optional<int> copied = o;
+
+			Assert::IsTrue(o.isSet());							// Check that the flag has not been changed
+			Assert::AreEqual(o.get_or(emptyValue), value);		// Check that the has not been changed
+
+			Assert::IsTrue(copied.isSet());							// Check that the flag has been set
+			Assert::AreEqual(copied.get_or(emptyValue), value);		// Check that the value has been set 
+		}
+
 		TEST_METHOD(SetValue)
 		{
 			// Setup
