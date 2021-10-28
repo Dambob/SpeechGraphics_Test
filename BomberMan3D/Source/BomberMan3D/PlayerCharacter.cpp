@@ -38,7 +38,7 @@ APlayerCharacter::APlayerCharacter()
 		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, TEXT("No bomb class found."));
 	}
 
-	showDebugMessages = true;
+	showDebugMessages = false;
 }
 
 // Called when the game starts or when spawned
@@ -48,9 +48,13 @@ void APlayerCharacter::BeginPlay()
 	
 	check(GEngine != nullptr);
 
-	// Display a debug message for five seconds. 
-	// The -1 "Key" value argument prevents the message from being updated or refreshed.
-	GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, TEXT("We are using ") + this->GetClass()->GetFName().ToString());
+	// Debug
+	if (showDebugMessages)
+	{
+		// Display a debug message for five seconds. 
+		// The -1 "Key" value argument prevents the message from being updated or refreshed.
+		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, TEXT("We are using ") + this->GetClass()->GetFName().ToString());
+	}
 
 	//APlayerController* playerController = UGameplayStatics::GetPlayerController(this, 0);
 	APlayerController* playerController = dynamic_cast<APlayerController*>(GetController());
@@ -190,8 +194,11 @@ void APlayerCharacter::PlaceBomb()
 {
 	if (bombCount > 0)
 	{
-
-		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, TEXT("Bomb placed by: ") + name.ToString());
+		// Debug
+		if (showDebugMessages)
+		{
+			GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, TEXT("Bomb placed by: ") + name.ToString());
+		}
 
 		FVector location = this->GetActorLocation();
 
@@ -204,7 +211,11 @@ void APlayerCharacter::PlaceBomb()
 
 void APlayerCharacter::BindBombExploded()
 {
-	GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, TEXT("Bomb placed by: ") + name.ToString() + TEXT(" has now exploded."));
+	// Debug
+	if (showDebugMessages)
+	{
+		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, TEXT("Bomb placed by: ") + name.ToString() + TEXT(" has now exploded."));
+	}
 
 	bombCount++;
 }
