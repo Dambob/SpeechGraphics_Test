@@ -31,7 +31,7 @@ namespace ContainerTests
 			Assert::AreEqual(o.get_or(emptyValue), value);		// Check that the value has been set 
 		}
 
-		TEST_METHOD(ConstructorCopy)
+		TEST_METHOD(CopyAssignment)
 		{
 			// Setup
 			int value = 10,
