@@ -7,6 +7,8 @@
 
 #pragma once
 
+#include <mutex>
+
 template <class T>
 class Optional
 {
@@ -25,11 +27,13 @@ public:
 
 	bool isSet()
 	{
+		std::scoped_lock<std::mutex> lock(accessMutex);
 		return hasValue;
 	};
 
 	void set(T newValue)
 	{
+		std::scoped_lock<std::mutex> lock(accessMutex);
 		value = newValue;
 		hasValue = true;
 	};
@@ -37,6 +41,7 @@ public:
 	// Return the value or, if empty, the provded "empty" value
 	T get_or(T emptyValue)
 	{
+		std::scoped_lock<std::mutex> lock(accessMutex);
 		if (hasValue)
 		{
 			return value;
@@ -49,6 +54,7 @@ public:
 
 	void clear()
 	{
+		std::scoped_lock<std::mutex> lock(accessMutex);
 		hasValue = false;
 		value = T();
 	}
@@ -56,4 +62,5 @@ public:
 private:
 	bool hasValue;
 	T value;
+	std::mutex accessMutex;
 };
