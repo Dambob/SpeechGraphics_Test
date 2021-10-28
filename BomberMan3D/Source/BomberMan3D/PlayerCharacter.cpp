@@ -25,6 +25,17 @@ APlayerCharacter::APlayerCharacter()
 		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, TEXT("No nameplate widget found."));
 	}
 
+	static ConstructorHelpers::FClassFinder<ABomb> bombBP(TEXT("/Game/Blueprints/BPBomb"));
+
+	if (bombBP.Succeeded())
+	{
+		bombBPClass = bombBP.Class;
+	}
+	else
+	{
+		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, TEXT("No bomb class found."));
+	}
+
 	showDebugMessages = true;
 }
 
@@ -176,4 +187,8 @@ void APlayerCharacter::MoveRight(float value)
 void APlayerCharacter::PlaceBomb()
 {
 	GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, TEXT("Bomb placed by: ") + name.ToString());
+
+	FVector location = this->GetActorLocation();	
+
+	ABomb* bomb = (ABomb*) GetWorld()->SpawnActor(bombBPClass, &location);
 }

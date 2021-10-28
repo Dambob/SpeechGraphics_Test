@@ -13,8 +13,8 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define BOMBERMAN3D_PlayerCharacter_generated_h
 
-#define BomberMan3D_Source_BomberMan3D_PlayerCharacter_h_15_SPARSE_DATA
-#define BomberMan3D_Source_BomberMan3D_PlayerCharacter_h_15_RPC_WRAPPERS \
+#define BomberMan3D_Source_BomberMan3D_PlayerCharacter_h_16_SPARSE_DATA
+#define BomberMan3D_Source_BomberMan3D_PlayerCharacter_h_16_RPC_WRAPPERS \
  \
 	DECLARE_FUNCTION(execPlaceBomb); \
 	DECLARE_FUNCTION(execGetName); \
@@ -22,7 +22,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 	DECLARE_FUNCTION(execMoveUpward);
 
 
-#define BomberMan3D_Source_BomberMan3D_PlayerCharacter_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
+#define BomberMan3D_Source_BomberMan3D_PlayerCharacter_h_16_RPC_WRAPPERS_NO_PURE_DECLS \
  \
 	DECLARE_FUNCTION(execPlaceBomb); \
 	DECLARE_FUNCTION(execGetName); \
@@ -30,7 +30,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 	DECLARE_FUNCTION(execMoveUpward);
 
 
-#define BomberMan3D_Source_BomberMan3D_PlayerCharacter_h_15_INCLASS_NO_PURE_DECLS \
+#define BomberMan3D_Source_BomberMan3D_PlayerCharacter_h_16_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAPlayerCharacter(); \
 	friend struct Z_Construct_UClass_APlayerCharacter_Statics; \
@@ -39,7 +39,7 @@ public: \
 	DECLARE_SERIALIZER(APlayerCharacter)
 
 
-#define BomberMan3D_Source_BomberMan3D_PlayerCharacter_h_15_INCLASS \
+#define BomberMan3D_Source_BomberMan3D_PlayerCharacter_h_16_INCLASS \
 private: \
 	static void StaticRegisterNativesAPlayerCharacter(); \
 	friend struct Z_Construct_UClass_APlayerCharacter_Statics; \
@@ -48,7 +48,7 @@ public: \
 	DECLARE_SERIALIZER(APlayerCharacter)
 
 
-#define BomberMan3D_Source_BomberMan3D_PlayerCharacter_h_15_STANDARD_CONSTRUCTORS \
+#define BomberMan3D_Source_BomberMan3D_PlayerCharacter_h_16_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API APlayerCharacter(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(APlayerCharacter) \
@@ -61,7 +61,7 @@ private: \
 public:
 
 
-#define BomberMan3D_Source_BomberMan3D_PlayerCharacter_h_15_ENHANCED_CONSTRUCTORS \
+#define BomberMan3D_Source_BomberMan3D_PlayerCharacter_h_16_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API APlayerCharacter(APlayerCharacter&&); \
@@ -72,32 +72,32 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(APlayerCharacter); \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(APlayerCharacter)
 
 
-#define BomberMan3D_Source_BomberMan3D_PlayerCharacter_h_15_PRIVATE_PROPERTY_OFFSET \
+#define BomberMan3D_Source_BomberMan3D_PlayerCharacter_h_16_PRIVATE_PROPERTY_OFFSET \
 	FORCEINLINE static uint32 __PPO__nameplate() { return STRUCT_OFFSET(APlayerCharacter, nameplate); } \
 	FORCEINLINE static uint32 __PPO__name() { return STRUCT_OFFSET(APlayerCharacter, name); }
 
 
-#define BomberMan3D_Source_BomberMan3D_PlayerCharacter_h_12_PROLOG
-#define BomberMan3D_Source_BomberMan3D_PlayerCharacter_h_15_GENERATED_BODY_LEGACY \
+#define BomberMan3D_Source_BomberMan3D_PlayerCharacter_h_13_PROLOG
+#define BomberMan3D_Source_BomberMan3D_PlayerCharacter_h_16_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	BomberMan3D_Source_BomberMan3D_PlayerCharacter_h_15_PRIVATE_PROPERTY_OFFSET \
-	BomberMan3D_Source_BomberMan3D_PlayerCharacter_h_15_SPARSE_DATA \
-	BomberMan3D_Source_BomberMan3D_PlayerCharacter_h_15_RPC_WRAPPERS \
-	BomberMan3D_Source_BomberMan3D_PlayerCharacter_h_15_INCLASS \
-	BomberMan3D_Source_BomberMan3D_PlayerCharacter_h_15_STANDARD_CONSTRUCTORS \
+	BomberMan3D_Source_BomberMan3D_PlayerCharacter_h_16_PRIVATE_PROPERTY_OFFSET \
+	BomberMan3D_Source_BomberMan3D_PlayerCharacter_h_16_SPARSE_DATA \
+	BomberMan3D_Source_BomberMan3D_PlayerCharacter_h_16_RPC_WRAPPERS \
+	BomberMan3D_Source_BomberMan3D_PlayerCharacter_h_16_INCLASS \
+	BomberMan3D_Source_BomberMan3D_PlayerCharacter_h_16_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define BomberMan3D_Source_BomberMan3D_PlayerCharacter_h_15_GENERATED_BODY \
+#define BomberMan3D_Source_BomberMan3D_PlayerCharacter_h_16_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	BomberMan3D_Source_BomberMan3D_PlayerCharacter_h_15_PRIVATE_PROPERTY_OFFSET \
-	BomberMan3D_Source_BomberMan3D_PlayerCharacter_h_15_SPARSE_DATA \
-	BomberMan3D_Source_BomberMan3D_PlayerCharacter_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
-	BomberMan3D_Source_BomberMan3D_PlayerCharacter_h_15_INCLASS_NO_PURE_DECLS \
-	BomberMan3D_Source_BomberMan3D_PlayerCharacter_h_15_ENHANCED_CONSTRUCTORS \
+	BomberMan3D_Source_BomberMan3D_PlayerCharacter_h_16_PRIVATE_PROPERTY_OFFSET \
+	BomberMan3D_Source_BomberMan3D_PlayerCharacter_h_16_SPARSE_DATA \
+	BomberMan3D_Source_BomberMan3D_PlayerCharacter_h_16_RPC_WRAPPERS_NO_PURE_DECLS \
+	BomberMan3D_Source_BomberMan3D_PlayerCharacter_h_16_INCLASS_NO_PURE_DECLS \
+	BomberMan3D_Source_BomberMan3D_PlayerCharacter_h_16_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
+#include "Bomb.h"
 #include "PlayerCharacter.generated.h"
 
 // Forward declarations
@@ -65,4 +66,7 @@ protected:
 	bool showDebugMessages;
 
 	void SetupNameplate();
+
+	// Reference BP Asset in the Editor
+	TSubclassOf<ABomb> bombBPClass;
 };
