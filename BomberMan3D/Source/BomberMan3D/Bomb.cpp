@@ -24,18 +24,6 @@ void ABomb::BeginPlay()
 void ABomb::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-
-	//FuseTick(DeltaTime);
-}
-
-void ABomb::FuseTick(float DeltaTime)
-{
-	fuseTime -= DeltaTime;
-
-	if (fuseTime <= 0)
-	{
-		Explode();
-	}
 }
 
 void ABomb::Explode()
