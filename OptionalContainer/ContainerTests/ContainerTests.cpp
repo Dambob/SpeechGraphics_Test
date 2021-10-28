@@ -12,8 +12,26 @@ namespace ContainerTests
 	{
 	public:
 		
+		TEST_METHOD(ConstructNoValue)
+		{
+			// Setup
+			Optional<int> o;
+
+			Assert::IsFalse(o.isSet());
+		}
+
+		TEST_METHOD(ConstructHasValue)
+		{
+			// Setup
+			int value = 10;
+			Optional<int> o(value);
+
+			Assert::IsTrue(o.isSet());
+		}
+
 		TEST_METHOD(SetValue)
 		{
+
 			Assert::AreEqual(1, 2);
 		}
 
