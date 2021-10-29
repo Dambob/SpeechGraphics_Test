@@ -4,6 +4,7 @@
 #include "Explosion.h"
 #include "PlayerCharacter.h"
 #include "Bomb.h"
+#include "BlockDestructible.h"
 
 // Sets default values
 AExplosion::AExplosion(const FObjectInitializer& ObjectInitializer)
@@ -80,23 +81,25 @@ void AExplosion::CheckCollisions()
 
 void AExplosion::OnBeginOverlap(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
-	APlayerCharacter* character = dynamic_cast<APlayerCharacter*>(OtherActor);
-
 	// Hit player
-	if (character)
+	if (APlayerCharacter* character = dynamic_cast<APlayerCharacter*>(OtherActor))
 	{
 		/// ToDo: Add response logic for hitting player
-
-		return;
+		//
 	}
-
-	ABomb* bomb = dynamic_cast<ABomb*>(OtherActor);
-
 	// Hit bomb
-	if (bomb)
+	else if (ABomb* bomb = dynamic_cast<ABomb*>(OtherActor))
 	{
 		bomb->Explode();
-		return;
+	}
+	// Hit destructible
+	else if (ABlockDestructible* blockDestructible = dynamic_cast<ABlockDestructible*>(OtherActor))
+	{
+		// Apply damage to block
+		blockDestructible->TakeDamage(1, FDamageEvent(),  nullptr, this);
+
+		// Block will stop explosion.
+		Destroy();
 	}
 
 	/// ToDo: Add check for powerups

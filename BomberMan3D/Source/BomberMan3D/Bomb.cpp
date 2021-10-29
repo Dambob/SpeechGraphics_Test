@@ -21,6 +21,8 @@ ABomb::ABomb()
 	{
 		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, TEXT("No explosion class found."));
 	}
+
+	SetActorEnableCollision(true);
 }
 
 // Called when the game starts or when spawned
