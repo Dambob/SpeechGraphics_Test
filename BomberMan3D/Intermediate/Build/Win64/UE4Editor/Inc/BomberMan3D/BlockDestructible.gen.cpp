@@ -43,6 +43,7 @@ void EmptyLinkFunctionForGeneratedCodeBlockDestructible() {}
 		{ "Comment", "/**\n * \n */" },
 		{ "IncludePath", "BlockDestructible.h" },
 		{ "ModuleRelativePath", "BlockDestructible.h" },
+		{ "ObjectInitializerConstructorDeclared", "" },
 	};
 #endif
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ABlockDestructible_Statics::StaticCppClassTypeInfo = {
@@ -72,7 +73,7 @@ void EmptyLinkFunctionForGeneratedCodeBlockDestructible() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ABlockDestructible, 3451179465);
+	IMPLEMENT_CLASS(ABlockDestructible, 2884827446);
 	template<> BOMBERMAN3D_API UClass* StaticClass<ABlockDestructible>()
 	{
 		return ABlockDestructible::StaticClass();
