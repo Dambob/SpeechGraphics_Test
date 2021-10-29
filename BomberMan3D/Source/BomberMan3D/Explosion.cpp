@@ -63,10 +63,10 @@ void AExplosion::CheckCollisions()
 	FHitResult sweepResult;
 
 	// Check if path is clear
-	bool hit = GetWorld()->SweepSingleByChannel(sweepResult, startLocation, endLocation, FQuat::Identity, ECC_WorldStatic, collider);
+	bool hit = GetWorld()->SweepSingleByChannel(sweepResult, startLocation, endLocation, FQuat::Identity, ECC_Visibility, collider);
 
 	// Something in the way
-	if (hit)
+	if (hit && sweepResult.bBlockingHit)
 	{
 		// Reduce range down to not overlap with object
 		range = sweepResult.Distance;
