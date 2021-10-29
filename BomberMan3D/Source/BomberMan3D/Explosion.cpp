@@ -36,6 +36,10 @@ AExplosion::AExplosion(const FObjectInitializer& ObjectInitializer)
 	collisionBox->SetMobility(EComponentMobility::Static);
 	collisionBox->AttachToComponent(DefaultSceneRoot, FAttachmentTransformRules::KeepRelativeTransform);
 
+	// Collision
+	smokeFX = ObjectInitializer.CreateDefaultSubobject<UNiagaraComponent>(this, TEXT("Effect"));
+	smokeFX->AttachToComponent(DefaultSceneRoot, FAttachmentTransformRules::KeepRelativeTransform);
+
 	SetActorEnableCollision(true);
 }
 

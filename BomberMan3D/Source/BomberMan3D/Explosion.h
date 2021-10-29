@@ -5,6 +5,8 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include "Components/BoxComponent.h"
+//#include "Niagara/Public/NiagaraComponent.h"
+#include "NiagaraComponent.h"
 #include "Explosion.generated.h"
 
 UCLASS()
@@ -30,8 +32,14 @@ protected:
 	USceneComponent* DefaultSceneRoot;
 
 	/**
-	* Contains the mesh and material of this block
+	* Contains the collision of this block
 	*/
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
 	UBoxComponent* collisionBox;
+
+	/**
+	* Contains the effect
+	*/
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
+	UNiagaraComponent* smokeFX;
 };
