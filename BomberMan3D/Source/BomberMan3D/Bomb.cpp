@@ -11,7 +11,7 @@ ABomb::ABomb()
 
 	fuseTime = 3.0f;
 
-	static ConstructorHelpers::FClassFinder<ABomb> explosionBP(TEXT("/Game/Blueprints/BPExplosion"));
+	static ConstructorHelpers::FClassFinder<AExplosion> explosionBP(TEXT("/Game/Blueprints/BPExplosion"));
 
 	if (explosionBP.Succeeded())
 	{
@@ -42,6 +42,22 @@ void ABomb::Explode()
 {
 	// ToDo:
 	//Add in explosion mechanics here
+	FVector location = GetActorLocation();
+	float rotation = 90.0f;
+
+	// Spawn 4 explosions
+	for (int i = 0; i < 4; i++)
+	{
+		AExplosion* explosion = (AExplosion*)GetWorld()->SpawnActor(explosionBPClass, &location);
+
+		if (explosion)
+		{
+			// Rotate each explosion 90 degrees to cover each direction
+			explosion->SetActorRotation(FRotator(0.0f, rotation*i, 0.0f));
+		}
+
+		explosion = nullptr;
+	}
 
 	// Broadcast delegate
 	OnBombExplosion.ExecuteIfBound();

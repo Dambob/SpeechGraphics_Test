@@ -6,7 +6,7 @@
 // Sets default values
 ABlockDestructible::ABlockDestructible(const FObjectInitializer& ObjectInitializer) : ABlock(ObjectInitializer)
 {
-	static ConstructorHelpers::FClassFinder<ABomb> bombBP(TEXT("/Game/Blueprints/BPBomb"));
+	/*static ConstructorHelpers::FClassFinder<ABomb> bombBP(TEXT("/Game/Blueprints/BPBomb"));
 
 	if (bombBP.Succeeded())
 	{
@@ -15,7 +15,7 @@ ABlockDestructible::ABlockDestructible(const FObjectInitializer& ObjectInitializ
 	else
 	{
 		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, TEXT("No bomb class found."));
-	}
+	}*/
 }
 
 float ABlockDestructible::TakeDamage(float Damage, FDamageEvent const& DamageEvent, AController* EventInstigator, AActor* DamageCauser)
@@ -27,7 +27,7 @@ float ABlockDestructible::TakeDamage(float Damage, FDamageEvent const& DamageEve
 		// Spawn powerup
 		// ToDo: change from bomb to powerup
 		FVector location = this->GetActorLocation();
-		ABomb* bomb = (ABomb*)GetWorld()->SpawnActor(bombBPClass, &location);
+		//ABomb* bomb = (ABomb*)GetWorld()->SpawnActor(bombBPClass, &location);
 
 		// Remove block
 		Destroy();
