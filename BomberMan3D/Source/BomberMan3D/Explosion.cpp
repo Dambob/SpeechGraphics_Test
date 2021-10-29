@@ -28,7 +28,7 @@ AExplosion::AExplosion(const FObjectInitializer& ObjectInitializer)
 
 	// Collision
 	collisionBox = ObjectInitializer.CreateDefaultSubobject<UBoxComponent>(this, TEXT("CollisionBox"));
-	collisionBox->InitBoxExtent(FVector(20.0f, 20.0f, 20.0f));
+	collisionBox->InitBoxExtent(FVector(20.0f, 20.0f, 100.0f));
 	collisionBox->SetRelativeTransform(FTransform
 	(
 		FRotator(0.0f, 0.0f, 0.0f),
@@ -84,12 +84,13 @@ void AExplosion::OnBeginOverlap(UPrimitiveComponent* OverlappedComp, AActor* Oth
 	// Hit player
 	if (APlayerCharacter* character = dynamic_cast<APlayerCharacter*>(OtherActor))
 	{
-		/// ToDo: Add response logic for hitting player
-		//
+		// Kill chracter
+		character->Kill();
 	}
 	// Hit bomb
 	else if (ABomb* bomb = dynamic_cast<ABomb*>(OtherActor))
 	{
+		// Explode the bomb
 		bomb->Explode();
 	}
 	// Hit destructible

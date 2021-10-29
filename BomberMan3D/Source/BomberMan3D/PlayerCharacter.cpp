@@ -39,6 +39,8 @@ APlayerCharacter::APlayerCharacter()
 	}
 
 	showDebugMessages = false;
+
+	alive = true;
 }
 
 // Called when the game starts or when spawned
@@ -56,6 +58,7 @@ void APlayerCharacter::BeginPlay()
 		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, TEXT("We are using ") + this->GetClass()->GetFName().ToString());
 	}
 
+	/* Old code for adding camera to main player
 	//APlayerController* playerController = UGameplayStatics::GetPlayerController(this, 0);
 	APlayerController* playerController = dynamic_cast<APlayerController*>(GetController());
 
@@ -70,6 +73,7 @@ void APlayerCharacter::BeginPlay()
 		//Sets Player Controller view to the first CameraActor found
 		playerController->SetViewTargetWithBlend(FoundActors[0], 2.f, EViewTargetBlendFunction::VTBlend_Linear);
 	}
+	*/
 
 	SetupNameplate();	
 }

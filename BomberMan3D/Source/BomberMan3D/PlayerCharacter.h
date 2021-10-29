@@ -51,6 +51,10 @@ public:
 	UFUNCTION()
 	void PlaceBomb();
 
+	void Kill() { alive = false; };
+
+	bool isAlive() { return alive; };
+
 protected:
 	// Reference UMG Asset in the Editor
 	TSubclassOf<UUserWidget> nameWidgetClass;
@@ -75,4 +79,6 @@ protected:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Character")
 	int bombCount;
+
+	bool alive;
 };

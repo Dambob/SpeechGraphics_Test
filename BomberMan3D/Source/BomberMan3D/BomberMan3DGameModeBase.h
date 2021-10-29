@@ -6,6 +6,9 @@
 #include "GameFramework/GameModeBase.h"
 #include "BomberMan3DGameModeBase.generated.h"
 
+// Forward Declarations
+class APlayerCharacter;
+
 /**
  * 
  */
@@ -17,4 +20,12 @@ class BOMBERMAN3D_API ABomberMan3DGameModeBase : public AGameModeBase
 	ABomberMan3DGameModeBase();
 
 	virtual void StartPlay() override;
+
+public:
+	void PlayerDead(APlayerCharacter player);
+
+	virtual void ResetLevel() override;
+
+protected:
+	void SpawnPlayerTwo();
 };
