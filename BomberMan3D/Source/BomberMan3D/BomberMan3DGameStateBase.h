@@ -20,4 +20,7 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	TArray<int> score;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	FString result;
 };

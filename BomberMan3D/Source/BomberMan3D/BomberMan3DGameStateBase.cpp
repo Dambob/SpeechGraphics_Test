@@ -4,7 +4,8 @@
 #include "BomberMan3DGameStateBase.h"
 
 ABomberMan3DGameStateBase::ABomberMan3DGameStateBase() :
-	score({ 0,0 })
+	score({ 0,0 }),
+	result("None")
 {
 
 }

@@ -6,7 +6,7 @@
 #include "Engine/World.h"
 #include "PlayerCharacter.h"
 #include "BomberMan3DGameStateBase.h"
-#include "Bomb.h"
+#include "Explosion.h"
 
 ABomberMan3DGameModeBase::ABomberMan3DGameModeBase()
 {
@@ -81,11 +81,6 @@ void ABomberMan3DGameModeBase::SpawnPlayerTwo()
 	if (world)
 	{
 		APlayerController* playerController = UGameplayStatics::CreatePlayer(world);
-
-		/*playerController->SetName("Player Two");
-		playerController->Possess(playerController->GetPawn());
-
-		world->AddController(playerController);*/
 	}
 }
 
@@ -117,6 +112,8 @@ void ABomberMan3DGameModeBase::CheckPlayers()
 	if (livingPlayers.Num() == 0)
 	{
 		// Draw
+		// Get game state
+		GetGameState<ABomberMan3DGameStateBase>()->result = "Draw";
 	}
 	else if (livingPlayers.Num() == 1)
 	{
@@ -125,7 +122,7 @@ void ABomberMan3DGameModeBase::CheckPlayers()
 		// Check for active explosions
 		// Get all explosions
 		TArray<AActor*> foundExplosions;
-		UGameplayStatics::GetAllActorsOfClass(GetWorld(), ABomb::StaticClass(), foundExplosions);
+		UGameplayStatics::GetAllActorsOfClass(GetWorld(), AExplosion::StaticClass(), foundExplosions);
 
 		if (foundExplosions.Num() == 0)
 		{
@@ -135,6 +132,8 @@ void ABomberMan3DGameModeBase::CheckPlayers()
 
 			// Get game state
 			//GetGameState<ABomberMan3DGameStateBase>();
+
+			GetGameState<ABomberMan3DGameStateBase>()->result = TEXT("Winner: ") + livingPlayers[0]->GetName().ToString();
 		}
 	}	
 }
@@ -147,4 +146,6 @@ void ABomberMan3DGameModeBase::ResetLevel()
 
 	RestartPlayer(player);
 	SpawnPlayerTwo();
+
+	GetGameState<ABomberMan3DGameStateBase>()->result = "None";
 }
