@@ -27,8 +27,8 @@ void EmptyLinkFunctionForGeneratedCodeBomberMan3D_init() {}
 				SingletonFuncArray,
 				UE_ARRAY_COUNT(SingletonFuncArray),
 				PKG_CompiledIn | 0x00000000,
-				0xD2BFB78E,
-				0x235C6159,
+				0x07F81501,
+				0x3992A0CC,
 				METADATA_PARAMS(nullptr, 0)
 			};
 			UE4CodeGen_Private::ConstructUPackage(ReturnPackage, PackageParams);

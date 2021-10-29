@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\BomberMan3D.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{96E3DB4F-ADA7-4688-BA83-7B0B4BD24AB1}</UniqueIdentifier>
+      <UniqueIdentifier>{F820DDBD-50F1-494C-A9B7-B4F17C1E537F}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\BomberMan3D.Target.cs">
       <Filter>Source</Filter>
@@ -12,7 +12,7 @@
       <Filter>Source</Filter>
     </None>
     <Filter Include="Config">
-      <UniqueIdentifier>{901BE304-657D-4FA8-9475-5B0578C2C866}</UniqueIdentifier>
+      <UniqueIdentifier>{F935E559-518A-4DA4-964B-312059D8E6C0}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -27,8 +27,20 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\BomberMan3D">
-      <UniqueIdentifier>{116EE93E-61B1-4BDD-A2E2-78621167CE43}</UniqueIdentifier>
+      <UniqueIdentifier>{FAEC1787-87D6-414A-9ADD-453521040606}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\BomberMan3D\Block.cpp">
+      <Filter>Source\BomberMan3D</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\BomberMan3D\Block.h">
+      <Filter>Source\BomberMan3D</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\BomberMan3D\BlockDestructible.cpp">
+      <Filter>Source\BomberMan3D</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\BomberMan3D\BlockDestructible.h">
+      <Filter>Source\BomberMan3D</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\BomberMan3D\Bomb.cpp">
       <Filter>Source\BomberMan3D</Filter>
     </ClCompile>
