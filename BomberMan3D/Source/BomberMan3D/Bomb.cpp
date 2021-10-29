@@ -40,7 +40,8 @@ void ABomb::Tick(float DeltaTime)
 
 void ABomb::Explode()
 {
-	// ToDo:
+	SetActorEnableCollision(false);
+
 	//Add in explosion mechanics here
 	FVector location = GetActorLocation();
 	float rotation = 90.0f;

@@ -8,14 +8,25 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class UPrimitiveComponent;
+class AActor;
+struct FHitResult;
 #ifdef BOMBERMAN3D_Explosion_generated_h
 #error "Explosion.generated.h already included, missing '#pragma once' in Explosion.h"
 #endif
 #define BOMBERMAN3D_Explosion_generated_h
 
 #define BomberMan3D_Source_BomberMan3D_Explosion_h_15_SPARSE_DATA
-#define BomberMan3D_Source_BomberMan3D_Explosion_h_15_RPC_WRAPPERS
-#define BomberMan3D_Source_BomberMan3D_Explosion_h_15_RPC_WRAPPERS_NO_PURE_DECLS
+#define BomberMan3D_Source_BomberMan3D_Explosion_h_15_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execOnBeginOverlap);
+
+
+#define BomberMan3D_Source_BomberMan3D_Explosion_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execOnBeginOverlap);
+
+
 #define BomberMan3D_Source_BomberMan3D_Explosion_h_15_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAExplosion(); \

@@ -2,6 +2,8 @@
 
 
 #include "Explosion.h"
+#include "PlayerCharacter.h"
+#include "Bomb.h"
 
 // Sets default values
 AExplosion::AExplosion(const FObjectInitializer& ObjectInitializer)
@@ -36,7 +38,7 @@ AExplosion::AExplosion(const FObjectInitializer& ObjectInitializer)
 	collisionBox->SetMobility(EComponentMobility::Movable);
 	collisionBox->AttachToComponent(DefaultSceneRoot, FAttachmentTransformRules::KeepRelativeTransform);
 
-	// Collision
+	// Smoke
 	smokeFX = ObjectInitializer.CreateDefaultSubobject<UNiagaraComponent>(this, TEXT("Effect"));
 	smokeFX->AttachToComponent(DefaultSceneRoot, FAttachmentTransformRules::KeepRelativeTransform);
 
@@ -51,6 +53,9 @@ AExplosion::AExplosion(const FObjectInitializer& ObjectInitializer)
 void AExplosion::BeginPlay()
 {
 	Super::BeginPlay();
+
+	// Add link to overlap event
+	collisionBox->OnComponentBeginOverlap.AddDynamic(this, &AExplosion::OnBeginOverlap);
 }
 
 void AExplosion::CheckCollisions()
@@ -71,6 +76,38 @@ void AExplosion::CheckCollisions()
 		// Reduce range down to not overlap with object
 		range = sweepResult.Distance;
 	}
+}
+
+void AExplosion::OnBeginOverlap(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+{
+	APlayerCharacter* character = dynamic_cast<APlayerCharacter*>(OtherActor);
+
+	// Hit player
+	if (character)
+	{
+		/// ToDo: Add response logic for hitting player
+
+		return;
+	}
+
+	ABomb* bomb = dynamic_cast<ABomb*>(OtherActor);
+
+	// Hit bomb
+	if (bomb)
+	{
+		bomb->Explode();
+		return;
+	}
+
+	/// ToDo: Add check for powerups
+	/*APlayerCharacter* character = dynamic_cast<APlayerCharacter*>(OtherActor);
+
+	// Hit player
+	if (character)
+	{
+		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, TEXT("Hit character."));
+		return;
+	}*/
 }
 
 // Called every frame

@@ -23,6 +23,8 @@ public:
 
 	FBombExploded OnBombExplosion;
 
+	void Explode();
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
@@ -32,8 +34,6 @@ protected:
 
 	// Timer for fuse
 	FTimerHandle fuseTimerHandle;	
-
-	void Explode();
 
 	// Reference BP Asset in the Editor
 	TSubclassOf<AExplosion> explosionBPClass;
