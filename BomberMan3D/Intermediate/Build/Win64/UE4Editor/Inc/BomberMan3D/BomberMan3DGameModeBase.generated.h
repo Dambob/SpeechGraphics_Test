@@ -14,8 +14,18 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define BOMBERMAN3D_BomberMan3DGameModeBase_generated_h
 
 #define BomberMan3D_Source_BomberMan3D_BomberMan3DGameModeBase_h_18_SPARSE_DATA
-#define BomberMan3D_Source_BomberMan3D_BomberMan3DGameModeBase_h_18_RPC_WRAPPERS
-#define BomberMan3D_Source_BomberMan3D_BomberMan3DGameModeBase_h_18_RPC_WRAPPERS_NO_PURE_DECLS
+#define BomberMan3D_Source_BomberMan3D_BomberMan3DGameModeBase_h_18_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execSetScore); \
+	DECLARE_FUNCTION(execGetScore);
+
+
+#define BomberMan3D_Source_BomberMan3D_BomberMan3DGameModeBase_h_18_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execSetScore); \
+	DECLARE_FUNCTION(execGetScore);
+
+
 #define BomberMan3D_Source_BomberMan3D_BomberMan3DGameModeBase_h_18_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesABomberMan3DGameModeBase(); \

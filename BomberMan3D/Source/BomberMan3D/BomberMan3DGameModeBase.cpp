@@ -5,16 +5,30 @@
 #include "Kismet/GameplayStatics.h"
 #include "Engine/World.h"
 #include "PlayerCharacter.h"
+#include "BomberMan3DGameStateBase.h"
 
 ABomberMan3DGameModeBase::ABomberMan3DGameModeBase()
 {
-	// set default pawn class to our Blueprinted character
+	// Set game state class to our Blueprinted state
+	static ConstructorHelpers::FClassFinder<ABomberMan3DGameStateBase> gameStateBPClass(TEXT("/Game/Blueprints/GameModes/BPBomberMan3DGameStateBase"));
+	if (gameStateBPClass.Class != nullptr)
+	{
+		GameStateClass = gameStateBPClass.Class;
+	}
+
+	// Set default pawn class to our Blueprinted character
 	static ConstructorHelpers::FClassFinder<APawn> PlayerPawnBPClass(TEXT("/Game/Blueprints/Characters/BPPlayerCharacter"));
 	if (PlayerPawnBPClass.Class != nullptr)
 	{
-		DefaultPawnClass = nullptr;
-		//DefaultPawnClass = PlayerPawnBPClass.Class;
+		DefaultPawnClass = PlayerPawnBPClass.Class;
 	}
+}
+
+void ABomberMan3DGameModeBase::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
+
+	CheckPlayers();
 }
 
 void ABomberMan3DGameModeBase::StartPlay()
@@ -28,6 +42,32 @@ void ABomberMan3DGameModeBase::StartPlay()
 	GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Yellow, TEXT("We are using ") + this->GetClass()->GetFName().ToString());
 
 	SpawnPlayerTwo();
+}
+
+int ABomberMan3DGameModeBase::GetScore(int playerID) const
+{
+	int score = -1;
+
+	TArray<int> scores = GetGameState<ABomberMan3DGameStateBase>()->score;
+
+	if (scores.Num() >= playerID)
+	{
+		score = scores[playerID];
+	}
+
+	return score;
+}
+
+void ABomberMan3DGameModeBase::SetScore(int playerID, int newScore) const
+{
+	int score = -1;
+
+	TArray<int> scores = GetGameState<ABomberMan3DGameStateBase>()->score;
+
+	if (scores.Num() >= playerID)
+	{
+		scores[playerID] = score;
+	}
 }
 
 void ABomberMan3DGameModeBase::SpawnPlayerTwo()
@@ -45,9 +85,12 @@ void ABomberMan3DGameModeBase::SpawnPlayerTwo()
 	}
 }
 
-void ABomberMan3DGameModeBase::PlayerDead(APlayerCharacter player)
+void ABomberMan3DGameModeBase::CheckPlayers()
 {
+	// ToDo: Check which players are alive
 
+	// Get game state
+	GetGameState<ABomberMan3DGameStateBase>();
 }
 
 void ABomberMan3DGameModeBase::ResetLevel()

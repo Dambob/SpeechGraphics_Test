@@ -129,3 +129,7 @@ D:\Program Files\Epic Games\UE_4.26\Engine\Plugins\FX\Niagara\Intermediate\Build
 D:\Users\Damien\Documents\Development\SpeechGraphics_Test\BomberMan3D\Intermediate\Build\Win64\UE4Editor\Inc\BomberMan3D\Explosion.generated.h
 D:\Users\Damien\Documents\Development\SpeechGraphics_Test\BomberMan3D\Intermediate\Build\Win64\UE4Editor\Inc\BomberMan3D\Bomb.generated.h
 D:\Users\Damien\Documents\Development\SpeechGraphics_Test\BomberMan3D\Intermediate\Build\Win64\UE4Editor\Inc\BomberMan3D\PlayerCharacter.generated.h
+D:\Users\Damien\Documents\Development\SpeechGraphics_Test\BomberMan3D\Source\BomberMan3D\BomberMan3DGameStateBase.h
+D:\Program Files\Epic Games\UE_4.26\Engine\Source\Runtime\Engine\Classes\GameFramework/GameStateBase.h
+D:\Program Files\Epic Games\UE_4.26\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\GameStateBase.generated.h
+D:\Users\Damien\Documents\Development\SpeechGraphics_Test\BomberMan3D\Intermediate\Build\Win64\UE4Editor\Inc\BomberMan3D\BomberMan3DGameStateBase.generated.h

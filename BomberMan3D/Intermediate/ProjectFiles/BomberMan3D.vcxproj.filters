@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\BomberMan3D.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{B5CFAA87-1FFF-4B71-AB89-106242E00D8C}</UniqueIdentifier>
+      <UniqueIdentifier>{EA481221-0BAC-45A0-BABA-90F32B2329EB}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\BomberMan3D.Target.cs">
       <Filter>Source</Filter>
@@ -12,7 +12,7 @@
       <Filter>Source</Filter>
     </None>
     <Filter Include="Config">
-      <UniqueIdentifier>{82265DF8-8D4E-4CF1-9D8D-D75BC4D55CA1}</UniqueIdentifier>
+      <UniqueIdentifier>{F5A7868D-9E77-4D14-B93D-3AB3102C978C}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -27,7 +27,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\BomberMan3D">
-      <UniqueIdentifier>{57EAA612-91A7-4A16-9C1E-ECDE4351786F}</UniqueIdentifier>
+      <UniqueIdentifier>{B08A56E5-AEE2-4F1B-9770-A6E1A3B33837}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\BomberMan3D\Block.cpp">
       <Filter>Source\BomberMan3D</Filter>
@@ -56,10 +56,22 @@
     <ClInclude Include="..\..\Source\BomberMan3D\BomberMan3D.h">
       <Filter>Source\BomberMan3D</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\BomberMan3D\BomberMan3DGameInstance.cpp">
+      <Filter>Source\BomberMan3D</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\BomberMan3D\BomberMan3DGameInstance.h">
+      <Filter>Source\BomberMan3D</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\BomberMan3D\BomberMan3DGameModeBase.cpp">
       <Filter>Source\BomberMan3D</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\BomberMan3D\BomberMan3DGameModeBase.h">
+      <Filter>Source\BomberMan3D</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\BomberMan3D\BomberMan3DGameStateBase.cpp">
+      <Filter>Source\BomberMan3D</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\BomberMan3D\BomberMan3DGameStateBase.h">
       <Filter>Source\BomberMan3D</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\BomberMan3D\DMActorWidgetComponent.cpp">
