@@ -51,8 +51,6 @@ AExplosion::AExplosion(const FObjectInitializer& ObjectInitializer)
 void AExplosion::BeginPlay()
 {
 	Super::BeginPlay();
-	
-	CheckCollisions();
 }
 
 void AExplosion::CheckCollisions()
@@ -65,7 +63,7 @@ void AExplosion::CheckCollisions()
 	FHitResult sweepResult;
 
 	// Check if path is clear
-	bool hit = GetWorld()->SweepSingleByChannel(sweepResult, startLocation, endLocation, FQuat::Identity, ECC_Visibility, collider);
+	bool hit = GetWorld()->SweepSingleByChannel(sweepResult, startLocation, endLocation, FQuat::Identity, ECC_WorldStatic, collider);
 
 	// Something in the way
 	if (hit)
@@ -81,6 +79,16 @@ void AExplosion::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 	
 	Move(DeltaTime);
+}
+
+bool AExplosion::SetRotation(FRotator NewRotation)
+{
+	bool result = Super::SetActorRotation(NewRotation);
+
+	// Update collisions based on new rotation
+	CheckCollisions();
+
+	return result;
 }
 
 void AExplosion::Move(float DeltaTime)

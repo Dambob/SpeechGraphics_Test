@@ -53,7 +53,7 @@ void ABomb::Explode()
 		if (explosion)
 		{
 			// Rotate each explosion 90 degrees to cover each direction
-			explosion->SetActorRotation(FRotator(0.0f, rotation*i, 0.0f));
+			explosion->SetRotation(FRotator(0.0f, rotation*i, 0.0f));
 		}
 
 		explosion = nullptr;
