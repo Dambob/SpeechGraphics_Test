@@ -14,7 +14,7 @@ AExplosion::AExplosion(const FObjectInitializer& ObjectInitializer)
 
 	if (DefaultSceneRoot)
 	{
-		DefaultSceneRoot->SetMobility(EComponentMobility::Static);
+		DefaultSceneRoot->SetMobility(EComponentMobility::Movable);
 	}
 
 	// If root component missing, use Default
@@ -33,7 +33,7 @@ AExplosion::AExplosion(const FObjectInitializer& ObjectInitializer)
 		FVector(1.0f, 1.0f, 1.0f)
 	)
 	);
-	collisionBox->SetMobility(EComponentMobility::Static);
+	collisionBox->SetMobility(EComponentMobility::Movable);
 	collisionBox->AttachToComponent(DefaultSceneRoot, FAttachmentTransformRules::KeepRelativeTransform);
 
 	// Collision
@@ -41,6 +41,10 @@ AExplosion::AExplosion(const FObjectInitializer& ObjectInitializer)
 	smokeFX->AttachToComponent(DefaultSceneRoot, FAttachmentTransformRules::KeepRelativeTransform);
 
 	SetActorEnableCollision(true);
+
+	speed = 30.0f;
+	range = 400.0f;
+	distanceMoved = 0.0f;
 }
 
 // Called when the game starts or when spawned
@@ -48,12 +52,53 @@ void AExplosion::BeginPlay()
 {
 	Super::BeginPlay();
 	
+	CheckCollisions();
+}
+
+void AExplosion::CheckCollisions()
+{
+	FVector startLocation = GetActorLocation();
+	FVector forward = GetActorForwardVector();
+	FVector endLocation = startLocation + (forward * range);
+
+	FCollisionShape collider = collisionBox->GetCollisionShape();
+	FHitResult sweepResult;
+
+	// Check if path is clear
+	bool hit = GetWorld()->SweepSingleByChannel(sweepResult, startLocation, endLocation, FQuat::Identity, ECC_Visibility, collider);
+
+	// Something in the way
+	if (hit)
+	{
+		// Reduce range down to not overlap with object
+		range = sweepResult.Distance;
+	}
 }
 
 // Called every frame
 void AExplosion::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-
+	
+	Move(DeltaTime);
 }
 
+void AExplosion::Move(float DeltaTime)
+{
+	FVector forward = GetActorForwardVector();
+
+	float distance = DeltaTime * speed;
+
+	if (distanceMoved + distance <= range)
+	{
+		distanceMoved += distance;
+		forward *= distance;
+
+		AddActorWorldOffset(forward);
+	}
+	else
+	{
+		// Reached end of path
+		Destroy();
+	}
+}

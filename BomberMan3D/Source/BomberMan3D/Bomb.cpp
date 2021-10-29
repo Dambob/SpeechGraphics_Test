@@ -9,7 +9,18 @@ ABomb::ABomb()
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
-	fuseTime = 3;
+	fuseTime = 3.0f;
+
+	static ConstructorHelpers::FClassFinder<ABomb> explosionBP(TEXT("/Game/Blueprints/BPExplosion"));
+
+	if (explosionBP.Succeeded())
+	{
+		explosionBPClass = explosionBP.Class;
+	}
+	else
+	{
+		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, TEXT("No explosion class found."));
+	}
 }
 
 // Called when the game starts or when spawned

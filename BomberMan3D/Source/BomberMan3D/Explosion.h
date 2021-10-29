@@ -42,4 +42,16 @@ protected:
 	*/
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
 	UNiagaraComponent* smokeFX;
+
+	UPROPERTY(EditAnywhere, Category = "Explosion")
+	float speed;
+
+	UPROPERTY(EditAnywhere, Category = "Explosion")
+	float range;
+
+	float distanceMoved;
+
+	void Move(float DeltaTime);
+
+	void CheckCollisions();
 };

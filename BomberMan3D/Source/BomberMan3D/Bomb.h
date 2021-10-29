@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include "Explosion.h"
 #include "Bomb.generated.h"
 
 UCLASS()
@@ -33,4 +34,7 @@ protected:
 	FTimerHandle fuseTimerHandle;	
 
 	void Explode();
+
+	// Reference BP Asset in the Editor
+	TSubclassOf<AExplosion> explosionBPClass;
 };
