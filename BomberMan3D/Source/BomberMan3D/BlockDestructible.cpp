@@ -22,8 +22,6 @@ float ABlockDestructible::TakeDamage(float Damage, FDamageEvent const& DamageEve
 {
 	float ActualDamage = Super::TakeDamage(Damage, DamageEvent, EventInstigator, DamageCauser);
 
-	GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, TEXT("Damage taken."));
-
 	if (ActualDamage > 0.0f)
 	{
 		// Spawn powerup
