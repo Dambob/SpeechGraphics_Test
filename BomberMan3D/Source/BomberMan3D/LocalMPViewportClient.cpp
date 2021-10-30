@@ -5,6 +5,7 @@
 
 bool ULocalMPViewportClient::InputKey(const FInputKeyEventArgs& EventArgs)
 {
+	// If not a keypress
 	if (IgnoreInput() || EventArgs.IsGamepad() || EventArgs.Key.IsMouseButton())
 	{
 		return Super::InputKey(EventArgs);
@@ -22,6 +23,7 @@ bool ULocalMPViewportClient::InputKey(const FInputKeyEventArgs& EventArgs)
 			FInputKeyEventArgs EventArg = EventArgs;
 			EventArg.ControllerId = i;
 
+			// Pass event to player
 			bRetVal = Super::InputKey(EventArg) || bRetVal;
 		}
 

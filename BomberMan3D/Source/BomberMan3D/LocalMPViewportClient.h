@@ -6,9 +6,9 @@
 #include "Engine/GameViewportClient.h"
 #include "LocalMPViewportClient.generated.h"
 
-/**
- * 
- */
+/*
+	Allow local multiplayer to occur on single keyboard
+*/
 UCLASS()
 class BOMBERMAN3D_API ULocalMPViewportClient : public UGameViewportClient
 {

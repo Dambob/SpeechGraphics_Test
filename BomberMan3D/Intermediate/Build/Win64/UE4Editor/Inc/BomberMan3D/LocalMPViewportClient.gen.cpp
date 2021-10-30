@@ -41,9 +41,10 @@ void EmptyLinkFunctionForGeneratedCodeLocalMPViewportClient() {}
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ULocalMPViewportClient_Statics::Class_MetaDataParams[] = {
-		{ "Comment", "/**\n * \n */" },
+		{ "Comment", "/*\n\x09""Allow local multiplayer to occur on single keyboard\n*/" },
 		{ "IncludePath", "LocalMPViewportClient.h" },
 		{ "ModuleRelativePath", "LocalMPViewportClient.h" },
+		{ "ToolTip", "Allow local multiplayer to occur on single keyboard" },
 	};
 #endif
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ULocalMPViewportClient_Statics::StaticCppClassTypeInfo = {
@@ -73,7 +74,7 @@ void EmptyLinkFunctionForGeneratedCodeLocalMPViewportClient() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ULocalMPViewportClient, 1481900421);
+	IMPLEMENT_CLASS(ULocalMPViewportClient, 4124316663);
 	template<> BOMBERMAN3D_API UClass* StaticClass<ULocalMPViewportClient>()
 	{
 		return ULocalMPViewportClient::StaticClass();
