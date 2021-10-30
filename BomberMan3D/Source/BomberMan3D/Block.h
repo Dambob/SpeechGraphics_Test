@@ -17,13 +17,7 @@ public:
 
 	virtual ~ABlock() = default;
 
-	// Called every frame
-	virtual void Tick(float DeltaTime) override;
-
 protected:
-	// Called when the game starts or when spawned
-	virtual void BeginPlay() override;
-
 	/**
 	* Root component of the Block
 	*/
@@ -31,8 +25,8 @@ protected:
 	USceneComponent* DefaultSceneRoot;
 
 	/**
-	* Contains the mesh and material of this block
+	* Contains the mesh of this block
 	*/
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
-	UStaticMeshComponent* blockMesh;
+	UStaticMeshComponent* BlockMesh;
 };

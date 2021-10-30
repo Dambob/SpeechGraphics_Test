@@ -28,7 +28,9 @@ void EmptyLinkFunctionForGeneratedCodeBomb() {}
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UDelegateFunction_ABomb_BombExploded__DelegateSignature_Statics::Function_MetaDataParams[] = {
+		{ "Comment", "// Event trigged when bomb has exploded\n" },
 		{ "ModuleRelativePath", "Bomb.h" },
+		{ "ToolTip", "Event trigged when bomb has exploded" },
 	};
 #endif
 	const UE4CodeGen_Private::FFunctionParams Z_Construct_UDelegateFunction_ABomb_BombExploded__DelegateSignature_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ABomb, nullptr, "BombExploded__DelegateSignature", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00120000, 0, 0, METADATA_PARAMS(Z_Construct_UDelegateFunction_ABomb_BombExploded__DelegateSignature_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_ABomb_BombExploded__DelegateSignature_Statics::Function_MetaDataParams)) };
@@ -71,7 +73,7 @@ void EmptyLinkFunctionForGeneratedCodeBomb() {}
 	};
 #if WITH_EDITOR
 	const FClassFunctionLinkInfo Z_Construct_UClass_ABomb_Statics::FuncInfo[] = {
-		{ &Z_Construct_UDelegateFunction_ABomb_BombExploded__DelegateSignature, "BombExploded__DelegateSignature" }, // 373718540
+		{ &Z_Construct_UDelegateFunction_ABomb_BombExploded__DelegateSignature, "BombExploded__DelegateSignature" }, // 2049444864
 	};
 #endif //WITH_EDITOR
 #if WITH_METADATA
@@ -117,7 +119,7 @@ void EmptyLinkFunctionForGeneratedCodeBomb() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ABomb, 3648533360);
+	IMPLEMENT_CLASS(ABomb, 4293590796);
 	template<> BOMBERMAN3D_API UClass* StaticClass<ABomb>()
 	{
 		return ABomb::StaticClass();

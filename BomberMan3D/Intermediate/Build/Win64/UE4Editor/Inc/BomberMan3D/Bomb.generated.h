@@ -13,7 +13,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define BOMBERMAN3D_Bomb_generated_h
 
-#define BomberMan3D_Source_BomberMan3D_Bomb_h_15_DELEGATE \
+#define BomberMan3D_Source_BomberMan3D_Bomb_h_16_DELEGATE \
 static inline void FBombExploded_DelegateWrapper(const FScriptDelegate& BombExploded) \
 { \
 	BombExploded.ProcessDelegate<UObject>(NULL); \

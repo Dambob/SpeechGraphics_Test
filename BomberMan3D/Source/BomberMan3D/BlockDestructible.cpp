@@ -5,7 +5,9 @@
 #include "Math/UnrealMathUtility.h"
 
 // Sets default values
-ABlockDestructible::ABlockDestructible(const FObjectInitializer& ObjectInitializer) : ABlock(ObjectInitializer)
+ABlockDestructible::ABlockDestructible(const FObjectInitializer& ObjectInitializer) :
+	ABlock(ObjectInitializer),
+	dropChance(30.0f)
 {
 	static ConstructorHelpers::FClassFinder<APickup> pickupBP(TEXT("/Game/Blueprints/Pickups/BPPickup"));
 
@@ -18,7 +20,15 @@ ABlockDestructible::ABlockDestructible(const FObjectInitializer& ObjectInitializ
 		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, TEXT("No pickup class found."));
 	}
 
-	dropChance = 30.0f;
+	if (DefaultSceneRoot)
+	{
+		DefaultSceneRoot->SetMobility(EComponentMobility::Movable);
+	}
+
+	if (BlockMesh)
+	{
+		BlockMesh->SetMobility(EComponentMobility::Movable);
+	}
 }
 
 float ABlockDestructible::TakeDamage(float Damage, FDamageEvent const& DamageEvent, AController* EventInstigator, AActor* DamageCauser)
@@ -46,7 +56,7 @@ void ABlockDestructible::Reset()
 {
 	// Unhide block
 	SetActorEnableCollision(true);
-	SetActorHiddenInGame(false);
+	SetActorHiddenInGame(false);	
 }
 
 void ABlockDestructible::Kill()
@@ -66,23 +76,23 @@ void ABlockDestructible::SpawnPowerup()
 
 	switch (typeRoll)
 	{
-	case 0:
-		pickup->SetType(PickupType::Range);
-		pickup->SetValue(300.0f);
-		break;
-	case 1:
-		pickup->SetType(PickupType::Speed);
-		pickup->SetValue(500.0f);
-		break;
-	case 2:
-		pickup->SetType(PickupType::BombCount);
-		pickup->SetValue(1.0f);
-		break;
-	case 3:
-		pickup->SetType(PickupType::Remote);
-		pickup->SetValue(10.0f);
-		break;
-	default:
-		break;
+		case 0:
+			pickup->SetType(PickupType::Range);
+			pickup->SetValue(300.0f);
+			break;
+		case 1:
+			pickup->SetType(PickupType::Speed);
+			pickup->SetValue(500.0f);
+			break;
+		case 2:
+			pickup->SetType(PickupType::BombCount);
+			pickup->SetValue(1.0f);
+			break;
+		case 3:
+			pickup->SetType(PickupType::Remote);
+			pickup->SetValue(10.0f);
+			break;
+		default:
+			break;
 	}
 }

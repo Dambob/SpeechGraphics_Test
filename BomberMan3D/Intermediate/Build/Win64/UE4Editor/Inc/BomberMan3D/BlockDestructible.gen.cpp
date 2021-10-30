@@ -88,7 +88,7 @@ void EmptyLinkFunctionForGeneratedCodeBlockDestructible() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ABlockDestructible, 1427082815);
+	IMPLEMENT_CLASS(ABlockDestructible, 376214212);
 	template<> BOMBERMAN3D_API UClass* StaticClass<ABlockDestructible>()
 	{
 		return ABlockDestructible::StaticClass();

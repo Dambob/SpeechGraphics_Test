@@ -60,7 +60,7 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(ABlock); \
 
 #define BomberMan3D_Source_BomberMan3D_Block_h_12_PRIVATE_PROPERTY_OFFSET \
 	FORCEINLINE static uint32 __PPO__DefaultSceneRoot() { return STRUCT_OFFSET(ABlock, DefaultSceneRoot); } \
-	FORCEINLINE static uint32 __PPO__blockMesh() { return STRUCT_OFFSET(ABlock, blockMesh); }
+	FORCEINLINE static uint32 __PPO__BlockMesh() { return STRUCT_OFFSET(ABlock, BlockMesh); }
 
 
 #define BomberMan3D_Source_BomberMan3D_Block_h_9_PROLOG
