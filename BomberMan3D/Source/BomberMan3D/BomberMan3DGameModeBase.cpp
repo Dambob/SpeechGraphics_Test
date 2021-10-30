@@ -9,7 +9,9 @@
 #include "Explosion.h"
 #include <math.h>
 
-ABomberMan3DGameModeBase::ABomberMan3DGameModeBase()
+ABomberMan3DGameModeBase::ABomberMan3DGameModeBase() :
+	running(false),
+	roundTime(120.0f)
 {
 	PrimaryActorTick.bStartWithTickEnabled = true;
 	PrimaryActorTick.bCanEverTick = true;
@@ -27,8 +29,6 @@ ABomberMan3DGameModeBase::ABomberMan3DGameModeBase()
 	{
 		DefaultPawnClass = PlayerPawnBPClass.Class;
 	}
-
-	roundTime = 120.0f;
 }
 
 void ABomberMan3DGameModeBase::Tick(float DeltaTime)
@@ -37,7 +37,8 @@ void ABomberMan3DGameModeBase::Tick(float DeltaTime)
 
 	if (running)
 	{
-		CheckPlayers();
+		// Check for win state each tick
+		CheckWinState();
 	}
 }
 
@@ -47,12 +48,63 @@ void ABomberMan3DGameModeBase::StartPlay()
 
 	SpawnPlayerTwo();
 
+	SetupGame();
+}
+
+void ABomberMan3DGameModeBase::PopulatePlayerList()
+{
+	// Clear players array
+	players.Empty();
+
+	// Get all players
+	TArray<AActor*> foundPlayers;
+	UGameplayStatics::GetAllActorsOfClass(GetWorld(), DefaultPawnClass, foundPlayers);
+
+	TArray<APlayerCharacter*> livingPlayers;
+
+	for (int i = 0; i < foundPlayers.Num(); i++)
+	{
+		APlayerCharacter* player = dynamic_cast<APlayerCharacter*>(foundPlayers[i]);
+
+		if (player)
+		{
+			players.Add(player);
+		}
+	}
+}
+
+APlayerCharacter* ABomberMan3DGameModeBase::GetPlayer(int playerID) const
+{
+	// Find player ID in list
+	for (int i = 0; i < players.Num(); i++)
+	{
+		if (players[i]->GetID() == playerID)
+		{
+			return players[i];
+		}
+	}
+
+	return nullptr;
+}
+
+void ABomberMan3DGameModeBase::SetupGame()
+{
+	// Repopulate player list
+	PopulatePlayerList();
+
+	// Reset game state
+	GetGameState<ABomberMan3DGameStateBase>()->result = "None";
 	running = true;
 
+	// Reset the timer
 	UWorld* world = this->GetWorld();
 
 	if (world)
 	{
+		// Clear any existing timer
+		world->GetTimerManager().ClearTimer(gameTimerHandle);
+
+		// Set timer
 		world->GetTimerManager().SetTimer(gameTimerHandle, this, &ABomberMan3DGameModeBase::TimerEnded, roundTime, false);
 	}
 }
@@ -103,6 +155,18 @@ float ABomberMan3DGameModeBase::GetRemainingTime() const
 	return result;
 }
 
+int ABomberMan3DGameModeBase::GetBombCount(int playerID) const
+{
+	APlayerCharacter* player = GetPlayer(playerID);
+
+	if (player)
+	{
+		return player->GetBombCount();
+	}
+
+	return -1;
+}
+
 void ABomberMan3DGameModeBase::SpawnPlayerTwo()
 {
 	UWorld* world = this->GetWorld();
@@ -113,79 +177,92 @@ void ABomberMan3DGameModeBase::SpawnPlayerTwo()
 	}
 }
 
-void ABomberMan3DGameModeBase::CheckPlayers()
+TArray<APlayerCharacter*> ABomberMan3DGameModeBase::UpdateLivingPlayers()
 {
-	// ToDo: Check which players are alive
-
-	// Get all players
-	TArray<AActor*> foundPlayers;
-	UGameplayStatics::GetAllActorsOfClass(GetWorld(), DefaultPawnClass, foundPlayers);
-
 	TArray<APlayerCharacter*> livingPlayers;
 
-	for (int i = 0; i < foundPlayers.Num(); i++)
+	for (int i = 0; i < players.Num(); i++)
 	{
-		APlayerCharacter* player = dynamic_cast<APlayerCharacter*>(foundPlayers[i]);
-
-		if (!player->isAlive())
+		if (!players[i]->isAlive())
 		{
 			// Stop movement to player
-			player->DisableInput(dynamic_cast<APlayerController*>(player->GetController()));
+			players[i]->DisableInput(dynamic_cast<APlayerController*>(players[i]->GetController()));
 		}
 		else
 		{
-			livingPlayers.Add(player);
+			// Alive, add to list
+			livingPlayers.Add(players[i]);
 		}
 	}
 
+	return livingPlayers;		
+}
+
+void ABomberMan3DGameModeBase::Draw()
+{
+	GetGameState<ABomberMan3DGameStateBase>()->result = "Draw";
+	running = false;
+}
+
+void ABomberMan3DGameModeBase::Win(int playerID)
+{
+	APlayerCharacter* player = GetPlayer(playerID);
+
+	if (!player)
+	{
+		// No winner?
+		// Stop running
+		running = false;
+	}
+	else
+	{
+		GetGameState<ABomberMan3DGameStateBase>()->result = TEXT("Winner: ") + player->GetName().ToString();
+		running = false;
+
+		// Increment winning player's score
+		SetScore(player->GetID(), GetScore(player->GetID()) + 1);
+	}
+}
+
+void ABomberMan3DGameModeBase::CheckWinState()
+{
+	TArray<APlayerCharacter*> livingPlayers = UpdateLivingPlayers();
+
 	if (livingPlayers.Num() == 0)
 	{
-		// Draw
-		// Get game state
-		GetGameState<ABomberMan3DGameStateBase>()->result = "Draw";
-		running = false;
+		Draw();
 	}
 	else if (livingPlayers.Num() == 1)
 	{
 		// 1 player alive, need to see if they'll die "soon"
-
 		// Check for active explosions
-		// Get all explosions
 		TArray<AActor*> foundExplosions;
 		UGameplayStatics::GetAllActorsOfClass(GetWorld(), AExplosion::StaticClass(), foundExplosions);
 
 		if (foundExplosions.Num() == 0)
 		{
 			// No explosions, living player wins
-			// Increase score of living player in game state
-			//livingPlayers[0];
-
-			// Get game state
-			//GetGameState<ABomberMan3DGameStateBase>();
-
-			GetGameState<ABomberMan3DGameStateBase>()->result = TEXT("Winner: ") + livingPlayers[0]->GetName().ToString();
-			running = false;
-
-			// Increment living player's score
-			SetScore(livingPlayers[0]->GetID(), GetScore(livingPlayers[0]->GetID())+1);
+			Win(livingPlayers[0]->GetID());
 		}
-	}	
+	}
 }
 
 void ABomberMan3DGameModeBase::TimerEnded()
 {
-	// Draw
-	// Get game state
-	GetGameState<ABomberMan3DGameStateBase>()->result = "Draw";
-	running = false;
+	Draw();
 }
 
 void ABomberMan3DGameModeBase::ResetLevel()
 {
-	Super::ResetLevel();
+	Super::ResetLevel();	
 
-	
+	RestartPlayers();
 
+	SetupGame();
+}
+
+void ABomberMan3DGameModeBase::RestartPlayers()
+{
 	// Loop through each player controller and restart them
 	for (FConstPlayerControllerIterator iterator = GetWorld()->GetPlayerControllerIterator(); iterator; iterator++)
 	{
@@ -195,21 +272,5 @@ void ABomberMan3DGameModeBase::ResetLevel()
 		{
 			RestartPlayer(player);
 		}
-	}
-
-	// Reset game state
-	GetGameState<ABomberMan3DGameStateBase>()->result = "None";
-	running = true;
-
-	// Reset the timer
-	UWorld* world = this->GetWorld();
-
-	if (world)
-	{
-		// Clear any existing timer
-		world->GetTimerManager().ClearTimer(gameTimerHandle);
-
-		// Set timer
-		world->GetTimerManager().SetTimer(gameTimerHandle, this, &ABomberMan3DGameModeBase::TimerEnded, roundTime, false);
 	}
 }

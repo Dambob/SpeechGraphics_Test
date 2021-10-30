@@ -19,7 +19,6 @@ class BOMBERMAN3D_API ABomberMan3DGameModeBase : public AGameModeBase
 
 public:
 	ABomberMan3DGameModeBase();
-
 	virtual ~ABomberMan3DGameModeBase() = default;
 
 	virtual void StartPlay() override;
@@ -41,18 +40,38 @@ public:
 	UFUNCTION(BlueprintPure, Category = "Timer")
 	virtual float GetRemainingTime() const;
 
-protected:
-	void SpawnPlayerTwo();
+	/* Return the player score based on ID. */
+	UFUNCTION(BlueprintPure, Category = "Player")
+	virtual int GetBombCount(int playerID) const;
 
-	void CheckPlayers();
-
+protected:	
+	// Flag to check if game is still running
 	bool running;
 
-	// Timer game
+	// Round timer
 	FTimerHandle gameTimerHandle;
 
+	// Time per round
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Game")
-	float roundTime;
+	float roundTime;	
 
+	// List of players
+	TArray<APlayerCharacter*> players;
+
+	APlayerCharacter* GetPlayer(int playerID) const;
+
+	// Spawns second player first time
+	void SpawnPlayerTwo();
+
+	// Start and restart game
+	void SetupGame();
+	void RestartPlayers();
+	void PopulatePlayerList();
+
+	// Win conditions
+	void Draw();
+	void Win(int playerID);
+	TArray<APlayerCharacter*> UpdateLivingPlayers();
+	void CheckWinState();
 	void TimerEnded();
 };

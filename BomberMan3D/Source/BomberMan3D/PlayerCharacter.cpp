@@ -270,6 +270,18 @@ void APlayerCharacter::PowerUp(PickupType type, float value)
 	}
 }
 
+int APlayerCharacter::GetBombCount() const
+{
+	if (remoteBombPower)
+	{
+		return remoteBombCount;
+	}
+	else
+	{
+		return bombCount;
+	}
+}
+
 void APlayerCharacter::EndRemotePower()
 {
 	// Detonate remote bomb, in case it's still active

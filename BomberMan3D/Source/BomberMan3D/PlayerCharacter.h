@@ -60,6 +60,10 @@ public:
 
 	virtual void PowerUp(PickupType type, float value);
 
+	/* Return the Bomb count. */
+	UFUNCTION(BlueprintPure, Category = "Player")
+	virtual int GetBombCount() const;
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
