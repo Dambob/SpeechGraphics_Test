@@ -15,7 +15,10 @@ APlayerCharacter::APlayerCharacter() :
 	bombCount(1),
 	bombRange(200.0f),
 	remoteBombPower(false),
-	remoteBombCount(0)
+	remoteBombCount(0),
+	speedPower(false),
+	rangePower(false),
+	countPower(false)
 {
  	// Turn off Tick
 	PrimaryActorTick.bCanEverTick = false;
@@ -198,8 +201,10 @@ void APlayerCharacter::PowerUp(PickupType type, float value)
 	switch (type)
 	{
 		case PickupType::Speed: GetCharacterMovement()->MaxWalkSpeed = value;	// Set run speed
+			speedPower = true;
 			break;
 		case PickupType::Range: bombRange = value;	// Set bomb range
+			rangePower = true;
 			break;
 		case PickupType::BombCount: bombCount += value;	// Increase bomb count
 			break;

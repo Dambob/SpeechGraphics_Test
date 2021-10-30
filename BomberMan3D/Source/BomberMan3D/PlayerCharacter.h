@@ -59,6 +59,15 @@ public:
 	UFUNCTION(BlueprintPure, Category = "Player")
 	virtual int GetBombCount() const;
 
+	UFUNCTION(BlueprintPure, Category = "Player|Powers")
+	virtual bool HasSpeedPower() const { return speedPower; };
+
+	UFUNCTION(BlueprintPure, Category = "Player|Powers")
+	virtual bool HasRangePower() const { return rangePower; };
+
+	UFUNCTION(BlueprintPure, Category = "Player|Powers")
+	virtual bool HasRemotePower() const { return remoteBombPower; };
+	
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
@@ -100,4 +109,8 @@ protected:
 
 	void EndRemotePower();
 
+
+	bool	speedPower,
+			rangePower,
+			countPower;
 };
