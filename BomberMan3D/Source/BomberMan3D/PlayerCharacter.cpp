@@ -43,6 +43,8 @@ APlayerCharacter::APlayerCharacter()
 	alive = true;
 
 	id = -1;
+
+
 }
 
 // Called when the game starts or when spawned

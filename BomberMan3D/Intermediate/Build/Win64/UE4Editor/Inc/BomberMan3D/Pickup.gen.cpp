@@ -13,10 +13,11 @@
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodePickup() {}
 // Cross Module References
+	BOMBERMAN3D_API UEnum* Z_Construct_UEnum_BomberMan3D_PickupType();
+	UPackage* Z_Construct_UPackage__Script_BomberMan3D();
 	BOMBERMAN3D_API UClass* Z_Construct_UClass_APickup_NoRegister();
 	BOMBERMAN3D_API UClass* Z_Construct_UClass_APickup();
 	ENGINE_API UClass* Z_Construct_UClass_AActor();
-	UPackage* Z_Construct_UPackage__Script_BomberMan3D();
 	ENGINE_API UClass* Z_Construct_UClass_UPrimitiveComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_AActor_NoRegister();
 	ENGINE_API UScriptStruct* Z_Construct_UScriptStruct_FHitResult();
@@ -24,6 +25,70 @@ void EmptyLinkFunctionForGeneratedCodePickup() {}
 	ENGINE_API UClass* Z_Construct_UClass_URotatingMovementComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UStaticMeshComponent_NoRegister();
 // End Cross Module References
+	static UEnum* PickupType_StaticEnum()
+	{
+		static UEnum* Singleton = nullptr;
+		if (!Singleton)
+		{
+			Singleton = GetStaticEnum(Z_Construct_UEnum_BomberMan3D_PickupType, Z_Construct_UPackage__Script_BomberMan3D(), TEXT("PickupType"));
+		}
+		return Singleton;
+	}
+	template<> BOMBERMAN3D_API UEnum* StaticEnum<PickupType>()
+	{
+		return PickupType_StaticEnum();
+	}
+	static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_PickupType(PickupType_StaticEnum, TEXT("/Script/BomberMan3D"), TEXT("PickupType"), false, nullptr, nullptr);
+	uint32 Get_Z_Construct_UEnum_BomberMan3D_PickupType_Hash() { return 2454920585U; }
+	UEnum* Z_Construct_UEnum_BomberMan3D_PickupType()
+	{
+#if WITH_HOT_RELOAD
+		UPackage* Outer = Z_Construct_UPackage__Script_BomberMan3D();
+		static UEnum* ReturnEnum = FindExistingEnumIfHotReloadOrDynamic(Outer, TEXT("PickupType"), 0, Get_Z_Construct_UEnum_BomberMan3D_PickupType_Hash(), false);
+#else
+		static UEnum* ReturnEnum = nullptr;
+#endif // WITH_HOT_RELOAD
+		if (!ReturnEnum)
+		{
+			static const UE4CodeGen_Private::FEnumeratorParam Enumerators[] = {
+				{ "None", (int64)None },
+				{ "Range", (int64)Range },
+				{ "Speed", (int64)Speed },
+				{ "BombCount", (int64)BombCount },
+				{ "Remote", (int64)Remote },
+			};
+#if WITH_METADATA
+			const UE4CodeGen_Private::FMetaDataPairParam Enum_MetaDataParams[] = {
+				{ "BombCount.DisplayName", "Bomb Count" },
+				{ "BombCount.Name", "BombCount" },
+				{ "ModuleRelativePath", "Pickup.h" },
+				{ "None.DisplayName", "None" },
+				{ "None.Name", "None" },
+				{ "Range.DisplayName", "Range" },
+				{ "Range.Name", "Range" },
+				{ "Remote.DisplayName", "Remote" },
+				{ "Remote.Name", "Remote" },
+				{ "Speed.DisplayName", "Speed" },
+				{ "Speed.Name", "Speed" },
+			};
+#endif
+			static const UE4CodeGen_Private::FEnumParams EnumParams = {
+				(UObject*(*)())Z_Construct_UPackage__Script_BomberMan3D,
+				nullptr,
+				"PickupType",
+				"PickupType",
+				Enumerators,
+				UE_ARRAY_COUNT(Enumerators),
+				RF_Public|RF_Transient|RF_MarkAsNative,
+				EEnumFlags::None,
+				UE4CodeGen_Private::EDynamicType::NotDynamic,
+				(uint8)UEnum::ECppForm::Regular,
+				METADATA_PARAMS(Enum_MetaDataParams, UE_ARRAY_COUNT(Enum_MetaDataParams))
+			};
+			UE4CodeGen_Private::ConstructUEnum(ReturnEnum, EnumParams);
+		}
+		return ReturnEnum;
+	}
 	DEFINE_FUNCTION(APickup::execOnBeginOverlap)
 	{
 		P_GET_OBJECT(UPrimitiveComponent,Z_Param_OverlappedComp);
@@ -149,6 +214,10 @@ void EmptyLinkFunctionForGeneratedCodePickup() {}
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_mesh_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_mesh;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_type_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FBytePropertyParams NewProp_type;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
@@ -171,37 +240,47 @@ void EmptyLinkFunctionForGeneratedCodePickup() {}
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_APickup_Statics::NewProp_DefaultSceneRoot_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
 		{ "Category", "Components" },
-		{ "Comment", "/**\n\x09* Root component of the Block\n\x09*/" },
+		{ "Comment", "/**\n\x09* Root component of the Pickup\n\x09*/" },
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "Pickup.h" },
-		{ "ToolTip", "Root component of the Block" },
+		{ "ToolTip", "Root component of the Pickup" },
 	};
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_APickup_Statics::NewProp_DefaultSceneRoot = { "DefaultSceneRoot", nullptr, (EPropertyFlags)0x00200800000a001d, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(APickup, DefaultSceneRoot), Z_Construct_UClass_USceneComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_APickup_Statics::NewProp_DefaultSceneRoot_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_APickup_Statics::NewProp_DefaultSceneRoot_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_APickup_Statics::NewProp_rotatingMovement_MetaData[] = {
 		{ "Category", "Components" },
-		{ "Comment", "/**\n\x09* Contains the mesh and material of this block\n\x09*/" },
+		{ "Comment", "/**\n\x09* Contains the rotator\n\x09*/" },
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "Pickup.h" },
-		{ "ToolTip", "Contains the mesh and material of this block" },
+		{ "ToolTip", "Contains the rotator" },
 	};
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_APickup_Statics::NewProp_rotatingMovement = { "rotatingMovement", nullptr, (EPropertyFlags)0x00200800000a001d, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(APickup, rotatingMovement), Z_Construct_UClass_URotatingMovementComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_APickup_Statics::NewProp_rotatingMovement_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_APickup_Statics::NewProp_rotatingMovement_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_APickup_Statics::NewProp_mesh_MetaData[] = {
 		{ "Category", "Components" },
-		{ "Comment", "/**\n\x09* Contains the mesh and material of this block\n\x09*/" },
+		{ "Comment", "/**\n\x09* Contains the mesh and material of this pickup\n\x09*/" },
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "Pickup.h" },
-		{ "ToolTip", "Contains the mesh and material of this block" },
+		{ "ToolTip", "Contains the mesh and material of this pickup" },
 	};
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_APickup_Statics::NewProp_mesh = { "mesh", nullptr, (EPropertyFlags)0x00200800000a001d, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(APickup, mesh), Z_Construct_UClass_UStaticMeshComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_APickup_Statics::NewProp_mesh_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_APickup_Statics::NewProp_mesh_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_APickup_Statics::NewProp_type_MetaData[] = {
+		{ "Category", "Pickup" },
+		{ "Comment", "/**\n\x09* Contains the type of pickup\n\x09*/" },
+		{ "ModuleRelativePath", "Pickup.h" },
+		{ "ToolTip", "Contains the type of pickup" },
+	};
+#endif
+	const UE4CodeGen_Private::FBytePropertyParams Z_Construct_UClass_APickup_Statics::NewProp_type = { "type", nullptr, (EPropertyFlags)0x0020080000000005, UE4CodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(APickup, type), Z_Construct_UEnum_BomberMan3D_PickupType, METADATA_PARAMS(Z_Construct_UClass_APickup_Statics::NewProp_type_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_APickup_Statics::NewProp_type_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_APickup_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APickup_Statics::NewProp_DefaultSceneRoot,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APickup_Statics::NewProp_rotatingMovement,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APickup_Statics::NewProp_mesh,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APickup_Statics::NewProp_type,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_APickup_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<APickup>::IsAbstract,
@@ -230,7 +309,7 @@ void EmptyLinkFunctionForGeneratedCodePickup() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(APickup, 2775875178);
+	IMPLEMENT_CLASS(APickup, 1907647153);
 	template<> BOMBERMAN3D_API UClass* StaticClass<APickup>()
 	{
 		return APickup::StaticClass();

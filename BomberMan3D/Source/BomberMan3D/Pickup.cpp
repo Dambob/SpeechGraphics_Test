@@ -40,6 +40,8 @@ APickup::APickup(const FObjectInitializer& ObjectInitializer)
 	rotatingMovement = ObjectInitializer.CreateDefaultSubobject<URotatingMovementComponent>(this, TEXT("Rotator"));
 
 	SetActorEnableCollision(true);
+
+	type = PickupType::None;
 }
 
 // Called when the game starts or when spawned

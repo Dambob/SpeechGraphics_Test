@@ -7,6 +7,16 @@
 #include "GameFramework/RotatingMovementComponent.h"
 #include "Pickup.generated.h"
 
+UENUM()
+enum PickupType
+{
+	None UMETA(DisplayName = "None"),
+	Range UMETA(DisplayName = "Range"),
+	Speed UMETA(DisplayName = "Speed"),
+	BombCount UMETA(DisplayName = "Bomb Count"),
+	Remote UMETA(DisplayName = "Remote")
+};
+
 UCLASS()
 class BOMBERMAN3D_API APickup : public AActor
 {
@@ -28,23 +38,29 @@ protected:
 	virtual void BeginPlay() override;
 
 	/**
-	* Root component of the Block
+	* Root component of the Pickup
 	*/
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"), Category = "Components")
 	USceneComponent* DefaultSceneRoot;
 	
 	/**
-	* Contains the mesh and material of this block
+	* Contains the rotator
 	*/
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
 	URotatingMovementComponent* rotatingMovement;
 	
 	/**
-	* Contains the mesh and material of this block
+	* Contains the mesh and material of this pickup
 	*/
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
 	UStaticMeshComponent* mesh;
 
 	UFUNCTION()
 	void OnBeginOverlap(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
+
+	/**
+	* Contains the type of pickup
+	*/
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Pickup")
+	TEnumAsByte<PickupType> type;
 };
