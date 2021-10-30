@@ -5,6 +5,7 @@
 #include "PlayerCharacter.h"
 #include "Bomb.h"
 #include "BlockDestructible.h"
+#include "Pickup.h"
 
 // Sets default values
 AExplosion::AExplosion(const FObjectInitializer& ObjectInitializer)
@@ -102,16 +103,12 @@ void AExplosion::OnBeginOverlap(UPrimitiveComponent* OverlappedComp, AActor* Oth
 		// Block will stop explosion.
 		Destroy();
 	}
-
-	/// ToDo: Add check for powerups
-	/*APlayerCharacter* character = dynamic_cast<APlayerCharacter*>(OtherActor);
-
-	// Hit player
-	if (character)
+	// Hit destructible
+	else if (APickup* pickup = dynamic_cast<APickup*>(OtherActor))
 	{
-		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, TEXT("Hit character."));
-		return;
-	}*/
+		// Destroy pickup
+		pickup->Destroy();
+	}
 }
 
 // Called every frame

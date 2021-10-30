@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\BomberMan3D.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{EA481221-0BAC-45A0-BABA-90F32B2329EB}</UniqueIdentifier>
+      <UniqueIdentifier>{9488E17F-FC65-4A2F-83AC-61204AB0DBC0}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\BomberMan3D.Target.cs">
       <Filter>Source</Filter>
@@ -12,7 +12,7 @@
       <Filter>Source</Filter>
     </None>
     <Filter Include="Config">
-      <UniqueIdentifier>{F5A7868D-9E77-4D14-B93D-3AB3102C978C}</UniqueIdentifier>
+      <UniqueIdentifier>{92496E34-5118-456A-95C1-4958F67EFA93}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -27,7 +27,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\BomberMan3D">
-      <UniqueIdentifier>{B08A56E5-AEE2-4F1B-9770-A6E1A3B33837}</UniqueIdentifier>
+      <UniqueIdentifier>{5392D7A8-9E89-4BA7-89D2-DA29C149707F}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\BomberMan3D\Block.cpp">
       <Filter>Source\BomberMan3D</Filter>
@@ -96,6 +96,12 @@
       <Filter>Source\BomberMan3D</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\BomberMan3D\LocalMPViewportClient.h">
+      <Filter>Source\BomberMan3D</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\BomberMan3D\Pickup.cpp">
+      <Filter>Source\BomberMan3D</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\BomberMan3D\Pickup.h">
       <Filter>Source\BomberMan3D</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\BomberMan3D\PlayerCharacter.cpp">
