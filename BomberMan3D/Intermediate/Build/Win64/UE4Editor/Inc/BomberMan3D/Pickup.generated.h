@@ -71,9 +71,10 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(APickup); \
 
 #define BomberMan3D_Source_BomberMan3D_Pickup_h_23_PRIVATE_PROPERTY_OFFSET \
 	FORCEINLINE static uint32 __PPO__DefaultSceneRoot() { return STRUCT_OFFSET(APickup, DefaultSceneRoot); } \
-	FORCEINLINE static uint32 __PPO__rotatingMovement() { return STRUCT_OFFSET(APickup, rotatingMovement); } \
-	FORCEINLINE static uint32 __PPO__mesh() { return STRUCT_OFFSET(APickup, mesh); } \
-	FORCEINLINE static uint32 __PPO__type() { return STRUCT_OFFSET(APickup, type); }
+	FORCEINLINE static uint32 __PPO__RotatingMovement() { return STRUCT_OFFSET(APickup, RotatingMovement); } \
+	FORCEINLINE static uint32 __PPO__Mesh() { return STRUCT_OFFSET(APickup, Mesh); } \
+	FORCEINLINE static uint32 __PPO__type() { return STRUCT_OFFSET(APickup, type); } \
+	FORCEINLINE static uint32 __PPO__value() { return STRUCT_OFFSET(APickup, value); }
 
 
 #define BomberMan3D_Source_BomberMan3D_Pickup_h_20_PROLOG

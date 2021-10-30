@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
 #include "Bomb.h"
+#include "Pickup.h"
 #include "PlayerCharacter.generated.h"
 
 // Forward declarations
@@ -56,6 +57,8 @@ public:
 	void Kill() { alive = false; };
 
 	bool isAlive() { return alive; };
+
+	virtual void PowerUp(PickupType type, float value);
 
 protected:
 	// Reference UMG Asset in the Editor

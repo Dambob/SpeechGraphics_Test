@@ -71,10 +71,10 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(AExplosion); \
 
 #define BomberMan3D_Source_BomberMan3D_Explosion_h_15_PRIVATE_PROPERTY_OFFSET \
 	FORCEINLINE static uint32 __PPO__DefaultSceneRoot() { return STRUCT_OFFSET(AExplosion, DefaultSceneRoot); } \
-	FORCEINLINE static uint32 __PPO__collisionBox() { return STRUCT_OFFSET(AExplosion, collisionBox); } \
-	FORCEINLINE static uint32 __PPO__smokeFX() { return STRUCT_OFFSET(AExplosion, smokeFX); } \
-	FORCEINLINE static uint32 __PPO__speed() { return STRUCT_OFFSET(AExplosion, speed); } \
-	FORCEINLINE static uint32 __PPO__range() { return STRUCT_OFFSET(AExplosion, range); }
+	FORCEINLINE static uint32 __PPO__CollisionBox() { return STRUCT_OFFSET(AExplosion, CollisionBox); } \
+	FORCEINLINE static uint32 __PPO__SmokeFX() { return STRUCT_OFFSET(AExplosion, SmokeFX); } \
+	FORCEINLINE static uint32 __PPO__Speed() { return STRUCT_OFFSET(AExplosion, Speed); } \
+	FORCEINLINE static uint32 __PPO__Range() { return STRUCT_OFFSET(AExplosion, Range); }
 
 
 #define BomberMan3D_Source_BomberMan3D_Explosion_h_12_PROLOG

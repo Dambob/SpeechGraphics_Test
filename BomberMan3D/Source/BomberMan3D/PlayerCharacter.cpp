@@ -5,6 +5,7 @@
 #include "Kismet/GameplayStatics.h"
 #include "Camera/CameraActor.h"
 #include "DMActorWidgetComponent.h"
+#include "GameFramework/CharacterMovementComponent.h"
 
 // Sets default values
 APlayerCharacter::APlayerCharacter()
@@ -44,7 +45,7 @@ APlayerCharacter::APlayerCharacter()
 
 	id = -1;
 
-
+	GetCharacterMovement()->MaxWalkSpeed = 200.0f;
 }
 
 // Called when the game starts or when spawned
@@ -199,6 +200,23 @@ void APlayerCharacter::PlaceBomb()
 		bomb->OnBombExplosion.BindUFunction(this, FName("BindBombExploded"));
 
 		bombCount--;
+	}
+}
+
+void APlayerCharacter::PowerUp(PickupType type, float value)
+{
+	switch (type)
+	{
+	case PickupType::Speed: GetCharacterMovement()->MaxWalkSpeed += value;
+			break;
+		case PickupType::Range:
+			break;
+		case PickupType::BombCount: bombCount += value;	// Increase bomb count
+			break;
+		case PickupType::Remote:
+			break;
+		default:
+			break;
 	}
 }
 

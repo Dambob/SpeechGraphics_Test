@@ -39,19 +39,19 @@ protected:
 	* Contains the collision of this block
 	*/
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
-	UBoxComponent* collisionBox;
+	UBoxComponent* CollisionBox;
 
 	/**
 	* Contains the effect
 	*/
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
-	UNiagaraComponent* smokeFX;
+	UNiagaraComponent* SmokeFX;
 
 	UPROPERTY(EditAnywhere, Category = "Explosion")
-	float speed;
+	float Speed;
 
 	UPROPERTY(EditAnywhere, Category = "Explosion")
-	float range;
+	float Range;
 
 	float distanceMoved;
 

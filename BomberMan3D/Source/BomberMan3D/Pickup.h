@@ -47,13 +47,13 @@ protected:
 	* Contains the rotator
 	*/
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
-	URotatingMovementComponent* rotatingMovement;
+	URotatingMovementComponent* RotatingMovement;
 	
 	/**
 	* Contains the mesh and material of this pickup
 	*/
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
-	UStaticMeshComponent* mesh;
+	UStaticMeshComponent* Mesh;
 
 	UFUNCTION()
 	void OnBeginOverlap(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
@@ -63,4 +63,10 @@ protected:
 	*/
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Pickup")
 	TEnumAsByte<PickupType> type;
+
+	/**
+	* Contains the value of pickup
+	*/
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Pickup")
+	float value;
 };

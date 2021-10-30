@@ -28,26 +28,26 @@ AExplosion::AExplosion(const FObjectInitializer& ObjectInitializer)
 	}
 
 	// Collision
-	collisionBox = ObjectInitializer.CreateDefaultSubobject<UBoxComponent>(this, TEXT("CollisionBox"));
-	collisionBox->InitBoxExtent(FVector(20.0f, 20.0f, 100.0f));
-	collisionBox->SetRelativeTransform(FTransform
+	CollisionBox = ObjectInitializer.CreateDefaultSubobject<UBoxComponent>(this, TEXT("CollisionBox"));
+	CollisionBox->InitBoxExtent(FVector(20.0f, 20.0f, 100.0f));
+	CollisionBox->SetRelativeTransform(FTransform
 	(
 		FRotator(0.0f, 0.0f, 0.0f),
 		FVector(0.0f, 0.0f, 0.0f),
 		FVector(1.0f, 1.0f, 1.0f)
 	)
 	);
-	collisionBox->SetMobility(EComponentMobility::Movable);
-	collisionBox->AttachToComponent(DefaultSceneRoot, FAttachmentTransformRules::KeepRelativeTransform);
+	CollisionBox->SetMobility(EComponentMobility::Movable);
+	CollisionBox->AttachToComponent(DefaultSceneRoot, FAttachmentTransformRules::KeepRelativeTransform);
 
 	// Smoke
-	smokeFX = ObjectInitializer.CreateDefaultSubobject<UNiagaraComponent>(this, TEXT("Effect"));
-	smokeFX->AttachToComponent(DefaultSceneRoot, FAttachmentTransformRules::KeepRelativeTransform);
+	SmokeFX = ObjectInitializer.CreateDefaultSubobject<UNiagaraComponent>(this, TEXT("Effect"));
+	SmokeFX->AttachToComponent(DefaultSceneRoot, FAttachmentTransformRules::KeepRelativeTransform);
 
 	SetActorEnableCollision(true);
 
-	speed = 30.0f;
-	range = 400.0f;
+	Speed = 30.0f;
+	Range = 400.0f;
 	distanceMoved = 0.0f;
 }
 
@@ -57,16 +57,16 @@ void AExplosion::BeginPlay()
 	Super::BeginPlay();
 
 	// Add link to overlap event
-	collisionBox->OnComponentBeginOverlap.AddDynamic(this, &AExplosion::OnBeginOverlap);
+	CollisionBox->OnComponentBeginOverlap.AddDynamic(this, &AExplosion::OnBeginOverlap);
 }
 
 void AExplosion::CheckCollisions()
 {
 	FVector startLocation = GetActorLocation();
 	FVector forward = GetActorForwardVector();
-	FVector endLocation = startLocation + (forward * range);
+	FVector endLocation = startLocation + (forward * Range);
 
-	FCollisionShape collider = collisionBox->GetCollisionShape();
+	FCollisionShape collider = CollisionBox->GetCollisionShape();
 	FHitResult sweepResult;
 
 	// Check if path is clear
@@ -75,8 +75,8 @@ void AExplosion::CheckCollisions()
 	// Something in the way
 	if (hit && sweepResult.bBlockingHit)
 	{
-		// Reduce range down to not overlap with object
-		range = sweepResult.Distance;
+		// Reduce Range down to not overlap with object
+		Range = sweepResult.Distance;
 	}
 }
 
@@ -133,9 +133,9 @@ void AExplosion::Move(float DeltaTime)
 {
 	FVector forward = GetActorForwardVector();
 
-	float distance = DeltaTime * speed;
+	float distance = DeltaTime * Speed;
 
-	if (distanceMoved + distance <= range)
+	if (distanceMoved + distance <= Range)
 	{
 		distanceMoved += distance;
 		forward *= distance;

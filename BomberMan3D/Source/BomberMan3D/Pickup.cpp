@@ -25,23 +25,24 @@ APickup::APickup(const FObjectInitializer& ObjectInitializer)
 	}
 
 	// Mesh
-	mesh = ObjectInitializer.CreateDefaultSubobject<UStaticMeshComponent>(this, TEXT("Mesh"));
-	mesh->SetRelativeTransform(FTransform
+	Mesh = ObjectInitializer.CreateDefaultSubobject<UStaticMeshComponent>(this, TEXT("Mesh"));
+	Mesh->SetRelativeTransform(FTransform
 	(
 		FRotator(0.0f, 0.0f, 0.0f),
 		FVector(0.0f, 0.0f, 0.0f),
 		FVector(1.0f, 1.0f, 1.0f)
 	)
 	);
-	mesh->SetMobility(EComponentMobility::Movable);
-	mesh->AttachToComponent(DefaultSceneRoot, FAttachmentTransformRules::KeepRelativeTransform);
+	Mesh->SetMobility(EComponentMobility::Movable);
+	Mesh->AttachToComponent(DefaultSceneRoot, FAttachmentTransformRules::KeepRelativeTransform);
 
 	// Rotator
-	rotatingMovement = ObjectInitializer.CreateDefaultSubobject<URotatingMovementComponent>(this, TEXT("Rotator"));
+	RotatingMovement = ObjectInitializer.CreateDefaultSubobject<URotatingMovementComponent>(this, TEXT("Rotator"));
 
 	SetActorEnableCollision(true);
 
 	type = PickupType::None;
+	value = 0.0f;
 }
 
 // Called when the game starts or when spawned
@@ -50,7 +51,7 @@ void APickup::BeginPlay()
 	Super::BeginPlay();
 	
 	// Add link to overlap event
-	mesh->OnComponentBeginOverlap.AddDynamic(this, &APickup::OnBeginOverlap);
+	Mesh->OnComponentBeginOverlap.AddDynamic(this, &APickup::OnBeginOverlap);
 }
 
 // Called every frame
@@ -65,7 +66,7 @@ void APickup::OnBeginOverlap(UPrimitiveComponent* OverlappedComp, AActor* OtherA
 	if (APlayerCharacter* character = dynamic_cast<APlayerCharacter*>(OtherActor))
 	{
 		// Give powerup to player
-		// character->Powerup();
+		character->PowerUp(type, value);
 
 		// Remove pickup
 		Destroy();
