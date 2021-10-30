@@ -21,6 +21,7 @@ void EmptyLinkFunctionForGeneratedCodePickup() {}
 	ENGINE_API UClass* Z_Construct_UClass_AActor_NoRegister();
 	ENGINE_API UScriptStruct* Z_Construct_UScriptStruct_FHitResult();
 	ENGINE_API UClass* Z_Construct_UClass_USceneComponent_NoRegister();
+	ENGINE_API UClass* Z_Construct_UClass_URotatingMovementComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UStaticMeshComponent_NoRegister();
 // End Cross Module References
 	DEFINE_FUNCTION(APickup::execOnBeginOverlap)
@@ -141,6 +142,10 @@ void EmptyLinkFunctionForGeneratedCodePickup() {}
 #endif
 		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_DefaultSceneRoot;
 #if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_rotatingMovement_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_rotatingMovement;
+#if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_mesh_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_mesh;
@@ -174,6 +179,16 @@ void EmptyLinkFunctionForGeneratedCodePickup() {}
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_APickup_Statics::NewProp_DefaultSceneRoot = { "DefaultSceneRoot", nullptr, (EPropertyFlags)0x00200800000a001d, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(APickup, DefaultSceneRoot), Z_Construct_UClass_USceneComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_APickup_Statics::NewProp_DefaultSceneRoot_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_APickup_Statics::NewProp_DefaultSceneRoot_MetaData)) };
 #if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_APickup_Statics::NewProp_rotatingMovement_MetaData[] = {
+		{ "Category", "Components" },
+		{ "Comment", "/**\n\x09* Contains the mesh and material of this block\n\x09*/" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "Pickup.h" },
+		{ "ToolTip", "Contains the mesh and material of this block" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_APickup_Statics::NewProp_rotatingMovement = { "rotatingMovement", nullptr, (EPropertyFlags)0x00200800000a001d, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(APickup, rotatingMovement), Z_Construct_UClass_URotatingMovementComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_APickup_Statics::NewProp_rotatingMovement_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_APickup_Statics::NewProp_rotatingMovement_MetaData)) };
+#if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_APickup_Statics::NewProp_mesh_MetaData[] = {
 		{ "Category", "Components" },
 		{ "Comment", "/**\n\x09* Contains the mesh and material of this block\n\x09*/" },
@@ -185,6 +200,7 @@ void EmptyLinkFunctionForGeneratedCodePickup() {}
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_APickup_Statics::NewProp_mesh = { "mesh", nullptr, (EPropertyFlags)0x00200800000a001d, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(APickup, mesh), Z_Construct_UClass_UStaticMeshComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_APickup_Statics::NewProp_mesh_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_APickup_Statics::NewProp_mesh_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_APickup_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APickup_Statics::NewProp_DefaultSceneRoot,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APickup_Statics::NewProp_rotatingMovement,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APickup_Statics::NewProp_mesh,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_APickup_Statics::StaticCppClassTypeInfo = {
@@ -214,7 +230,7 @@ void EmptyLinkFunctionForGeneratedCodePickup() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(APickup, 1320589980);
+	IMPLEMENT_CLASS(APickup, 2775875178);
 	template<> BOMBERMAN3D_API UClass* StaticClass<APickup>()
 	{
 		return APickup::StaticClass();

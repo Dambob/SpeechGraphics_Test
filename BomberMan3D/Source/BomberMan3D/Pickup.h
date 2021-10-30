@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include "GameFramework/RotatingMovementComponent.h"
 #include "Pickup.generated.h"
 
 UCLASS()
@@ -31,7 +32,13 @@ protected:
 	*/
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"), Category = "Components")
 	USceneComponent* DefaultSceneRoot;
-
+	
+	/**
+	* Contains the mesh and material of this block
+	*/
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
+	URotatingMovementComponent* rotatingMovement;
+	
 	/**
 	* Contains the mesh and material of this block
 	*/

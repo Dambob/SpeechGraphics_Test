@@ -15,7 +15,7 @@ APickup::APickup(const FObjectInitializer& ObjectInitializer)
 
 	if (DefaultSceneRoot)
 	{
-		DefaultSceneRoot->SetMobility(EComponentMobility::Static);
+		DefaultSceneRoot->SetMobility(EComponentMobility::Movable);
 	}
 
 	// If root component missing, use Default
@@ -24,7 +24,7 @@ APickup::APickup(const FObjectInitializer& ObjectInitializer)
 		RootComponent = DefaultSceneRoot;
 	}
 
-	//Mesh
+	// Mesh
 	mesh = ObjectInitializer.CreateDefaultSubobject<UStaticMeshComponent>(this, TEXT("Mesh"));
 	mesh->SetRelativeTransform(FTransform
 	(
@@ -33,8 +33,11 @@ APickup::APickup(const FObjectInitializer& ObjectInitializer)
 		FVector(1.0f, 1.0f, 1.0f)
 	)
 	);
-	mesh->SetMobility(EComponentMobility::Static);
+	mesh->SetMobility(EComponentMobility::Movable);
 	mesh->AttachToComponent(DefaultSceneRoot, FAttachmentTransformRules::KeepRelativeTransform);
+
+	// Rotator
+	rotatingMovement = ObjectInitializer.CreateDefaultSubobject<URotatingMovementComponent>(this, TEXT("Rotator"));
 
 	SetActorEnableCollision(true);
 }

@@ -27,7 +27,7 @@ void EmptyLinkFunctionForGeneratedCodeBomberMan3D_init() {}
 				SingletonFuncArray,
 				UE_ARRAY_COUNT(SingletonFuncArray),
 				PKG_CompiledIn | 0x00000000,
-				0xA142C7FF,
+				0xC715C4A0,
 				0x322F1CED,
 				METADATA_PARAMS(nullptr, 0)
 			};
