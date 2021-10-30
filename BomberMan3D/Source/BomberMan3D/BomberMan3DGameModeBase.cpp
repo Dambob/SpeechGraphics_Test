@@ -42,12 +42,6 @@ void ABomberMan3DGameModeBase::StartPlay()
 {
 	Super::StartPlay();
 
-	check(GEngine != nullptr);
-
-	// Display a debug message for five seconds. 
-	// The -1 "Key" value argument prevents the message from being updated or refreshed.
-	GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Yellow, TEXT("We are using ") + this->GetClass()->GetFName().ToString());
-
 	SpawnPlayerTwo();
 
 	running = true;
@@ -149,11 +143,18 @@ void ABomberMan3DGameModeBase::ResetLevel()
 {
 	Super::ResetLevel();
 
-	APlayerController* player = GetWorld()->GetFirstPlayerController();
+	// Loop through each player controller and restart them
+	for (FConstPlayerControllerIterator iterator = GetWorld()->GetPlayerControllerIterator(); iterator; iterator++)
+	{
+		APlayerController* player = iterator->Get();
 
-	RestartPlayer(player);
-	SpawnPlayerTwo();
+		if (player)
+		{
+			RestartPlayer(player);
+		}
+	}
 
+	// Reset game state
 	GetGameState<ABomberMan3DGameStateBase>()->result = "None";
 	running = true;
 }
