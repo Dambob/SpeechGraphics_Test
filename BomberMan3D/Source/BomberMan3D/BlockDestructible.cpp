@@ -2,20 +2,23 @@
 
 
 #include "BlockDestructible.h"
+#include "Math/UnrealMathUtility.h"
 
 // Sets default values
 ABlockDestructible::ABlockDestructible(const FObjectInitializer& ObjectInitializer) : ABlock(ObjectInitializer)
 {
-	/*static ConstructorHelpers::FClassFinder<ABomb> bombBP(TEXT("/Game/Blueprints/BPBomb"));
+	static ConstructorHelpers::FClassFinder<APickup> pickupBP(TEXT("/Game/Blueprints/Pickups/BPPickup"));
 
-	if (bombBP.Succeeded())
+	if (pickupBP.Succeeded())
 	{
-		bombBPClass = bombBP.Class;
+		pickupBPClass = pickupBP.Class;
 	}
 	else
 	{
-		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, TEXT("No bomb class found."));
-	}*/
+		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, TEXT("No pickup class found."));
+	}
+
+	dropChance = 30.0f;
 }
 
 float ABlockDestructible::TakeDamage(float Damage, FDamageEvent const& DamageEvent, AController* EventInstigator, AActor* DamageCauser)
@@ -24,10 +27,13 @@ float ABlockDestructible::TakeDamage(float Damage, FDamageEvent const& DamageEve
 
 	if (ActualDamage > 0.0f)
 	{
-		// Spawn powerup
-		// ToDo: change from bomb to powerup
-		FVector location = this->GetActorLocation();
-		//ABomb* bomb = (ABomb*)GetWorld()->SpawnActor(bombBPClass, &location);
+		float roll = FMath::FRandRange(0, 100);
+
+		// Spawn a pickup
+		if (roll <= dropChance)
+		{
+			SpawnPowerup();
+		}
 
 		// Remove block
 		Kill();
@@ -50,4 +56,33 @@ void ABlockDestructible::Kill()
 	SetActorHiddenInGame(true);
 }
 
+void ABlockDestructible::SpawnPowerup()
+{
+	// Spawn powerup
+	FVector location = this->GetActorLocation();
+	APickup* pickup = (APickup*)GetWorld()->SpawnActor(pickupBPClass, &location);
 
+	int typeRoll = FMath::RandRange(0, 3);
+
+	switch (typeRoll)
+	{
+	case 0:
+		pickup->SetType(PickupType::Range);
+		pickup->SetValue(300.0f);
+		break;
+	case 1:
+		pickup->SetType(PickupType::Speed);
+		pickup->SetValue(500.0f);
+		break;
+	case 2:
+		pickup->SetType(PickupType::BombCount);
+		pickup->SetValue(1.0f);
+		break;
+	case 3:
+		pickup->SetType(PickupType::Remote);
+		pickup->SetValue(10.0f);
+		break;
+	default:
+		break;
+	}
+}

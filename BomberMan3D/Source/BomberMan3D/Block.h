@@ -15,6 +15,8 @@ public:
 	// Sets default values for this actor's properties
 	ABlock(const FObjectInitializer& ObjectInitializer);
 
+	virtual ~ABlock() = default;
+
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 

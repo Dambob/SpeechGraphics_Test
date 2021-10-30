@@ -58,7 +58,10 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(ABlockDestructible); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(ABlockDestructible)
 
 
-#define BomberMan3D_Source_BomberMan3D_BlockDestructible_h_16_PRIVATE_PROPERTY_OFFSET
+#define BomberMan3D_Source_BomberMan3D_BlockDestructible_h_16_PRIVATE_PROPERTY_OFFSET \
+	FORCEINLINE static uint32 __PPO__dropChance() { return STRUCT_OFFSET(ABlockDestructible, dropChance); }
+
+
 #define BomberMan3D_Source_BomberMan3D_BlockDestructible_h_13_PROLOG
 #define BomberMan3D_Source_BomberMan3D_BlockDestructible_h_16_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \

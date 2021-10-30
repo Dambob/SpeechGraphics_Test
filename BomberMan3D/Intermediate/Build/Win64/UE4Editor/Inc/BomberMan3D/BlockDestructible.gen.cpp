@@ -31,6 +31,11 @@ void EmptyLinkFunctionForGeneratedCodeBlockDestructible() {}
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_dropChance_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_dropChance;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
 	};
@@ -46,6 +51,16 @@ void EmptyLinkFunctionForGeneratedCodeBlockDestructible() {}
 		{ "ObjectInitializerConstructorDeclared", "" },
 	};
 #endif
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABlockDestructible_Statics::NewProp_dropChance_MetaData[] = {
+		{ "Category", "Pickups" },
+		{ "ModuleRelativePath", "BlockDestructible.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ABlockDestructible_Statics::NewProp_dropChance = { "dropChance", nullptr, (EPropertyFlags)0x0020080000000005, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ABlockDestructible, dropChance), METADATA_PARAMS(Z_Construct_UClass_ABlockDestructible_Statics::NewProp_dropChance_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ABlockDestructible_Statics::NewProp_dropChance_MetaData)) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ABlockDestructible_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABlockDestructible_Statics::NewProp_dropChance,
+	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ABlockDestructible_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<ABlockDestructible>::IsAbstract,
 	};
@@ -55,11 +70,11 @@ void EmptyLinkFunctionForGeneratedCodeBlockDestructible() {}
 		&StaticCppClassTypeInfo,
 		DependentSingletons,
 		nullptr,
-		nullptr,
+		Z_Construct_UClass_ABlockDestructible_Statics::PropPointers,
 		nullptr,
 		UE_ARRAY_COUNT(DependentSingletons),
 		0,
-		0,
+		UE_ARRAY_COUNT(Z_Construct_UClass_ABlockDestructible_Statics::PropPointers),
 		0,
 		0x009000A4u,
 		METADATA_PARAMS(Z_Construct_UClass_ABlockDestructible_Statics::Class_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UClass_ABlockDestructible_Statics::Class_MetaDataParams))
@@ -73,7 +88,7 @@ void EmptyLinkFunctionForGeneratedCodeBlockDestructible() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ABlockDestructible, 2884827446);
+	IMPLEMENT_CLASS(ABlockDestructible, 1427082815);
 	template<> BOMBERMAN3D_API UClass* StaticClass<ABlockDestructible>()
 	{
 		return ABlockDestructible::StaticClass();

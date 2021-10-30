@@ -4,7 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Block.h"
-#include "Bomb.h"
+#include "Pickup.h"
 #include "BlockDestructible.generated.h"
 
 /**
@@ -25,7 +25,12 @@ public:
 	
 protected:
 	// Reference BP Asset in the Editor
-	TSubclassOf<ABomb> bombBPClass;
+	TSubclassOf<APickup> pickupBPClass;
 
 	void Kill();
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Pickups")
+	float dropChance;
+
+	void SpawnPowerup();
 };

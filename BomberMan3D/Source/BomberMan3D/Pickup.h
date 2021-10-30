@@ -33,6 +33,10 @@ public:
 
 	virtual void Reset() override { Destroy(); };
 
+	void SetType(PickupType newType) { type = newType; };
+
+	void SetValue(float newValue) { value = newValue; };
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
