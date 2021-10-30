@@ -61,15 +61,13 @@ int ABomberMan3DGameModeBase::GetScore(int playerID) const
 	return score;
 }
 
-void ABomberMan3DGameModeBase::SetScore(int playerID, int newScore) const
+void ABomberMan3DGameModeBase::SetScore(int playerID, int newScore)
 {
-	int score = -1;
-
 	TArray<int> scores = GetGameState<ABomberMan3DGameStateBase>()->score;
 
 	if (scores.Num() >= playerID)
 	{
-		scores[playerID] = score;
+		GetGameState<ABomberMan3DGameStateBase>()->score[playerID] = newScore;
 	}
 }
 
@@ -135,6 +133,9 @@ void ABomberMan3DGameModeBase::CheckPlayers()
 
 			GetGameState<ABomberMan3DGameStateBase>()->result = TEXT("Winner: ") + livingPlayers[0]->GetName().ToString();
 			running = false;
+
+			// Increment living player's score
+			SetScore(livingPlayers[0]->GetID(), GetScore(livingPlayers[0]->GetID())+1);
 		}
 	}	
 }

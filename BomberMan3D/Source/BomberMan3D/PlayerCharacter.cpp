@@ -41,6 +41,8 @@ APlayerCharacter::APlayerCharacter()
 	showDebugMessages = false;
 
 	alive = true;
+
+	id = -1;
 }
 
 // Called when the game starts or when spawned
@@ -133,11 +135,12 @@ void APlayerCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCom
 
 	if (playerController)
 	{
-		// Controls for Player 1
+		// Set player name and ID here, as we know which is which now
 		if (playerController->GetLocalPlayer()->GetControllerId() == 0)
 		{
 			// Set player name
 			name = FText::FromString("Player 1");
+			id = 0;
 
 			// Add movement bindings
 			PlayerInputComponent->BindAxis("MoveUpward_P1", this, &APlayerCharacter::MoveUpward);
@@ -148,8 +151,9 @@ void APlayerCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCom
 		}
 		else // Controls for Player 2
 		{
-			// Set player name
+			// Set player name and ID here, as we know which is which now
 			name = FText::FromString("Player 2");
+			id = 1;
 
 			// Add movement bindings
 			PlayerInputComponent->BindAxis("MoveUpward_P2", this, &APlayerCharacter::MoveUpward);

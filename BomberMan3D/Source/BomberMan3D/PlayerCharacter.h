@@ -47,6 +47,8 @@ public:
 	UFUNCTION()
 	FText GetName() { return name; };
 
+	int GetID() { return id; };
+
 	// Left/right movement
 	UFUNCTION()
 	void PlaceBomb();
@@ -66,6 +68,8 @@ protected:
 	// Character Name
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Character")
 	FText name;
+
+	int id;
 
 	bool showDebugMessages;
 

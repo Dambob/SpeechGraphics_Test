@@ -35,7 +35,7 @@ public:
 
 	/* Set the player score based on ID. */
 	UFUNCTION(BlueprintCallable, Category = "Score")
-	virtual void SetScore(int playerID, int newScore) const;
+	virtual void SetScore(int playerID, int newScore);
 
 protected:
 	void SpawnPlayerTwo();
