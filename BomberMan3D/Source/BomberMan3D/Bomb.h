@@ -12,15 +12,13 @@ class BOMBERMAN3D_API ABomb : public AActor
 {
 	GENERATED_BODY()
 
+		// Event trigged when bomb has exploded
 		DECLARE_DYNAMIC_DELEGATE(FBombExploded);
 	
 public:	
 	// Sets default values for this actor's properties
 	ABomb();
 	virtual ~ABomb() = default;
-
-	// Called every frame
-	virtual void Tick(float DeltaTime) override;
 
 	FBombExploded OnBombExplosion;
 
@@ -37,9 +35,6 @@ public:
 	void LightFuse();
 
 protected:
-	// Called when the game starts or when spawned
-	virtual void BeginPlay() override;
-
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Bomb")
 	float fuseTime;
 

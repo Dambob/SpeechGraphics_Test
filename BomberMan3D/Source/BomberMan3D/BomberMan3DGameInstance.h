@@ -19,6 +19,5 @@ public:
 	virtual ~UBomberMan3DGameInstance() = default;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	TArray<int> score;
-	
+	TArray<int> score;	
 };
