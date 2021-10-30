@@ -25,7 +25,7 @@ public:
 
 	void Explode();
 
-	virtual void Reset() { Destroy(); };
+	virtual void Reset() override { Destroy(); };
 
 protected:
 	// Called when the game starts or when spawned

@@ -20,8 +20,12 @@ public:
 	ABlockDestructible(const FObjectInitializer& ObjectInitializer);
 
 	float TakeDamage(float Damage, FDamageEvent const& DamageEvent, AController* EventInstigator, AActor* DamageCauser) override;
+
+	virtual void Reset() override;
 	
 protected:
 	// Reference BP Asset in the Editor
 	TSubclassOf<ABomb> bombBPClass;
+
+	void Kill();
 };

@@ -30,10 +30,24 @@ float ABlockDestructible::TakeDamage(float Damage, FDamageEvent const& DamageEve
 		//ABomb* bomb = (ABomb*)GetWorld()->SpawnActor(bombBPClass, &location);
 
 		// Remove block
-		Destroy();
+		Kill();
 	}
 
 	return ActualDamage;
+}
+
+void ABlockDestructible::Reset()
+{
+	// Unhide block
+	SetActorEnableCollision(true);
+	SetActorHiddenInGame(false);
+}
+
+void ABlockDestructible::Kill()
+{
+	// Hide block
+	SetActorEnableCollision(false);
+	SetActorHiddenInGame(true);
 }
 
 
