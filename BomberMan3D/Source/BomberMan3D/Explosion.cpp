@@ -8,7 +8,10 @@
 #include "Pickup.h"
 
 // Sets default values
-AExplosion::AExplosion(const FObjectInitializer& ObjectInitializer)
+AExplosion::AExplosion(const FObjectInitializer& ObjectInitializer) :
+	Speed(30.0f),
+	Range(400.0f),
+	distanceMoved(0.0f)
 {
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
@@ -44,11 +47,7 @@ AExplosion::AExplosion(const FObjectInitializer& ObjectInitializer)
 	SmokeFX = ObjectInitializer.CreateDefaultSubobject<UNiagaraComponent>(this, TEXT("Effect"));
 	SmokeFX->AttachToComponent(DefaultSceneRoot, FAttachmentTransformRules::KeepRelativeTransform);
 
-	SetActorEnableCollision(true);
-
-	Speed = 30.0f;
-	Range = 400.0f;
-	distanceMoved = 0.0f;
+	SetActorEnableCollision(true);	
 }
 
 // Called when the game starts or when spawned
@@ -133,8 +132,10 @@ void AExplosion::Move(float DeltaTime)
 {
 	FVector forward = GetActorForwardVector();
 
+	// Distance to move this frame
 	float distance = DeltaTime * Speed;
 
+	// Distance wtihin range
 	if (distanceMoved + distance <= Range)
 	{
 		distanceMoved += distance;
