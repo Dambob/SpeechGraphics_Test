@@ -22,30 +22,36 @@ AExplosion::AExplosion(const FObjectInitializer& ObjectInitializer) :
 	if (DefaultSceneRoot)
 	{
 		DefaultSceneRoot->SetMobility(EComponentMobility::Movable);
-	}
 
-	// If root component missing, use Default
-	if (!RootComponent && DefaultSceneRoot)
-	{
-		RootComponent = DefaultSceneRoot;
+		// If root component missing, use Default
+		if (!RootComponent)
+		{
+			RootComponent = DefaultSceneRoot;
+		}
 	}
 
 	// Collision
 	CollisionBox = ObjectInitializer.CreateDefaultSubobject<UBoxComponent>(this, TEXT("CollisionBox"));
-	CollisionBox->InitBoxExtent(FVector(20.0f, 20.0f, 100.0f));
-	CollisionBox->SetRelativeTransform(FTransform
-	(
-		FRotator(0.0f, 0.0f, 0.0f),
-		FVector(0.0f, 0.0f, 0.0f),
-		FVector(1.0f, 1.0f, 1.0f)
-	)
-	);
-	CollisionBox->SetMobility(EComponentMobility::Movable);
-	CollisionBox->AttachToComponent(DefaultSceneRoot, FAttachmentTransformRules::KeepRelativeTransform);
+	if (CollisionBox)
+	{
+		CollisionBox->InitBoxExtent(FVector(20.0f, 20.0f, 100.0f));
+		CollisionBox->SetRelativeTransform(FTransform
+		(
+			FRotator(0.0f, 0.0f, 0.0f),
+			FVector(0.0f, 0.0f, 0.0f),
+			FVector(1.0f, 1.0f, 1.0f)
+		)
+		);
+		CollisionBox->SetMobility(EComponentMobility::Movable);
+		CollisionBox->AttachToComponent(DefaultSceneRoot, FAttachmentTransformRules::KeepRelativeTransform);
+	}
 
 	// Smoke
 	SmokeFX = ObjectInitializer.CreateDefaultSubobject<UNiagaraComponent>(this, TEXT("Effect"));
-	SmokeFX->AttachToComponent(DefaultSceneRoot, FAttachmentTransformRules::KeepRelativeTransform);
+	if (SmokeFX)
+	{
+		SmokeFX->AttachToComponent(DefaultSceneRoot, FAttachmentTransformRules::KeepRelativeTransform);
+	}
 
 	SetActorEnableCollision(true);	
 }
