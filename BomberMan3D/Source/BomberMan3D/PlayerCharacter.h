@@ -20,11 +20,6 @@ public:
 	// Sets default values for this character's properties
 	APlayerCharacter();
 	virtual ~APlayerCharacter() = default;
-	
-	// Called every frame
-	virtual void Tick(float DeltaTime) override;
-
-	void PostInitializeComponents() override;
 
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
@@ -81,7 +76,7 @@ protected:
 
 	int id;
 
-	bool showDebugMessages;
+	bool alive;
 
 	void SetupNameplate();
 
@@ -105,5 +100,4 @@ protected:
 
 	void EndRemotePower();
 
-	bool alive;
 };

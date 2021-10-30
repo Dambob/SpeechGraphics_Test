@@ -254,7 +254,9 @@ void EmptyLinkFunctionForGeneratedCodeBomberMan3DGameModeBase() {}
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABomberMan3DGameModeBase_Statics::NewProp_roundTime_MetaData[] = {
 		{ "Category", "Game" },
+		{ "Comment", "// Time per round\n" },
 		{ "ModuleRelativePath", "BomberMan3DGameModeBase.h" },
+		{ "ToolTip", "Time per round" },
 	};
 #endif
 	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ABomberMan3DGameModeBase_Statics::NewProp_roundTime = { "roundTime", nullptr, (EPropertyFlags)0x0020080000000005, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ABomberMan3DGameModeBase, roundTime), METADATA_PARAMS(Z_Construct_UClass_ABomberMan3DGameModeBase_Statics::NewProp_roundTime_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ABomberMan3DGameModeBase_Statics::NewProp_roundTime_MetaData)) };
@@ -288,7 +290,7 @@ void EmptyLinkFunctionForGeneratedCodeBomberMan3DGameModeBase() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ABomberMan3DGameModeBase, 3303193820);
+	IMPLEMENT_CLASS(ABomberMan3DGameModeBase, 3977411209);
 	template<> BOMBERMAN3D_API UClass* StaticClass<ABomberMan3DGameModeBase>()
 	{
 		return ABomberMan3DGameModeBase::StaticClass();

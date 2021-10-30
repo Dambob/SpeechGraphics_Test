@@ -8,14 +8,19 @@
 #include "GameFramework/CharacterMovementComponent.h"
 
 // Sets default values
-APlayerCharacter::APlayerCharacter()
+APlayerCharacter::APlayerCharacter() :
+	name(FText::FromString("Character")),
+	id(-1),
+	alive(true),
+	bombCount(1),
+	bombRange(200.0f),
+	remoteBombPower(false),
+	remoteBombCount(0)
 {
- 	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
-	PrimaryActorTick.bCanEverTick = true;
+ 	// Turn off Tick
+	PrimaryActorTick.bCanEverTick = false;
 
-	bombCount = 1;
-
-	name = FText::FromString("Character");
+	GetCharacterMovement()->MaxWalkSpeed = 200.0f;
 
 	static ConstructorHelpers::FClassFinder<UUserWidget> nameplateWidget(TEXT("/Game/Blueprints/UMG/BPFloatingName"));
 
@@ -25,7 +30,7 @@ APlayerCharacter::APlayerCharacter()
 	}
 	else
 	{
-		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, TEXT("No nameplate widget found."));
+		UE_LOG(LogTemp, Warning, TEXT("No nameplate widget found."));
 	}
 
 	static ConstructorHelpers::FClassFinder<ABomb> bombBP(TEXT("/Game/Blueprints/BPBomb"));
@@ -36,36 +41,14 @@ APlayerCharacter::APlayerCharacter()
 	}
 	else
 	{
-		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, TEXT("No bomb class found."));
+		UE_LOG(LogTemp, Warning, TEXT("No bomb class found."));
 	}
-
-	showDebugMessages = false;
-
-	alive = true;
-
-	id = -1;
-
-	GetCharacterMovement()->MaxWalkSpeed = 200.0f;
-	bombRange = 200.0f;
-
-	remoteBombPower = false;
-	remoteBombCount = 0;
 }
 
 // Called when the game starts or when spawned
 void APlayerCharacter::BeginPlay()
 {
 	Super::BeginPlay();
-	
-	check(GEngine != nullptr);
-
-	// Debug
-	if (showDebugMessages)
-	{
-		// Display a debug message for five seconds. 
-		// The -1 "Key" value argument prevents the message from being updated or refreshed.
-		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, TEXT("We are using ") + this->GetClass()->GetFName().ToString());
-	}
 
 	SetupNameplate();	
 }
@@ -74,63 +57,30 @@ void APlayerCharacter::SetupNameplate()
 {
 	nameplate = NewObject<UDMActorWidgetComponent>(this);
 
-	if (nameplate)
+	if (!nameplate)
 	{
-		if (nameWidgetClass)
-		{
-			nameplate->SetWidgetClass(nameWidgetClass);
-		}
-		else
-		{
-			// Debug
-			if (showDebugMessages)
-			{
-				GEngine->AddOnScreenDebugMessage(-1, 10.0f, FColor::Red, TEXT("Name WidgetClass is null."));
-			}
-		}
-
-		if (nameplate->GetClass())
-		{
-			// Debug
-			if (showDebugMessages)
-			{
-				GEngine->AddOnScreenDebugMessage(-1, 10.0f, FColor::Red, TEXT("Name WidgetClass Set."));
-			}
-		}
-		else
-		{
-			// Debug
-			if (showDebugMessages)
-			{
-				GEngine->AddOnScreenDebugMessage(-1, 10.0f, FColor::Red, TEXT("Name WidgetClass not set."));
-			}
-		}
-
-		nameplate->InitWidget();
-		nameplate->SetupAttachment(RootComponent);
-		nameplate->SetRelativeLocation(FVector(0.0f, 0.0f, 120.0f));
-
-		nameplate->RegisterComponent();
+		UE_LOG(LogTemp, Warning, TEXT("Nameplate is null."));
+		return;
 	}
-	else
+
+	if (!nameWidgetClass)
 	{
-		// Debug
-		if (showDebugMessages)
-		{
-			GEngine->AddOnScreenDebugMessage(-1, 10.0f, FColor::Red, TEXT("Nameplate is null."));
-		}
+		UE_LOG(LogTemp, Warning, TEXT("Name WidgetClass is null."));
 	}
-}
+	
+	// Set class of widget
+	nameplate->SetWidgetClass(nameWidgetClass);
 
-// Called every frame
-void APlayerCharacter::Tick(float DeltaTime)
-{
-	Super::Tick(DeltaTime);
-}
+	if (!nameplate->GetClass())
+	{
+		UE_LOG(LogTemp, Warning, TEXT("Name WidgetClass not set."));
+	}
 
-void APlayerCharacter::PostInitializeComponents()
-{
-	Super::PostInitializeComponents();
+	// Initialise nameplate and attach to player
+	nameplate->InitWidget();
+	nameplate->SetupAttachment(RootComponent);
+	nameplate->SetRelativeLocation(FVector(0.0f, 0.0f, 120.0f));
+	nameplate->RegisterComponent();
 }
 
 // Called to bind functionality to input
@@ -143,6 +93,7 @@ void APlayerCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCom
 	if (playerController)
 	{
 		// Set player name and ID here, as we know which is which now
+		// ToDo: Find better way/place to setup each player
 		if (playerController->GetLocalPlayer()->GetControllerId() == 0)
 		{
 			// Set player name
@@ -196,16 +147,12 @@ void APlayerCharacter::MoveRight(float value)
 
 void APlayerCharacter::PlaceBomb()
 {
+	// Normal mode
 	if (!remoteBombPower)
 	{
 		if (bombCount > 0)
 		{
-			// Debug
-			if (showDebugMessages)
-			{
-				GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, TEXT("Bomb placed by: ") + name.ToString());
-			}
-
+			// Spawn bomb at player location
 			FVector location = this->GetActorLocation();
 
 			ABomb* bomb = (ABomb*)GetWorld()->SpawnActor(bombBPClass, &location);
@@ -216,22 +163,18 @@ void APlayerCharacter::PlaceBomb()
 			bombCount--;
 		}
 	}
-	else
+	else	// Remote bomb mode
 	{
 		if (remoteBombCount > 0)
 		{
-			// Debug
-			if (showDebugMessages)
-			{
-				GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, TEXT("Bomb placed by: ") + name.ToString());
-			}
-
+			// Spawn bomb at player location
 			FVector location = this->GetActorLocation();
 
 			ABomb* bomb = (ABomb*)GetWorld()->SpawnActor(bombBPClass, &location);
 			bomb->SetRange(bombRange);
 			bomb->SetFuseTime(0.0f);
 
+			// Hold reference to remote bomb to detonate later
 			remoteBomb = bomb;
 
 			remoteBombCount--;
@@ -260,7 +203,7 @@ void APlayerCharacter::PowerUp(PickupType type, float value)
 			break;
 		case PickupType::BombCount: bombCount += value;	// Increase bomb count
 			break;
-		case PickupType::Remote:
+		case PickupType::Remote:	// Enable remote bomb mode
 			remoteBombPower = true;
 			GetWorldTimerManager().SetTimer(remotePowerTimerHandle, this, &APlayerCharacter::EndRemotePower, value, false);
 			remoteBombCount = 1;
@@ -297,11 +240,5 @@ void APlayerCharacter::EndRemotePower()
 
 void APlayerCharacter::BindBombExploded()
 {
-	// Debug
-	if (showDebugMessages)
-	{
-		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, TEXT("Bomb placed by: ") + name.ToString() + TEXT(" has now exploded."));
-	}
-
 	bombCount++;
 }
