@@ -25,11 +25,7 @@ class BOMBERMAN3D_API APickup : public AActor
 public:	
 	// Sets default values for this actor's properties
 	APickup(const FObjectInitializer& ObjectInitializer);
-
 	virtual ~APickup() = default;
-
-	// Called every frame
-	virtual void Tick(float DeltaTime) override;
 
 	virtual void Reset() override { Destroy(); };
 
@@ -54,7 +50,7 @@ protected:
 	URotatingMovementComponent* RotatingMovement;
 	
 	/**
-	* Contains the mesh and material of this pickup
+	* Contains the mesh of this pickup
 	*/
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
 	UStaticMeshComponent* Mesh;

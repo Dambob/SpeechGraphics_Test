@@ -264,10 +264,10 @@ void EmptyLinkFunctionForGeneratedCodePickup() {}
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_APickup_Statics::NewProp_Mesh_MetaData[] = {
 		{ "Category", "Components" },
-		{ "Comment", "/**\n\x09* Contains the mesh and material of this pickup\n\x09*/" },
+		{ "Comment", "/**\n\x09* Contains the mesh of this pickup\n\x09*/" },
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "Pickup.h" },
-		{ "ToolTip", "Contains the mesh and material of this pickup" },
+		{ "ToolTip", "Contains the mesh of this pickup" },
 	};
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_APickup_Statics::NewProp_Mesh = { "Mesh", nullptr, (EPropertyFlags)0x00200800000a001d, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(APickup, Mesh), Z_Construct_UClass_UStaticMeshComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_APickup_Statics::NewProp_Mesh_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_APickup_Statics::NewProp_Mesh_MetaData)) };
@@ -323,7 +323,7 @@ void EmptyLinkFunctionForGeneratedCodePickup() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(APickup, 802534423);
+	IMPLEMENT_CLASS(APickup, 1311988698);
 	template<> BOMBERMAN3D_API UClass* StaticClass<APickup>()
 	{
 		return APickup::StaticClass();

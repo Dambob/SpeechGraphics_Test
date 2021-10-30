@@ -5,7 +5,9 @@
 #include "PlayerCharacter.h"
 
 // Sets default values
-APickup::APickup(const FObjectInitializer& ObjectInitializer)
+APickup::APickup(const FObjectInitializer& ObjectInitializer) :
+	type(PickupType::None),
+	value(0.0f)
 {
 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = false;
@@ -40,9 +42,6 @@ APickup::APickup(const FObjectInitializer& ObjectInitializer)
 	RotatingMovement = ObjectInitializer.CreateDefaultSubobject<URotatingMovementComponent>(this, TEXT("Rotator"));
 
 	SetActorEnableCollision(true);
-
-	type = PickupType::None;
-	value = 0.0f;
 }
 
 // Called when the game starts or when spawned
@@ -52,12 +51,6 @@ void APickup::BeginPlay()
 	
 	// Add link to overlap event
 	Mesh->OnComponentBeginOverlap.AddDynamic(this, &APickup::OnBeginOverlap);
-}
-
-// Called every frame
-void APickup::Tick(float DeltaTime)
-{
-	Super::Tick(DeltaTime);
 }
 
 void APickup::OnBeginOverlap(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
