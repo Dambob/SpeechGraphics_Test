@@ -16,6 +16,7 @@ class BOMBERMAN3D_API UDMActorWidgetComponent : public UWidgetComponent
 	GENERATED_BODY()
 public:
 	UDMActorWidgetComponent();
+	virtual ~UDMActorWidgetComponent() = default;
 
 	// Initialise widget
 	virtual void InitWidget() override;

@@ -16,7 +16,6 @@ class BOMBERMAN3D_API UBomberMan3DGameInstance : public UGameInstance
 
 public:
 	UBomberMan3DGameInstance();
-
 	virtual ~UBomberMan3DGameInstance() = default;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)

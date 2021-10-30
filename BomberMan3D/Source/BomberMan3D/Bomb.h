@@ -17,6 +17,7 @@ class BOMBERMAN3D_API ABomb : public AActor
 public:	
 	// Sets default values for this actor's properties
 	ABomb();
+	virtual ~ABomb() = default;
 
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;

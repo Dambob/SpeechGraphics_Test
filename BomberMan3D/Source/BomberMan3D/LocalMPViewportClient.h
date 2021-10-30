@@ -13,6 +13,8 @@ UCLASS()
 class BOMBERMAN3D_API ULocalMPViewportClient : public UGameViewportClient
 {
 	GENERATED_BODY()
+
+	virtual ~ULocalMPViewportClient() = default;
 	
 	virtual bool InputKey(const FInputKeyEventArgs& EventArgs) override;
 };

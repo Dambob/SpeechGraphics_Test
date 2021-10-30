@@ -18,6 +18,7 @@ class BOMBERMAN3D_API ABlockDestructible : public ABlock
 public:
 	// Sets default values for this actor's properties
 	ABlockDestructible(const FObjectInitializer& ObjectInitializer);
+	virtual ~ABlockDestructible() = default;
 
 	float TakeDamage(float Damage, FDamageEvent const& DamageEvent, AController* EventInstigator, AActor* DamageCauser) override;
 

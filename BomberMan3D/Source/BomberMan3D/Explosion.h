@@ -17,6 +17,7 @@ class BOMBERMAN3D_API AExplosion : public AActor
 public:	
 	// Sets default values for this actor's properties
 	AExplosion(const FObjectInitializer& ObjectInitializer);
+	virtual ~AExplosion() = default;
 
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;

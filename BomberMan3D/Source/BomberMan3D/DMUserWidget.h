@@ -18,26 +18,26 @@ class BOMBERMAN3D_API UDMUserWidget : public UUserWidget
 public:
 	// Return the name of this widget
 	UFUNCTION()
-		FString GetName() { return widgetName; };
+	FString GetName() { return widgetName; };
 
 	// Return the owning actor of this widget
 	UFUNCTION()
-		AActor* GetOwner() { return owner; };
+	AActor* GetOwner() { return owner; };
 
 	// Set the owning actor of this widget
 	UFUNCTION()
-		void SetOwner(AActor* newOwner);
+	void SetOwner(AActor* newOwner);
 
 	// Event triggered when owning actor is changed
 	UPROPERTY(BlueprintAssignable, Category = "DM|Widget")
-		FOnOwningActorChanged OnOwningActorChanged;
+	FOnOwningActorChanged OnOwningActorChanged;
 
 protected:
 	// Widget name variable
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "DM|Widget")
-		FString widgetName;
+	FString widgetName;
 
 	// Owning actor variable
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "DM|Widget")
-		AActor* owner;
+	AActor* owner;
 };
