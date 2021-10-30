@@ -7,6 +7,7 @@
 #include "PlayerCharacter.h"
 #include "BomberMan3DGameStateBase.h"
 #include "Explosion.h"
+#include <math.h>
 
 ABomberMan3DGameModeBase::ABomberMan3DGameModeBase()
 {
@@ -26,6 +27,8 @@ ABomberMan3DGameModeBase::ABomberMan3DGameModeBase()
 	{
 		DefaultPawnClass = PlayerPawnBPClass.Class;
 	}
+
+	roundTime = 60.0f;
 }
 
 void ABomberMan3DGameModeBase::Tick(float DeltaTime)
@@ -45,6 +48,13 @@ void ABomberMan3DGameModeBase::StartPlay()
 	SpawnPlayerTwo();
 
 	running = true;
+
+	UWorld* world = this->GetWorld();
+
+	if (world)
+	{
+		world->GetTimerManager().SetTimer(gameTimerHandle, this, &ABomberMan3DGameModeBase::TimerEnded, roundTime, false);
+	}
 }
 
 int ABomberMan3DGameModeBase::GetScore(int playerID) const
@@ -69,6 +79,28 @@ void ABomberMan3DGameModeBase::SetScore(int playerID, int newScore)
 	{
 		GetGameState<ABomberMan3DGameStateBase>()->score[playerID] = newScore;
 	}
+}
+
+float ABomberMan3DGameModeBase::GetRemainingTime() const
+{
+	float result = 0.0f;
+	UWorld* world = this->GetWorld();
+
+	if (world)
+	{
+		result = world->GetTimerManager().GetTimerRemaining(gameTimerHandle);
+
+		// Cap result
+		if (result < 0.0f)
+		{
+			result = 0.0f;
+		}
+	}
+
+	// Round to 2DF for output
+	result = roundf(result);
+
+	return result;
 }
 
 void ABomberMan3DGameModeBase::SpawnPlayerTwo()
@@ -140,9 +172,19 @@ void ABomberMan3DGameModeBase::CheckPlayers()
 	}	
 }
 
+void ABomberMan3DGameModeBase::TimerEnded()
+{
+	// Draw
+	// Get game state
+	GetGameState<ABomberMan3DGameStateBase>()->result = "Draw";
+	running = false;
+}
+
 void ABomberMan3DGameModeBase::ResetLevel()
 {
 	Super::ResetLevel();
+
+	
 
 	// Loop through each player controller and restart them
 	for (FConstPlayerControllerIterator iterator = GetWorld()->GetPlayerControllerIterator(); iterator; iterator++)
@@ -158,4 +200,16 @@ void ABomberMan3DGameModeBase::ResetLevel()
 	// Reset game state
 	GetGameState<ABomberMan3DGameStateBase>()->result = "None";
 	running = true;
+
+	// Reset the timer
+	UWorld* world = this->GetWorld();
+
+	if (world)
+	{
+		// Clear any existing timer
+		world->GetTimerManager().ClearTimer(gameTimerHandle);
+
+		// Set timer
+		world->GetTimerManager().SetTimer(gameTimerHandle, this, &ABomberMan3DGameModeBase::TimerEnded, roundTime, false);
+	}
 }

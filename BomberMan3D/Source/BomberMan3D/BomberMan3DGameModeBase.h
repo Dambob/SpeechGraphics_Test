@@ -37,10 +37,22 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Score")
 	virtual void SetScore(int playerID, int newScore);
 
+	/* Return the player score based on ID. */
+	UFUNCTION(BlueprintPure, Category = "Timer")
+	virtual float GetRemainingTime() const;
+
 protected:
 	void SpawnPlayerTwo();
 
 	void CheckPlayers();
 
 	bool running;
+
+	// Timer game
+	FTimerHandle gameTimerHandle;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Game")
+	float roundTime;
+
+	void TimerEnded();
 };

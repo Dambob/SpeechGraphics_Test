@@ -16,12 +16,14 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define BomberMan3D_Source_BomberMan3D_BomberMan3DGameModeBase_h_18_SPARSE_DATA
 #define BomberMan3D_Source_BomberMan3D_BomberMan3DGameModeBase_h_18_RPC_WRAPPERS \
  \
+	DECLARE_FUNCTION(execGetRemainingTime); \
 	DECLARE_FUNCTION(execSetScore); \
 	DECLARE_FUNCTION(execGetScore);
 
 
 #define BomberMan3D_Source_BomberMan3D_BomberMan3DGameModeBase_h_18_RPC_WRAPPERS_NO_PURE_DECLS \
  \
+	DECLARE_FUNCTION(execGetRemainingTime); \
 	DECLARE_FUNCTION(execSetScore); \
 	DECLARE_FUNCTION(execGetScore);
 
@@ -68,7 +70,10 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(ABomberMan3DGameModeBase); \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(ABomberMan3DGameModeBase)
 
 
-#define BomberMan3D_Source_BomberMan3D_BomberMan3DGameModeBase_h_18_PRIVATE_PROPERTY_OFFSET
+#define BomberMan3D_Source_BomberMan3D_BomberMan3DGameModeBase_h_18_PRIVATE_PROPERTY_OFFSET \
+	FORCEINLINE static uint32 __PPO__roundTime() { return STRUCT_OFFSET(ABomberMan3DGameModeBase, roundTime); }
+
+
 #define BomberMan3D_Source_BomberMan3D_BomberMan3DGameModeBase_h_15_PROLOG
 #define BomberMan3D_Source_BomberMan3D_BomberMan3DGameModeBase_h_18_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
