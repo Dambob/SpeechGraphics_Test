@@ -27,13 +27,16 @@ ABomb::ABomb()
 	range = 200.0f;
 }
 
+void ABomb::LightFuse()
+{
+	// Start timer for fuse
+	GetWorldTimerManager().SetTimer(fuseTimerHandle, this, &ABomb::Explode, fuseTime, false);
+}
+
 // Called when the game starts or when spawned
 void ABomb::BeginPlay()
 {
-	Super::BeginPlay();
-	
-	// Start timer for fuse
-	GetWorldTimerManager().SetTimer(fuseTimerHandle, this, &ABomb::Explode, fuseTime, false);
+	Super::BeginPlay();	
 }
 
 // Called every frame

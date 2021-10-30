@@ -20,12 +20,7 @@ public:
 	// Sets default values for this character's properties
 	APlayerCharacter();
 	virtual ~APlayerCharacter() = default;
-
-protected:
-	// Called when the game starts or when spawned
-	virtual void BeginPlay() override;
-
-public:	
+	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
@@ -51,9 +46,13 @@ public:
 
 	int GetID() { return id; };
 
-	// Left/right movement
+	// Bomb placement
 	UFUNCTION()
 	void PlaceBomb();
+
+	// Detonate remote bomb
+	UFUNCTION()
+	void DetonateBomb();
 
 	void Kill() { alive = false; };
 
@@ -62,6 +61,9 @@ public:
 	virtual void PowerUp(PickupType type, float value);
 
 protected:
+	// Called when the game starts or when spawned
+	virtual void BeginPlay() override;
+
 	// Reference UMG Asset in the Editor
 	TSubclassOf<UUserWidget> nameWidgetClass;
 
@@ -90,6 +92,14 @@ protected:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Character")
 	int bombRange;
+
+	// Remote bomb
+	bool remoteBombPower;
+	FTimerHandle remotePowerTimerHandle;
+	int remoteBombCount;
+	ABomb* remoteBomb;
+
+	void EndRemotePower();
 
 	bool alive;
 };

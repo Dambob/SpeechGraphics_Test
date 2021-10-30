@@ -28,6 +28,13 @@ void EmptyLinkFunctionForGeneratedCodePlayerCharacter() {}
 		P_THIS->BindBombExploded();
 		P_NATIVE_END;
 	}
+	DEFINE_FUNCTION(APlayerCharacter::execDetonateBomb)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->DetonateBomb();
+		P_NATIVE_END;
+	}
 	DEFINE_FUNCTION(APlayerCharacter::execPlaceBomb)
 	{
 		P_FINISH;
@@ -63,6 +70,7 @@ void EmptyLinkFunctionForGeneratedCodePlayerCharacter() {}
 		UClass* Class = APlayerCharacter::StaticClass();
 		static const FNameNativePtrPair Funcs[] = {
 			{ "BindBombExploded", &APlayerCharacter::execBindBombExploded },
+			{ "DetonateBomb", &APlayerCharacter::execDetonateBomb },
 			{ "GetName", &APlayerCharacter::execGetName },
 			{ "MoveRight", &APlayerCharacter::execMoveRight },
 			{ "MoveUpward", &APlayerCharacter::execMoveUpward },
@@ -89,6 +97,30 @@ void EmptyLinkFunctionForGeneratedCodePlayerCharacter() {}
 		if (!ReturnFunction)
 		{
 			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_APlayerCharacter_BindBombExploded_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_APlayerCharacter_DetonateBomb_Statics
+	{
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_APlayerCharacter_DetonateBomb_Statics::Function_MetaDataParams[] = {
+		{ "Comment", "// Detonate remote bomb\n" },
+		{ "ModuleRelativePath", "PlayerCharacter.h" },
+		{ "ToolTip", "Detonate remote bomb" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_APlayerCharacter_DetonateBomb_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_APlayerCharacter, nullptr, "DetonateBomb", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_APlayerCharacter_DetonateBomb_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_APlayerCharacter_DetonateBomb_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_APlayerCharacter_DetonateBomb()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_APlayerCharacter_DetonateBomb_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -201,9 +233,9 @@ void EmptyLinkFunctionForGeneratedCodePlayerCharacter() {}
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_APlayerCharacter_PlaceBomb_Statics::Function_MetaDataParams[] = {
-		{ "Comment", "// Left/right movement\n" },
+		{ "Comment", "// Bomb placement\n" },
 		{ "ModuleRelativePath", "PlayerCharacter.h" },
-		{ "ToolTip", "Left/right movement" },
+		{ "ToolTip", "Bomb placement" },
 	};
 #endif
 	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_APlayerCharacter_PlaceBomb_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_APlayerCharacter, nullptr, "PlaceBomb", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_APlayerCharacter_PlaceBomb_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_APlayerCharacter_PlaceBomb_Statics::Function_MetaDataParams)) };
@@ -257,10 +289,11 @@ void EmptyLinkFunctionForGeneratedCodePlayerCharacter() {}
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_APlayerCharacter_Statics::FuncInfo[] = {
 		{ &Z_Construct_UFunction_APlayerCharacter_BindBombExploded, "BindBombExploded" }, // 1561606761
+		{ &Z_Construct_UFunction_APlayerCharacter_DetonateBomb, "DetonateBomb" }, // 1993486748
 		{ &Z_Construct_UFunction_APlayerCharacter_GetName, "GetName" }, // 4041814545
 		{ &Z_Construct_UFunction_APlayerCharacter_MoveRight, "MoveRight" }, // 916103735
 		{ &Z_Construct_UFunction_APlayerCharacter_MoveUpward, "MoveUpward" }, // 333176419
-		{ &Z_Construct_UFunction_APlayerCharacter_PlaceBomb, "PlaceBomb" }, // 1267687404
+		{ &Z_Construct_UFunction_APlayerCharacter_PlaceBomb, "PlaceBomb" }, // 773001547
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_APlayerCharacter_Statics::Class_MetaDataParams[] = {
@@ -345,7 +378,7 @@ void EmptyLinkFunctionForGeneratedCodePlayerCharacter() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(APlayerCharacter, 889350327);
+	IMPLEMENT_CLASS(APlayerCharacter, 530808956);
 	template<> BOMBERMAN3D_API UClass* StaticClass<APlayerCharacter>()
 	{
 		return APlayerCharacter::StaticClass();

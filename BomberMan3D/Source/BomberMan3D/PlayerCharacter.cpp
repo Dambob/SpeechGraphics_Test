@@ -47,6 +47,9 @@ APlayerCharacter::APlayerCharacter()
 
 	GetCharacterMovement()->MaxWalkSpeed = 200.0f;
 	bombRange = 200.0f;
+
+	remoteBombPower = false;
+	remoteBombCount = 0;
 }
 
 // Called when the game starts or when spawned
@@ -152,6 +155,9 @@ void APlayerCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCom
 
 			// Add bomb binding
 			PlayerInputComponent->BindAction("PlaceBomb_P1", IE_Pressed, this, &APlayerCharacter::PlaceBomb);
+
+			// Add remote bomb binding
+			PlayerInputComponent->BindAction("DetonateBomb_P1", IE_Pressed, this, &APlayerCharacter::DetonateBomb);
 		}
 		else // Controls for Player 2
 		{
@@ -165,6 +171,9 @@ void APlayerCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCom
 
 			// Add bomb binding
 			PlayerInputComponent->BindAction("PlaceBomb_P2", IE_Pressed, this, &APlayerCharacter::PlaceBomb);
+
+			// Add remote bomb binding
+			PlayerInputComponent->BindAction("DetonateBomb_P2", IE_Pressed, this, &APlayerCharacter::DetonateBomb);
 		}
 	}
 }
@@ -187,21 +196,57 @@ void APlayerCharacter::MoveRight(float value)
 
 void APlayerCharacter::PlaceBomb()
 {
-	if (bombCount > 0)
+	if (!remoteBombPower)
 	{
-		// Debug
-		if (showDebugMessages)
+		if (bombCount > 0)
 		{
-			GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, TEXT("Bomb placed by: ") + name.ToString());
+			// Debug
+			if (showDebugMessages)
+			{
+				GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, TEXT("Bomb placed by: ") + name.ToString());
+			}
+
+			FVector location = this->GetActorLocation();
+
+			ABomb* bomb = (ABomb*)GetWorld()->SpawnActor(bombBPClass, &location);
+			bomb->SetRange(bombRange);
+			bomb->OnBombExplosion.BindUFunction(this, FName("BindBombExploded"));
+			bomb->LightFuse();
+
+			bombCount--;
 		}
+	}
+	else
+	{
+		if (remoteBombCount > 0)
+		{
+			// Debug
+			if (showDebugMessages)
+			{
+				GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, TEXT("Bomb placed by: ") + name.ToString());
+			}
 
-		FVector location = this->GetActorLocation();
+			FVector location = this->GetActorLocation();
 
-		ABomb* bomb = (ABomb*)GetWorld()->SpawnActor(bombBPClass, &location);
-		bomb->SetRange(bombRange);
-		bomb->OnBombExplosion.BindUFunction(this, FName("BindBombExploded"));
+			ABomb* bomb = (ABomb*)GetWorld()->SpawnActor(bombBPClass, &location);
+			bomb->SetRange(bombRange);
+			bomb->SetFuseTime(0.0f);
 
-		bombCount--;
+			remoteBomb = bomb;
+
+			remoteBombCount--;
+		}
+	}
+}
+
+void APlayerCharacter::DetonateBomb()
+{
+	if (remoteBombPower && remoteBomb)
+	{
+		remoteBomb->Explode();
+		remoteBomb = nullptr;
+
+		remoteBombCount++;
 	}
 }
 
@@ -216,10 +261,26 @@ void APlayerCharacter::PowerUp(PickupType type, float value)
 		case PickupType::BombCount: bombCount += value;	// Increase bomb count
 			break;
 		case PickupType::Remote:
+			remoteBombPower = true;
+			GetWorldTimerManager().SetTimer(remotePowerTimerHandle, this, &APlayerCharacter::EndRemotePower, value, false);
+			remoteBombCount = 1;
 			break;
 		default:
 			break;
 	}
+}
+
+void APlayerCharacter::EndRemotePower()
+{
+	// Detonate remote bomb, in case it's still active
+	DetonateBomb();
+
+	// Remove timer
+	GetWorldTimerManager().ClearTimer(remotePowerTimerHandle);
+
+	// Reset counters
+	remoteBombPower = false;
+	remoteBombCount = 0;
 }
 
 void APlayerCharacter::BindBombExploded()

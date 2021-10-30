@@ -30,6 +30,12 @@ public:
 
 	void SetRange(float newRange) { range = newRange; };
 
+	// Set new fuse time
+	void SetFuseTime(float newTime) { fuseTime = newTime; };
+
+	// Light the fuse
+	void LightFuse();
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
