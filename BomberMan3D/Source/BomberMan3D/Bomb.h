@@ -27,6 +27,8 @@ public:
 
 	virtual void Reset() override { Destroy(); };
 
+	void SetRange(float newRange) { range = newRange; };
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
@@ -39,4 +41,7 @@ protected:
 
 	// Reference BP Asset in the Editor
 	TSubclassOf<AExplosion> explosionBPClass;
+
+	// Range for explosion
+	float range;
 };

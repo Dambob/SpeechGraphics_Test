@@ -23,6 +23,8 @@ ABomb::ABomb()
 	}
 
 	SetActorEnableCollision(true);
+
+	range = 200.0f;
 }
 
 // Called when the game starts or when spawned
@@ -55,6 +57,9 @@ void ABomb::Explode()
 
 		if (explosion)
 		{
+			// Set explosion range
+			explosion->SetRange(range);
+
 			// Rotate each explosion 90 degrees to cover each direction
 			explosion->SetRotation(FRotator(0.0f, rotation*i, 0.0f));
 		}

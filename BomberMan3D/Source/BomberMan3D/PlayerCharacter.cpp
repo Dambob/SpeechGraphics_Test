@@ -46,6 +46,7 @@ APlayerCharacter::APlayerCharacter()
 	id = -1;
 
 	GetCharacterMovement()->MaxWalkSpeed = 200.0f;
+	bombRange = 200.0f;
 }
 
 // Called when the game starts or when spawned
@@ -197,6 +198,7 @@ void APlayerCharacter::PlaceBomb()
 		FVector location = this->GetActorLocation();
 
 		ABomb* bomb = (ABomb*)GetWorld()->SpawnActor(bombBPClass, &location);
+		bomb->SetRange(bombRange);
 		bomb->OnBombExplosion.BindUFunction(this, FName("BindBombExploded"));
 
 		bombCount--;
@@ -207,9 +209,9 @@ void APlayerCharacter::PowerUp(PickupType type, float value)
 {
 	switch (type)
 	{
-	case PickupType::Speed: GetCharacterMovement()->MaxWalkSpeed += value;
+		case PickupType::Speed: GetCharacterMovement()->MaxWalkSpeed = value;	// Set run speed
 			break;
-		case PickupType::Range:
+		case PickupType::Range: bombRange = value;	// Set bomb range
 			break;
 		case PickupType::BombCount: bombCount += value;	// Increase bomb count
 			break;

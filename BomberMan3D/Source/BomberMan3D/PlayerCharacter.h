@@ -87,5 +87,8 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Character")
 	int bombCount;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Character")
+	int bombRange;
+
 	bool alive;
 };

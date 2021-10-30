@@ -25,6 +25,8 @@ public:
 
 	virtual void Reset() override { Destroy(); };
 
+	void SetRange(float newRange) { Range = newRange; };
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;

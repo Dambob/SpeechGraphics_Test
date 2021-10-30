@@ -77,7 +77,8 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(APlayerCharacter); \
 #define BomberMan3D_Source_BomberMan3D_PlayerCharacter_h_17_PRIVATE_PROPERTY_OFFSET \
 	FORCEINLINE static uint32 __PPO__nameplate() { return STRUCT_OFFSET(APlayerCharacter, nameplate); } \
 	FORCEINLINE static uint32 __PPO__name() { return STRUCT_OFFSET(APlayerCharacter, name); } \
-	FORCEINLINE static uint32 __PPO__bombCount() { return STRUCT_OFFSET(APlayerCharacter, bombCount); }
+	FORCEINLINE static uint32 __PPO__bombCount() { return STRUCT_OFFSET(APlayerCharacter, bombCount); } \
+	FORCEINLINE static uint32 __PPO__bombRange() { return STRUCT_OFFSET(APlayerCharacter, bombRange); }
 
 
 #define BomberMan3D_Source_BomberMan3D_PlayerCharacter_h_14_PROLOG
