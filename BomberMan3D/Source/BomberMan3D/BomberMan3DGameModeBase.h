@@ -41,4 +41,6 @@ protected:
 	void SpawnPlayerTwo();
 
 	void CheckPlayers();
+
+	bool running;
 };

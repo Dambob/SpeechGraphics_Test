@@ -32,7 +32,10 @@ void ABomberMan3DGameModeBase::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-	CheckPlayers();
+	if (running)
+	{
+		CheckPlayers();
+	}
 }
 
 void ABomberMan3DGameModeBase::StartPlay()
@@ -46,6 +49,8 @@ void ABomberMan3DGameModeBase::StartPlay()
 	GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Yellow, TEXT("We are using ") + this->GetClass()->GetFName().ToString());
 
 	SpawnPlayerTwo();
+
+	running = true;
 }
 
 int ABomberMan3DGameModeBase::GetScore(int playerID) const
@@ -114,6 +119,7 @@ void ABomberMan3DGameModeBase::CheckPlayers()
 		// Draw
 		// Get game state
 		GetGameState<ABomberMan3DGameStateBase>()->result = "Draw";
+		running = false;
 	}
 	else if (livingPlayers.Num() == 1)
 	{
@@ -134,6 +140,7 @@ void ABomberMan3DGameModeBase::CheckPlayers()
 			//GetGameState<ABomberMan3DGameStateBase>();
 
 			GetGameState<ABomberMan3DGameStateBase>()->result = TEXT("Winner: ") + livingPlayers[0]->GetName().ToString();
+			running = false;
 		}
 	}	
 }
@@ -148,4 +155,5 @@ void ABomberMan3DGameModeBase::ResetLevel()
 	SpawnPlayerTwo();
 
 	GetGameState<ABomberMan3DGameStateBase>()->result = "None";
+	running = true;
 }
