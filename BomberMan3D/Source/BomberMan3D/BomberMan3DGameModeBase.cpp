@@ -28,7 +28,7 @@ ABomberMan3DGameModeBase::ABomberMan3DGameModeBase()
 		DefaultPawnClass = PlayerPawnBPClass.Class;
 	}
 
-	roundTime = 60.0f;
+	roundTime = 120.0f;
 }
 
 void ABomberMan3DGameModeBase::Tick(float DeltaTime)
