@@ -1,0 +1,8 @@
+{
+	"SourceFiles": [
+		"D:\\Users\\Damien\\Documents\\Development\\SpeechGraphics_Test\\BomberMan3D\\Source\\BomberMan3D\\BomberMan3D.Build.cs",
+		"D:\\Users\\Damien\\Documents\\Development\\SpeechGraphics_Test\\BomberMan3D\\Source\\BomberMan3D.Target.cs",
+		"D:\\Users\\Damien\\Documents\\Development\\SpeechGraphics_Test\\BomberMan3D\\Source\\BomberMan3DEditor.Target.cs"
+	],
+	"EngineVersion": "4.26.2"
+}

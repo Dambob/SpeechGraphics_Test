@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\BomberMan3D.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{360B6AF8-4557-40DD-AB49-62D5E3098E9F}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\BomberMan3D.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\BomberMan3DEditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <Filter Include="Config">
+      <UniqueIdentifier>{D8336C61-50B0-4A10-AF51-914D684073A3}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Source\BomberMan3D">
+      <UniqueIdentifier>{F16E93DA-B50B-4338-90E3-F7E324F66D1D}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\BomberMan3D\Block.cpp">
+      <Filter>Source\BomberMan3D</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\BomberMan3D\Block.h">
+      <Filter>Source\BomberMan3D</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\BomberMan3D\BlockDestructible.cpp">
+      <Filter>Source\BomberMan3D</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\BomberMan3D\BlockDestructible.h">
+      <Filter>Source\BomberMan3D</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\BomberMan3D\Bomb.cpp">
+      <Filter>Source\BomberMan3D</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\BomberMan3D\Bomb.h">
+      <Filter>Source\BomberMan3D</Filter>
+    </ClInclude>
+    <None Include="..\..\Source\BomberMan3D\BomberMan3D.Build.cs">
+      <Filter>Source\BomberMan3D</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\BomberMan3D\BomberMan3D.cpp">
+      <Filter>Source\BomberMan3D</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\BomberMan3D\BomberMan3D.h">
+      <Filter>Source\BomberMan3D</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\BomberMan3D\BomberMan3DGameInstance.cpp">
+      <Filter>Source\BomberMan3D</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\BomberMan3D\BomberMan3DGameInstance.h">
+      <Filter>Source\BomberMan3D</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\BomberMan3D\BomberMan3DGameModeBase.cpp">
+      <Filter>Source\BomberMan3D</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\BomberMan3D\BomberMan3DGameModeBase.h">
+      <Filter>Source\BomberMan3D</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\BomberMan3D\BomberMan3DGameStateBase.cpp">
+      <Filter>Source\BomberMan3D</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\BomberMan3D\BomberMan3DGameStateBase.h">
+      <Filter>Source\BomberMan3D</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\BomberMan3D\BomberMan3DSaveGame.cpp">
+      <Filter>Source\BomberMan3D</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\BomberMan3D\BomberMan3DSaveGame.h">
+      <Filter>Source\BomberMan3D</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\BomberMan3D\DMActorWidgetComponent.cpp">
+      <Filter>Source\BomberMan3D</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\BomberMan3D\DMActorWidgetComponent.h">
+      <Filter>Source\BomberMan3D</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\BomberMan3D\DMUserWidget.cpp">
+      <Filter>Source\BomberMan3D</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\BomberMan3D\DMUserWidget.h">
+      <Filter>Source\BomberMan3D</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\BomberMan3D\Explosion.cpp">
+      <Filter>Source\BomberMan3D</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\BomberMan3D\Explosion.h">
+      <Filter>Source\BomberMan3D</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\BomberMan3D\LocalMPViewportClient.cpp">
+      <Filter>Source\BomberMan3D</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\BomberMan3D\LocalMPViewportClient.h">
+      <Filter>Source\BomberMan3D</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\BomberMan3D\Pickup.cpp">
+      <Filter>Source\BomberMan3D</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\BomberMan3D\Pickup.h">
+      <Filter>Source\BomberMan3D</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\BomberMan3D\PlayerCharacter.cpp">
+      <Filter>Source\BomberMan3D</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\BomberMan3D\PlayerCharacter.h">
+      <Filter>Source\BomberMan3D</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
