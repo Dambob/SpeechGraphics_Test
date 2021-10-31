@@ -36,7 +36,7 @@ APlayerCharacter::APlayerCharacter() :
 		UE_LOG(LogTemp, Warning, TEXT("No nameplate widget found."));
 	}
 
-	static ConstructorHelpers::FClassFinder<ABomb> bombBP(TEXT("/Game/Blueprints/BPBomb"));
+	static ConstructorHelpers::FClassFinder<ABomb> bombBP(TEXT("/Game/Blueprints/Actors/BPBomb"));
 
 	if (bombBP.Succeeded())
 	{
