@@ -45,4 +45,6 @@ Controls:
   - Detonate Bomb (remote) - Right Shift
 
 Known Issues:
-- Inconsistent error when running in PIE mode "Pure virtual function being called while application was running (gIsRunning == 1)"
+- Inconsistent error when running in PIE mode ([#2][i2])
+
+[i2]: https://github.com/Dambob/SpeechGraphics_Test/issues/2
