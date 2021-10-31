@@ -14,8 +14,20 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define BOMBERMAN3D_BomberMan3DGameInstance_generated_h
 
 #define BomberMan3D_Source_BomberMan3D_BomberMan3DGameInstance_h_15_SPARSE_DATA
-#define BomberMan3D_Source_BomberMan3D_BomberMan3DGameInstance_h_15_RPC_WRAPPERS
-#define BomberMan3D_Source_BomberMan3D_BomberMan3DGameInstance_h_15_RPC_WRAPPERS_NO_PURE_DECLS
+#define BomberMan3D_Source_BomberMan3D_BomberMan3DGameInstance_h_15_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execLoad); \
+	DECLARE_FUNCTION(execSave); \
+	DECLARE_FUNCTION(execReset);
+
+
+#define BomberMan3D_Source_BomberMan3D_BomberMan3DGameInstance_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execLoad); \
+	DECLARE_FUNCTION(execSave); \
+	DECLARE_FUNCTION(execReset);
+
+
 #define BomberMan3D_Source_BomberMan3D_BomberMan3DGameInstance_h_15_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUBomberMan3DGameInstance(); \

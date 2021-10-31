@@ -19,7 +19,7 @@ void ABomberMan3DGameStateBase::HandleBeginPlay()
 
 	if (instance)
 	{
-		// Save score in instance
+		// Load score from instance
 		score = instance->score;
 	}
 }

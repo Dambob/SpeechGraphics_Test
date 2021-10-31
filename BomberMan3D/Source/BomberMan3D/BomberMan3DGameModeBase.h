@@ -28,8 +28,6 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-	virtual void StartToLeaveMap() override;
-
 	/* Return the player score based on ID. */
 	UFUNCTION(BlueprintPure, Category = "Score")
 	virtual int GetScore(int playerID) const;
@@ -46,18 +44,9 @@ public:
 	UFUNCTION(BlueprintPure, Category = "Player")
 	virtual int GetBombCount(int playerID) const;
 
-	/* Save game. */
-	UFUNCTION(BlueprintPure)
-	virtual bool Save();
-
-	UFUNCTION(BlueprintPure)
-	virtual bool Load();
-
 protected:	
 	// Flag to check if game is still running
 	bool running;
-
-	FString saveSlotName;
 
 	// Round timer
 	FTimerHandle gameTimerHandle;

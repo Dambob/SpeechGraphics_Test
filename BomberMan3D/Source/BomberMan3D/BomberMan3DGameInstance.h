@@ -18,6 +18,20 @@ public:
 	UBomberMan3DGameInstance();
 	virtual ~UBomberMan3DGameInstance() = default;
 
+	FString saveSlotName;
+
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	TArray<int> score;	
+	TArray<int> score;
+
+	/* Reset game instance to start a new game */
+	UFUNCTION(BlueprintCallable)
+	virtual void Reset();
+
+	/* Save game. */
+	UFUNCTION(BlueprintCallable)
+	virtual bool Save();
+
+	/* Load Game */
+	UFUNCTION(BlueprintCallable)
+	virtual bool Load();
 };

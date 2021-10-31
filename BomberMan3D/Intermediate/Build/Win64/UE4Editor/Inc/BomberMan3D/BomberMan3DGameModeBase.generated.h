@@ -16,8 +16,6 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define BomberMan3D_Source_BomberMan3D_BomberMan3DGameModeBase_h_18_SPARSE_DATA
 #define BomberMan3D_Source_BomberMan3D_BomberMan3DGameModeBase_h_18_RPC_WRAPPERS \
  \
-	DECLARE_FUNCTION(execLoad); \
-	DECLARE_FUNCTION(execSave); \
 	DECLARE_FUNCTION(execGetBombCount); \
 	DECLARE_FUNCTION(execGetRemainingTime); \
 	DECLARE_FUNCTION(execSetScore); \
@@ -26,8 +24,6 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
 #define BomberMan3D_Source_BomberMan3D_BomberMan3DGameModeBase_h_18_RPC_WRAPPERS_NO_PURE_DECLS \
  \
-	DECLARE_FUNCTION(execLoad); \
-	DECLARE_FUNCTION(execSave); \
 	DECLARE_FUNCTION(execGetBombCount); \
 	DECLARE_FUNCTION(execGetRemainingTime); \
 	DECLARE_FUNCTION(execSetScore); \
