@@ -46,24 +46,10 @@ float ABlockDestructible::TakeDamage(float Damage, FDamageEvent const& DamageEve
 		}
 
 		// Remove block
-		Kill();
+		Destroy();
 	}
 
 	return ActualDamage;
-}
-
-void ABlockDestructible::Reset()
-{
-	// Unhide block
-	SetActorEnableCollision(true);
-	SetActorHiddenInGame(false);	
-}
-
-void ABlockDestructible::Kill()
-{
-	// Hide block
-	SetActorEnableCollision(false);
-	SetActorHiddenInGame(true);
 }
 
 void ABlockDestructible::SpawnPowerup()

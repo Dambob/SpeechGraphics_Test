@@ -28,6 +28,8 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
+	virtual void StartToLeaveMap() override;
+
 	/* Return the player score based on ID. */
 	UFUNCTION(BlueprintPure, Category = "Score")
 	virtual int GetScore(int playerID) const;
@@ -60,8 +62,7 @@ protected:
 
 	APlayerCharacter* GetPlayer(int playerID) const;
 
-	// Spawns second player first time
-	void SpawnPlayerTwo();
+	bool SpawnPlayer(int playerID);
 
 	// Start and restart game
 	void SetupGame();

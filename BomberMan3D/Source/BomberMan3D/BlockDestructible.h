@@ -21,14 +21,10 @@ public:
 	virtual ~ABlockDestructible() = default;
 
 	float TakeDamage(float Damage, FDamageEvent const& DamageEvent, AController* EventInstigator, AActor* DamageCauser) override;
-
-	virtual void Reset() override;
 	
 protected:
 	// Reference BP Asset in the Editor
 	TSubclassOf<APickup> pickupBPClass;
-
-	void Kill();
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Pickups")
 	float dropChance;

@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\BomberMan3D.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{9488E17F-FC65-4A2F-83AC-61204AB0DBC0}</UniqueIdentifier>
+      <UniqueIdentifier>{360B6AF8-4557-40DD-AB49-62D5E3098E9F}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\BomberMan3D.Target.cs">
       <Filter>Source</Filter>
@@ -12,7 +12,7 @@
       <Filter>Source</Filter>
     </None>
     <Filter Include="Config">
-      <UniqueIdentifier>{92496E34-5118-456A-95C1-4958F67EFA93}</UniqueIdentifier>
+      <UniqueIdentifier>{D8336C61-50B0-4A10-AF51-914D684073A3}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -27,7 +27,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\BomberMan3D">
-      <UniqueIdentifier>{5392D7A8-9E89-4BA7-89D2-DA29C149707F}</UniqueIdentifier>
+      <UniqueIdentifier>{F16E93DA-B50B-4338-90E3-F7E324F66D1D}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\BomberMan3D\Block.cpp">
       <Filter>Source\BomberMan3D</Filter>
@@ -72,6 +72,12 @@
       <Filter>Source\BomberMan3D</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\BomberMan3D\BomberMan3DGameStateBase.h">
+      <Filter>Source\BomberMan3D</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\BomberMan3D\BomberMan3DSaveGame.cpp">
+      <Filter>Source\BomberMan3D</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\BomberMan3D\BomberMan3DSaveGame.h">
       <Filter>Source\BomberMan3D</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\BomberMan3D\DMActorWidgetComponent.cpp">

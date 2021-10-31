@@ -42,11 +42,14 @@ void ABomberMan3DGameModeBase::Tick(float DeltaTime)
 	}
 }
 
+void ABomberMan3DGameModeBase::StartToLeaveMap()
+{
+	GetGameState<ABomberMan3DGameStateBase>()->HandleLeavingMap();
+}
+
 void ABomberMan3DGameModeBase::StartPlay()
 {
 	Super::StartPlay();
-
-	SpawnPlayerTwo();
 
 	SetupGame();
 }
@@ -89,6 +92,9 @@ APlayerCharacter* ABomberMan3DGameModeBase::GetPlayer(int playerID) const
 
 void ABomberMan3DGameModeBase::SetupGame()
 {
+	SpawnPlayer(0);
+	SpawnPlayer(1);
+
 	// Repopulate player list
 	PopulatePlayerList();
 
@@ -167,14 +173,21 @@ int ABomberMan3DGameModeBase::GetBombCount(int playerID) const
 	return -1;
 }
 
-void ABomberMan3DGameModeBase::SpawnPlayerTwo()
+bool ABomberMan3DGameModeBase::SpawnPlayer(int playerID)
 {
 	UWorld* world = this->GetWorld();
 
 	if (world)
 	{
-		APlayerController* playerController = UGameplayStatics::CreatePlayer(world);
+		APlayerController* playerController = UGameplayStatics::CreatePlayer(world, playerID);
+		
+		if (playerController)
+		{
+			return true;
+		}
 	}
+
+	return false;
 }
 
 TArray<APlayerCharacter*> ABomberMan3DGameModeBase::UpdateLivingPlayers()
