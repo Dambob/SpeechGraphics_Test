@@ -31,10 +31,6 @@ void EmptyLinkFunctionForGeneratedCodeBomberMan3DSaveGame() {}
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
-#if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_SaveSlotName_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FStrPropertyParams NewProp_SaveSlotName;
 		static const UE4CodeGen_Private::FUnsizedIntPropertyParams NewProp_score_Inner;
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_score_MetaData[];
@@ -55,13 +51,6 @@ void EmptyLinkFunctionForGeneratedCodeBomberMan3DSaveGame() {}
 		{ "ModuleRelativePath", "BomberMan3DSaveGame.h" },
 	};
 #endif
-#if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UBomberMan3DSaveGame_Statics::NewProp_SaveSlotName_MetaData[] = {
-		{ "Category", "BomberMan3DSaveGame" },
-		{ "ModuleRelativePath", "BomberMan3DSaveGame.h" },
-	};
-#endif
-	const UE4CodeGen_Private::FStrPropertyParams Z_Construct_UClass_UBomberMan3DSaveGame_Statics::NewProp_SaveSlotName = { "SaveSlotName", nullptr, (EPropertyFlags)0x0010000000020001, UE4CodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UBomberMan3DSaveGame, SaveSlotName), METADATA_PARAMS(Z_Construct_UClass_UBomberMan3DSaveGame_Statics::NewProp_SaveSlotName_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UBomberMan3DSaveGame_Statics::NewProp_SaveSlotName_MetaData)) };
 	const UE4CodeGen_Private::FUnsizedIntPropertyParams Z_Construct_UClass_UBomberMan3DSaveGame_Statics::NewProp_score_Inner = { "score", nullptr, (EPropertyFlags)0x0000000000020000, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, METADATA_PARAMS(nullptr, 0) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UBomberMan3DSaveGame_Statics::NewProp_score_MetaData[] = {
@@ -71,7 +60,6 @@ void EmptyLinkFunctionForGeneratedCodeBomberMan3DSaveGame() {}
 #endif
 	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UClass_UBomberMan3DSaveGame_Statics::NewProp_score = { "score", nullptr, (EPropertyFlags)0x0010000000020001, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UBomberMan3DSaveGame, score), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UClass_UBomberMan3DSaveGame_Statics::NewProp_score_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UBomberMan3DSaveGame_Statics::NewProp_score_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UBomberMan3DSaveGame_Statics::PropPointers[] = {
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UBomberMan3DSaveGame_Statics::NewProp_SaveSlotName,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UBomberMan3DSaveGame_Statics::NewProp_score_Inner,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UBomberMan3DSaveGame_Statics::NewProp_score,
 	};
@@ -102,7 +90,7 @@ void EmptyLinkFunctionForGeneratedCodeBomberMan3DSaveGame() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(UBomberMan3DSaveGame, 3150787137);
+	IMPLEMENT_CLASS(UBomberMan3DSaveGame, 1299698895);
 	template<> BOMBERMAN3D_API UClass* StaticClass<UBomberMan3DSaveGame>()
 	{
 		return UBomberMan3DSaveGame::StaticClass();

@@ -140,3 +140,7 @@ D:\Program Files\Epic Games\UE_4.26\Engine\Source\Runtime\Engine\Classes\GameFra
 D:\Program Files\Epic Games\UE_4.26\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\GameStateBase.generated.h
 D:\Users\Damien\Documents\Development\SpeechGraphics_Test\BomberMan3D\Intermediate\Build\Win64\UE4Editor\Inc\BomberMan3D\BomberMan3DGameStateBase.generated.h
 D:\Windows Kits\10\include\10.0.19041.0\ucrt\math.h
+D:\Users\Damien\Documents\Development\SpeechGraphics_Test\BomberMan3D\Source\BomberMan3D\BomberMan3DSaveGame.h
+D:\Program Files\Epic Games\UE_4.26\Engine\Source\Runtime\Engine\Classes\GameFramework/SaveGame.h
+D:\Program Files\Epic Games\UE_4.26\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\SaveGame.generated.h
+D:\Users\Damien\Documents\Development\SpeechGraphics_Test\BomberMan3D\Intermediate\Build\Win64\UE4Editor\Inc\BomberMan3D\BomberMan3DSaveGame.generated.h

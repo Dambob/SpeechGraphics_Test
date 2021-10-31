@@ -18,6 +18,20 @@ void EmptyLinkFunctionForGeneratedCodeBomberMan3DGameModeBase() {}
 	ENGINE_API UClass* Z_Construct_UClass_AGameModeBase();
 	UPackage* Z_Construct_UPackage__Script_BomberMan3D();
 // End Cross Module References
+	DEFINE_FUNCTION(ABomberMan3DGameModeBase::execLoad)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		*(bool*)Z_Param__Result=P_THIS->Load();
+		P_NATIVE_END;
+	}
+	DEFINE_FUNCTION(ABomberMan3DGameModeBase::execSave)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		*(bool*)Z_Param__Result=P_THIS->Save();
+		P_NATIVE_END;
+	}
 	DEFINE_FUNCTION(ABomberMan3DGameModeBase::execGetBombCount)
 	{
 		P_GET_PROPERTY(FIntProperty,Z_Param_playerID);
@@ -57,6 +71,8 @@ void EmptyLinkFunctionForGeneratedCodeBomberMan3DGameModeBase() {}
 			{ "GetBombCount", &ABomberMan3DGameModeBase::execGetBombCount },
 			{ "GetRemainingTime", &ABomberMan3DGameModeBase::execGetRemainingTime },
 			{ "GetScore", &ABomberMan3DGameModeBase::execGetScore },
+			{ "Load", &ABomberMan3DGameModeBase::execLoad },
+			{ "Save", &ABomberMan3DGameModeBase::execSave },
 			{ "SetScore", &ABomberMan3DGameModeBase::execSetScore },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
@@ -85,9 +101,9 @@ void EmptyLinkFunctionForGeneratedCodeBomberMan3DGameModeBase() {}
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ABomberMan3DGameModeBase_GetBombCount_Statics::Function_MetaDataParams[] = {
 		{ "Category", "Player" },
-		{ "Comment", "/* Return the player score based on ID. */" },
+		{ "Comment", "/* Return the player bomb count based on ID. */" },
 		{ "ModuleRelativePath", "BomberMan3DGameModeBase.h" },
-		{ "ToolTip", "Return the player score based on ID." },
+		{ "ToolTip", "Return the player bomb count based on ID." },
 	};
 #endif
 	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_ABomberMan3DGameModeBase_GetBombCount_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ABomberMan3DGameModeBase, nullptr, "GetBombCount", nullptr, nullptr, sizeof(BomberMan3DGameModeBase_eventGetBombCount_Parms), Z_Construct_UFunction_ABomberMan3DGameModeBase_GetBombCount_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ABomberMan3DGameModeBase_GetBombCount_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x54020400, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ABomberMan3DGameModeBase_GetBombCount_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_ABomberMan3DGameModeBase_GetBombCount_Statics::Function_MetaDataParams)) };
@@ -120,9 +136,9 @@ void EmptyLinkFunctionForGeneratedCodeBomberMan3DGameModeBase() {}
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ABomberMan3DGameModeBase_GetRemainingTime_Statics::Function_MetaDataParams[] = {
 		{ "Category", "Timer" },
-		{ "Comment", "/* Return the player score based on ID. */" },
+		{ "Comment", "/* Return the round time remaining. */" },
 		{ "ModuleRelativePath", "BomberMan3DGameModeBase.h" },
-		{ "ToolTip", "Return the player score based on ID." },
+		{ "ToolTip", "Return the round time remaining." },
 	};
 #endif
 	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_ABomberMan3DGameModeBase_GetRemainingTime_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ABomberMan3DGameModeBase, nullptr, "GetRemainingTime", nullptr, nullptr, sizeof(BomberMan3DGameModeBase_eventGetRemainingTime_Parms), Z_Construct_UFunction_ABomberMan3DGameModeBase_GetRemainingTime_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ABomberMan3DGameModeBase_GetRemainingTime_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x54020400, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ABomberMan3DGameModeBase_GetRemainingTime_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_ABomberMan3DGameModeBase_GetRemainingTime_Statics::Function_MetaDataParams)) };
@@ -171,6 +187,82 @@ void EmptyLinkFunctionForGeneratedCodeBomberMan3DGameModeBase() {}
 		if (!ReturnFunction)
 		{
 			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_ABomberMan3DGameModeBase_GetScore_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_ABomberMan3DGameModeBase_Load_Statics
+	{
+		struct BomberMan3DGameModeBase_eventLoad_Parms
+		{
+			bool ReturnValue;
+		};
+		static void NewProp_ReturnValue_SetBit(void* Obj);
+		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_ReturnValue;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+	void Z_Construct_UFunction_ABomberMan3DGameModeBase_Load_Statics::NewProp_ReturnValue_SetBit(void* Obj)
+	{
+		((BomberMan3DGameModeBase_eventLoad_Parms*)Obj)->ReturnValue = 1;
+	}
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_ABomberMan3DGameModeBase_Load_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(BomberMan3DGameModeBase_eventLoad_Parms), &Z_Construct_UFunction_ABomberMan3DGameModeBase_Load_Statics::NewProp_ReturnValue_SetBit, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ABomberMan3DGameModeBase_Load_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ABomberMan3DGameModeBase_Load_Statics::NewProp_ReturnValue,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ABomberMan3DGameModeBase_Load_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "BomberMan3DGameModeBase.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_ABomberMan3DGameModeBase_Load_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ABomberMan3DGameModeBase, nullptr, "Load", nullptr, nullptr, sizeof(BomberMan3DGameModeBase_eventLoad_Parms), Z_Construct_UFunction_ABomberMan3DGameModeBase_Load_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ABomberMan3DGameModeBase_Load_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x14020400, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ABomberMan3DGameModeBase_Load_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_ABomberMan3DGameModeBase_Load_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_ABomberMan3DGameModeBase_Load()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_ABomberMan3DGameModeBase_Load_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_ABomberMan3DGameModeBase_Save_Statics
+	{
+		struct BomberMan3DGameModeBase_eventSave_Parms
+		{
+			bool ReturnValue;
+		};
+		static void NewProp_ReturnValue_SetBit(void* Obj);
+		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_ReturnValue;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+	void Z_Construct_UFunction_ABomberMan3DGameModeBase_Save_Statics::NewProp_ReturnValue_SetBit(void* Obj)
+	{
+		((BomberMan3DGameModeBase_eventSave_Parms*)Obj)->ReturnValue = 1;
+	}
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_ABomberMan3DGameModeBase_Save_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(BomberMan3DGameModeBase_eventSave_Parms), &Z_Construct_UFunction_ABomberMan3DGameModeBase_Save_Statics::NewProp_ReturnValue_SetBit, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ABomberMan3DGameModeBase_Save_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ABomberMan3DGameModeBase_Save_Statics::NewProp_ReturnValue,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ABomberMan3DGameModeBase_Save_Statics::Function_MetaDataParams[] = {
+		{ "Comment", "/* Save game. */" },
+		{ "ModuleRelativePath", "BomberMan3DGameModeBase.h" },
+		{ "ToolTip", "Save game." },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_ABomberMan3DGameModeBase_Save_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ABomberMan3DGameModeBase, nullptr, "Save", nullptr, nullptr, sizeof(BomberMan3DGameModeBase_eventSave_Parms), Z_Construct_UFunction_ABomberMan3DGameModeBase_Save_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ABomberMan3DGameModeBase_Save_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x14020400, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ABomberMan3DGameModeBase_Save_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_ABomberMan3DGameModeBase_Save_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_ABomberMan3DGameModeBase_Save()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_ABomberMan3DGameModeBase_Save_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -237,9 +329,11 @@ void EmptyLinkFunctionForGeneratedCodeBomberMan3DGameModeBase() {}
 		(UObject* (*)())Z_Construct_UPackage__Script_BomberMan3D,
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_ABomberMan3DGameModeBase_Statics::FuncInfo[] = {
-		{ &Z_Construct_UFunction_ABomberMan3DGameModeBase_GetBombCount, "GetBombCount" }, // 857958510
-		{ &Z_Construct_UFunction_ABomberMan3DGameModeBase_GetRemainingTime, "GetRemainingTime" }, // 1320339498
+		{ &Z_Construct_UFunction_ABomberMan3DGameModeBase_GetBombCount, "GetBombCount" }, // 378671625
+		{ &Z_Construct_UFunction_ABomberMan3DGameModeBase_GetRemainingTime, "GetRemainingTime" }, // 2197040782
 		{ &Z_Construct_UFunction_ABomberMan3DGameModeBase_GetScore, "GetScore" }, // 393965031
+		{ &Z_Construct_UFunction_ABomberMan3DGameModeBase_Load, "Load" }, // 2687211078
+		{ &Z_Construct_UFunction_ABomberMan3DGameModeBase_Save, "Save" }, // 851752547
 		{ &Z_Construct_UFunction_ABomberMan3DGameModeBase_SetScore, "SetScore" }, // 941023620
 	};
 #if WITH_METADATA
@@ -290,7 +384,7 @@ void EmptyLinkFunctionForGeneratedCodeBomberMan3DGameModeBase() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ABomberMan3DGameModeBase, 3977411209);
+	IMPLEMENT_CLASS(ABomberMan3DGameModeBase, 1946198878);
 	template<> BOMBERMAN3D_API UClass* StaticClass<ABomberMan3DGameModeBase>()
 	{
 		return ABomberMan3DGameModeBase::StaticClass();

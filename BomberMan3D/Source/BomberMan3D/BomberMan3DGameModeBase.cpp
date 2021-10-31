@@ -8,9 +8,11 @@
 #include "BomberMan3DGameStateBase.h"
 #include "Explosion.h"
 #include <math.h>
+#include "BomberMan3DSaveGame.h"
 
 ABomberMan3DGameModeBase::ABomberMan3DGameModeBase() :
 	running(false),
+	saveSlotName("SaveSlotA"),
 	roundTime(120.0f)
 {
 	PrimaryActorTick.bStartWithTickEnabled = true;
@@ -44,12 +46,19 @@ void ABomberMan3DGameModeBase::Tick(float DeltaTime)
 
 void ABomberMan3DGameModeBase::StartToLeaveMap()
 {
-	GetGameState<ABomberMan3DGameStateBase>()->HandleLeavingMap();
+	// Update the data in Instance
+	GetGameState<ABomberMan3DGameStateBase>()->UpdateInstance();
 }
 
 void ABomberMan3DGameModeBase::StartPlay()
 {
 	Super::StartPlay();
+
+	// Load scores from previous save
+	/*if (!Load())
+	{
+		GEngine->AddOnScreenDebugMessage(INDEX_NONE, 5, FColor::Red, TEXT("Failed to load save."));
+	}*/
 
 	SetupGame();
 }
@@ -100,6 +109,7 @@ void ABomberMan3DGameModeBase::SetupGame()
 
 	// Reset game state
 	GetGameState<ABomberMan3DGameStateBase>()->result = "None";
+
 	running = true;
 
 	// Reset the timer
@@ -171,6 +181,43 @@ int ABomberMan3DGameModeBase::GetBombCount(int playerID) const
 	}
 
 	return -1;
+}
+
+bool ABomberMan3DGameModeBase::Save()
+{
+	if (UBomberMan3DSaveGame* SaveGameInstance = Cast<UBomberMan3DSaveGame>(UGameplayStatics::CreateSaveGameObject(UBomberMan3DSaveGame::StaticClass())))
+	{
+		// Set data on the savegame object.
+		SaveGameInstance->score = GetGameState<ABomberMan3DGameStateBase>()->score;
+
+		// Save the data immediately.
+		if (UGameplayStatics::SaveGameToSlot(SaveGameInstance, saveSlotName, 0))
+		{
+			// Save succeeded.
+			return true;
+		}
+	}
+
+	return false;
+}
+
+bool ABomberMan3DGameModeBase::Load()
+{
+	if (UBomberMan3DSaveGame* LoadedGame = Cast<UBomberMan3DSaveGame>(UGameplayStatics::LoadGameFromSlot(saveSlotName, 0)))
+	{
+		// Set data on the savegame object.
+		GetGameState<ABomberMan3DGameStateBase>()->score = LoadedGame->score;
+		GetGameState<ABomberMan3DGameStateBase>()->UpdateInstance();
+
+
+		GEngine->AddOnScreenDebugMessage(INDEX_NONE, 5, FColor::Red, TEXT("Loaded score p1: ") + FString::FromInt(GetGameState<ABomberMan3DGameStateBase>()->score[0]));
+		GEngine->AddOnScreenDebugMessage(INDEX_NONE, 5, FColor::Red, TEXT("Loaded score p2: ") + FString::FromInt(GetGameState<ABomberMan3DGameStateBase>()->score[1]));
+
+		// Load succeeded.
+		return true;
+	}
+
+	return false;
 }
 
 bool ABomberMan3DGameModeBase::SpawnPlayer(int playerID)

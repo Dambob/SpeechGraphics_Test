@@ -24,7 +24,7 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	FString result;
 
-	virtual void HandleLeavingMap();
+	virtual void UpdateInstance();
 
 protected:
 	virtual void HandleBeginPlay() override;

@@ -18,8 +18,5 @@ public:
 	UBomberMan3DSaveGame();
 
 	UPROPERTY(VisibleAnywhere)
-	FString SaveSlotName;
-
-	UPROPERTY(VisibleAnywhere)
 	TArray<int> score;	
 };

@@ -24,7 +24,7 @@ void ABomberMan3DGameStateBase::HandleBeginPlay()
 	}
 }
 
-void ABomberMan3DGameStateBase::HandleLeavingMap()
+void ABomberMan3DGameStateBase::UpdateInstance()
 {
 	UBomberMan3DGameInstance* instance = dynamic_cast<UBomberMan3DGameInstance*>(GetGameInstance());
 

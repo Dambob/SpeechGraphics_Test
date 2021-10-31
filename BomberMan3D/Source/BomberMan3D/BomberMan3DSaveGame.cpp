@@ -4,7 +4,6 @@
 #include "BomberMan3DSaveGame.h"
 
 UBomberMan3DSaveGame::UBomberMan3DSaveGame() :
-	SaveSlotName(TEXT("SaveSlotA")),
 	score({0,0})
 {
 }

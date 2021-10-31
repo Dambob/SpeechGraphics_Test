@@ -38,17 +38,26 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Score")
 	virtual void SetScore(int playerID, int newScore);
 
-	/* Return the player score based on ID. */
+	/* Return the round time remaining. */
 	UFUNCTION(BlueprintPure, Category = "Timer")
 	virtual float GetRemainingTime() const;
 
-	/* Return the player score based on ID. */
+	/* Return the player bomb count based on ID. */
 	UFUNCTION(BlueprintPure, Category = "Player")
 	virtual int GetBombCount(int playerID) const;
+
+	/* Save game. */
+	UFUNCTION(BlueprintPure)
+	virtual bool Save();
+
+	UFUNCTION(BlueprintPure)
+	virtual bool Load();
 
 protected:	
 	// Flag to check if game is still running
 	bool running;
+
+	FString saveSlotName;
 
 	// Round timer
 	FTimerHandle gameTimerHandle;
