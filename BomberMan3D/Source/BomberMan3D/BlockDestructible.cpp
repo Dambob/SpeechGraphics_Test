@@ -9,17 +9,6 @@ ABlockDestructible::ABlockDestructible(const FObjectInitializer& ObjectInitializ
 	ABlock(ObjectInitializer),
 	dropChance(30.0f)
 {
-	static ConstructorHelpers::FClassFinder<APickup> pickupBP(TEXT("/Game/Blueprints/Pickups/BPPickup"));
-
-	if (pickupBP.Succeeded())
-	{
-		pickupBPClass = pickupBP.Class;
-	}
-	else
-	{
-		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, TEXT("No pickup class found."));
-	}
-
 	if (DefaultSceneRoot)
 	{
 		DefaultSceneRoot->SetMobility(EComponentMobility::Movable);
@@ -54,31 +43,16 @@ float ABlockDestructible::TakeDamage(float Damage, FDamageEvent const& DamageEve
 
 void ABlockDestructible::SpawnPowerup()
 {
+	if (DropClasses.Num() == 0)
+	{
+		// No drops set
+		return;
+	}
+
+	// Pick powerup
+	int typeRoll = FMath::RandRange(0, DropClasses.Num() - 1);
+
 	// Spawn powerup
 	FVector location = this->GetActorLocation();
-	APickup* pickup = (APickup*)GetWorld()->SpawnActor(pickupBPClass, &location);
-
-	int typeRoll = FMath::RandRange(0, 3);
-
-	switch (typeRoll)
-	{
-		case 0:
-			pickup->SetType(PickupType::Range);
-			pickup->SetValue(300.0f);
-			break;
-		case 1:
-			pickup->SetType(PickupType::Speed);
-			pickup->SetValue(500.0f);
-			break;
-		case 2:
-			pickup->SetType(PickupType::BombCount);
-			pickup->SetValue(1.0f);
-			break;
-		case 3:
-			pickup->SetType(PickupType::Remote);
-			pickup->SetValue(10.0f);
-			break;
-		default:
-			break;
-	}
+	APickup* pickup = (APickup*)GetWorld()->SpawnActor(DropClasses[typeRoll], &location);
 }

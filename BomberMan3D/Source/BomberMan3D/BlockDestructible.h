@@ -24,7 +24,10 @@ public:
 	
 protected:
 	// Reference BP Asset in the Editor
-	TSubclassOf<APickup> pickupBPClass;
+	//TSubclassOf<APickup> pickupBPClass;
+
+	UPROPERTY(EditAnywhere, Category = "Pickups", meta = (AllowPrivateAccess = "true"))
+	TArray<TSubclassOf<APickup>> DropClasses;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Pickups")
 	float dropChance;

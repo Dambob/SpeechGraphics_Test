@@ -59,6 +59,7 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(ABlockDestructible); \
 
 
 #define BomberMan3D_Source_BomberMan3D_BlockDestructible_h_16_PRIVATE_PROPERTY_OFFSET \
+	FORCEINLINE static uint32 __PPO__DropClasses() { return STRUCT_OFFSET(ABlockDestructible, DropClasses); } \
 	FORCEINLINE static uint32 __PPO__dropChance() { return STRUCT_OFFSET(ABlockDestructible, dropChance); }
 
 
