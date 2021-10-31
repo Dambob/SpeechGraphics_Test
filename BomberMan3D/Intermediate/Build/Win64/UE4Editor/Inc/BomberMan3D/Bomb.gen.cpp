@@ -5,7 +5,7 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "BomberMan3D/Bomb.h"
+#include "BomberMan3D/Public/Actors/Bomb.h"
 #ifdef _MSC_VER
 #pragma warning (push)
 #pragma warning (disable : 4883)
@@ -29,7 +29,7 @@ void EmptyLinkFunctionForGeneratedCodeBomb() {}
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UDelegateFunction_ABomb_BombExploded__DelegateSignature_Statics::Function_MetaDataParams[] = {
 		{ "Comment", "// Event trigged when bomb has exploded\n" },
-		{ "ModuleRelativePath", "Bomb.h" },
+		{ "ModuleRelativePath", "Public/Actors/Bomb.h" },
 		{ "ToolTip", "Event trigged when bomb has exploded" },
 	};
 #endif
@@ -73,19 +73,19 @@ void EmptyLinkFunctionForGeneratedCodeBomb() {}
 	};
 #if WITH_EDITOR
 	const FClassFunctionLinkInfo Z_Construct_UClass_ABomb_Statics::FuncInfo[] = {
-		{ &Z_Construct_UDelegateFunction_ABomb_BombExploded__DelegateSignature, "BombExploded__DelegateSignature" }, // 2049444864
+		{ &Z_Construct_UDelegateFunction_ABomb_BombExploded__DelegateSignature, "BombExploded__DelegateSignature" }, // 3242639151
 	};
 #endif //WITH_EDITOR
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABomb_Statics::Class_MetaDataParams[] = {
-		{ "IncludePath", "Bomb.h" },
-		{ "ModuleRelativePath", "Bomb.h" },
+		{ "IncludePath", "Actors/Bomb.h" },
+		{ "ModuleRelativePath", "Public/Actors/Bomb.h" },
 	};
 #endif
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABomb_Statics::NewProp_fuseTime_MetaData[] = {
 		{ "Category", "Bomb" },
-		{ "ModuleRelativePath", "Bomb.h" },
+		{ "ModuleRelativePath", "Public/Actors/Bomb.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ABomb_Statics::NewProp_fuseTime = { "fuseTime", nullptr, (EPropertyFlags)0x0020080000000005, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ABomb, fuseTime), METADATA_PARAMS(Z_Construct_UClass_ABomb_Statics::NewProp_fuseTime_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ABomb_Statics::NewProp_fuseTime_MetaData)) };
@@ -119,7 +119,7 @@ void EmptyLinkFunctionForGeneratedCodeBomb() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ABomb, 4293590796);
+	IMPLEMENT_CLASS(ABomb, 3145643609);
 	template<> BOMBERMAN3D_API UClass* StaticClass<ABomb>()
 	{
 		return ABomb::StaticClass();

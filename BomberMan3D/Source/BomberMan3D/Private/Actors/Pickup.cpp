@@ -1,8 +1,8 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "Pickup.h"
-#include "PlayerCharacter.h"
+#include "../Public/Actors/Pickup.h"
+#include "../Public/Players/PlayerCharacter.h"
 
 // Sets default values
 APickup::APickup(const FObjectInitializer& ObjectInitializer) :

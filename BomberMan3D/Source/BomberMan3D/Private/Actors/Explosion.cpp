@@ -1,11 +1,11 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "Explosion.h"
-#include "PlayerCharacter.h"
-#include "Bomb.h"
-#include "BlockDestructible.h"
-#include "Pickup.h"
+#include "../Public/Actors/Explosion.h"
+#include "../Public/Players/PlayerCharacter.h"
+#include "../Public/Actors/Bomb.h"
+#include "../Public/Actors/BlockDestructible.h"
+#include "../Public/Actors/Pickup.h"
 
 // Sets default values
 AExplosion::AExplosion(const FObjectInitializer& ObjectInitializer) :

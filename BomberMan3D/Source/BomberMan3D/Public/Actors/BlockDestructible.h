@@ -3,8 +3,8 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "Block.h"
-#include "Pickup.h"
+#include "../Public/Actors/Block.h"
+#include "../Public/Actors/Pickup.h"
 #include "BlockDestructible.generated.h"
 
 /**

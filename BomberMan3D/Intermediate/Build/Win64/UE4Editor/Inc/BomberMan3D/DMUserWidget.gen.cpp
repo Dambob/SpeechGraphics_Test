@@ -5,7 +5,7 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "BomberMan3D/DMUserWidget.h"
+#include "BomberMan3D/Public/Widgets/DMUserWidget.h"
 #ifdef _MSC_VER
 #pragma warning (push)
 #pragma warning (disable : 4883)
@@ -40,7 +40,7 @@ void EmptyLinkFunctionForGeneratedCodeDMUserWidget() {}
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UDelegateFunction_BomberMan3D_OnOwningActorChanged__DelegateSignature_Statics::Function_MetaDataParams[] = {
 		{ "Comment", "// Declare event type for the owning actor being changed\n" },
-		{ "ModuleRelativePath", "DMUserWidget.h" },
+		{ "ModuleRelativePath", "Public/Widgets/DMUserWidget.h" },
 		{ "ToolTip", "Declare event type for the owning actor being changed" },
 	};
 #endif
@@ -106,7 +106,7 @@ void EmptyLinkFunctionForGeneratedCodeDMUserWidget() {}
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UDMUserWidget_GetName_Statics::Function_MetaDataParams[] = {
 		{ "Comment", "// Return the name of this widget\n" },
-		{ "ModuleRelativePath", "DMUserWidget.h" },
+		{ "ModuleRelativePath", "Public/Widgets/DMUserWidget.h" },
 		{ "ToolTip", "Return the name of this widget" },
 	};
 #endif
@@ -140,7 +140,7 @@ void EmptyLinkFunctionForGeneratedCodeDMUserWidget() {}
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UDMUserWidget_GetOwner_Statics::Function_MetaDataParams[] = {
 		{ "Comment", "// Return the owning actor of this widget\n" },
-		{ "ModuleRelativePath", "DMUserWidget.h" },
+		{ "ModuleRelativePath", "Public/Widgets/DMUserWidget.h" },
 		{ "ToolTip", "Return the owning actor of this widget" },
 	};
 #endif
@@ -174,7 +174,7 @@ void EmptyLinkFunctionForGeneratedCodeDMUserWidget() {}
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UDMUserWidget_SetOwner_Statics::Function_MetaDataParams[] = {
 		{ "Comment", "// Set the owning actor of this widget\n" },
-		{ "ModuleRelativePath", "DMUserWidget.h" },
+		{ "ModuleRelativePath", "Public/Widgets/DMUserWidget.h" },
 		{ "ToolTip", "Set the owning actor of this widget" },
 	};
 #endif
@@ -220,15 +220,15 @@ void EmptyLinkFunctionForGeneratedCodeDMUserWidget() {}
 		(UObject* (*)())Z_Construct_UPackage__Script_BomberMan3D,
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_UDMUserWidget_Statics::FuncInfo[] = {
-		{ &Z_Construct_UFunction_UDMUserWidget_GetName, "GetName" }, // 1397289125
-		{ &Z_Construct_UFunction_UDMUserWidget_GetOwner, "GetOwner" }, // 234602619
-		{ &Z_Construct_UFunction_UDMUserWidget_SetOwner, "SetOwner" }, // 2431709501
+		{ &Z_Construct_UFunction_UDMUserWidget_GetName, "GetName" }, // 3520444189
+		{ &Z_Construct_UFunction_UDMUserWidget_GetOwner, "GetOwner" }, // 4088074636
+		{ &Z_Construct_UFunction_UDMUserWidget_SetOwner, "SetOwner" }, // 1452602659
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UDMUserWidget_Statics::Class_MetaDataParams[] = {
 		{ "Comment", "// Base class for UMG Widgets that belong to a single Actor in the world via a WidgetComponent, eg. for 3D health-bars, nameplate, interaction tooltip.\n" },
-		{ "IncludePath", "DMUserWidget.h" },
-		{ "ModuleRelativePath", "DMUserWidget.h" },
+		{ "IncludePath", "Widgets/DMUserWidget.h" },
+		{ "ModuleRelativePath", "Public/Widgets/DMUserWidget.h" },
 		{ "ToolTip", "Base class for UMG Widgets that belong to a single Actor in the world via a WidgetComponent, eg. for 3D health-bars, nameplate, interaction tooltip." },
 	};
 #endif
@@ -236,7 +236,7 @@ void EmptyLinkFunctionForGeneratedCodeDMUserWidget() {}
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UDMUserWidget_Statics::NewProp_OnOwningActorChanged_MetaData[] = {
 		{ "Category", "DM|Widget" },
 		{ "Comment", "// Event triggered when owning actor is changed\n" },
-		{ "ModuleRelativePath", "DMUserWidget.h" },
+		{ "ModuleRelativePath", "Public/Widgets/DMUserWidget.h" },
 		{ "ToolTip", "Event triggered when owning actor is changed" },
 	};
 #endif
@@ -245,7 +245,7 @@ void EmptyLinkFunctionForGeneratedCodeDMUserWidget() {}
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UDMUserWidget_Statics::NewProp_widgetName_MetaData[] = {
 		{ "Category", "DM|Widget" },
 		{ "Comment", "// Widget name variable\n" },
-		{ "ModuleRelativePath", "DMUserWidget.h" },
+		{ "ModuleRelativePath", "Public/Widgets/DMUserWidget.h" },
 		{ "ToolTip", "Widget name variable" },
 	};
 #endif
@@ -254,7 +254,7 @@ void EmptyLinkFunctionForGeneratedCodeDMUserWidget() {}
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UDMUserWidget_Statics::NewProp_owner_MetaData[] = {
 		{ "Category", "DM|Widget" },
 		{ "Comment", "// Owning actor variable\n" },
-		{ "ModuleRelativePath", "DMUserWidget.h" },
+		{ "ModuleRelativePath", "Public/Widgets/DMUserWidget.h" },
 		{ "ToolTip", "Owning actor variable" },
 	};
 #endif
@@ -291,7 +291,7 @@ void EmptyLinkFunctionForGeneratedCodeDMUserWidget() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(UDMUserWidget, 1567449266);
+	IMPLEMENT_CLASS(UDMUserWidget, 2504610055);
 	template<> BOMBERMAN3D_API UClass* StaticClass<UDMUserWidget>()
 	{
 		return UDMUserWidget::StaticClass();

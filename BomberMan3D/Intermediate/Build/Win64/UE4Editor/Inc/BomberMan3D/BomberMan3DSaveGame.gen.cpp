@@ -5,7 +5,7 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "BomberMan3D/BomberMan3DSaveGame.h"
+#include "BomberMan3D/Public/Game/BomberMan3DSaveGame.h"
 #ifdef _MSC_VER
 #pragma warning (push)
 #pragma warning (disable : 4883)
@@ -47,15 +47,15 @@ void EmptyLinkFunctionForGeneratedCodeBomberMan3DSaveGame() {}
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UBomberMan3DSaveGame_Statics::Class_MetaDataParams[] = {
 		{ "Comment", "/**\n * \n */" },
-		{ "IncludePath", "BomberMan3DSaveGame.h" },
-		{ "ModuleRelativePath", "BomberMan3DSaveGame.h" },
+		{ "IncludePath", "Game/BomberMan3DSaveGame.h" },
+		{ "ModuleRelativePath", "Public/Game/BomberMan3DSaveGame.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FUnsizedIntPropertyParams Z_Construct_UClass_UBomberMan3DSaveGame_Statics::NewProp_score_Inner = { "score", nullptr, (EPropertyFlags)0x0000000000020000, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, METADATA_PARAMS(nullptr, 0) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UBomberMan3DSaveGame_Statics::NewProp_score_MetaData[] = {
 		{ "Category", "BomberMan3DSaveGame" },
-		{ "ModuleRelativePath", "BomberMan3DSaveGame.h" },
+		{ "ModuleRelativePath", "Public/Game/BomberMan3DSaveGame.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UClass_UBomberMan3DSaveGame_Statics::NewProp_score = { "score", nullptr, (EPropertyFlags)0x0010000000020001, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UBomberMan3DSaveGame, score), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UClass_UBomberMan3DSaveGame_Statics::NewProp_score_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UBomberMan3DSaveGame_Statics::NewProp_score_MetaData)) };
@@ -90,7 +90,7 @@ void EmptyLinkFunctionForGeneratedCodeBomberMan3DSaveGame() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(UBomberMan3DSaveGame, 1299698895);
+	IMPLEMENT_CLASS(UBomberMan3DSaveGame, 2225548551);
 	template<> BOMBERMAN3D_API UClass* StaticClass<UBomberMan3DSaveGame>()
 	{
 		return UBomberMan3DSaveGame::StaticClass();

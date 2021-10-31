@@ -1,8 +1,8 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "BomberMan3DGameInstance.h"
-#include "BomberMan3DSaveGame.h"
+#include "../Public/Game/BomberMan3DGameInstance.h"
+#include "../Public/Game/BomberMan3DSaveGame.h"
 #include "Kismet/GameplayStatics.h"
 
 UBomberMan3DGameInstance::UBomberMan3DGameInstance() :

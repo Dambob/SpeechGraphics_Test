@@ -31,6 +31,7 @@
 /wd4244
 /wd4838
 /I .
+/I D:\Users\Damien\Documents\Development\SpeechGraphics_Test\BomberMan3D\Source\BomberMan3D\Private
 /I ..\Intermediate\Build\Win64\UE4Editor\Inc\Engine
 /I Runtime
 /I Runtime\Engine\Classes
@@ -232,6 +233,7 @@
 /I Runtime\ClothingSystemRuntimeInterface\Public
 /I D:\Users\Damien\Documents\Development\SpeechGraphics_Test\BomberMan3D\Intermediate\Build\Win64\UE4Editor\Inc\BomberMan3D
 /I D:\Users\Damien\Documents\Development\SpeechGraphics_Test\BomberMan3D\Source
+/I D:\Users\Damien\Documents\Development\SpeechGraphics_Test\BomberMan3D\Source\BomberMan3D\Public
 /I ..\Plugins\FX\Niagara\Intermediate\Build\Win64\UE4Editor\Inc\Niagara
 /I ..\Plugins\FX\Niagara\Source
 /I ..\Plugins\FX\Niagara\Source\Niagara\Classes
@@ -279,7 +281,7 @@
 /FI"D:\Users\Damien\Documents\Development\SpeechGraphics_Test\BomberMan3D\Intermediate\Build\Win64\BomberMan3DEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
 /Yu"D:\Users\Damien\Documents\Development\SpeechGraphics_Test\BomberMan3D\Intermediate\Build\Win64\BomberMan3DEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
 /Fp"D:\Users\Damien\Documents\Development\SpeechGraphics_Test\BomberMan3D\Intermediate\Build\Win64\BomberMan3DEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.pch"
-"D:\Users\Damien\Documents\Development\SpeechGraphics_Test\BomberMan3D\Source\BomberMan3D\BlockDestructible.cpp"
+"D:\Users\Damien\Documents\Development\SpeechGraphics_Test\BomberMan3D\Source\BomberMan3D\Private\Actors\BlockDestructible.cpp"
 /FI"D:\Users\Damien\Documents\Development\SpeechGraphics_Test\BomberMan3D\Intermediate\Build\Win64\UE4Editor\Development\BomberMan3D\Definitions.BomberMan3D.h"
 /Fo"D:\Users\Damien\Documents\Development\SpeechGraphics_Test\BomberMan3D\Intermediate\Build\Win64\UE4Editor\Development\BomberMan3D\BlockDestructible.cpp.obj"
 /TP

@@ -1,7 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "BlockDestructible.h"
+#include "../Public/Actors/BlockDestructible.h"
 #include "Math/UnrealMathUtility.h"
 
 // Sets default values

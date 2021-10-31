@@ -1,6 +1,6 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
-#include "DMUserWidget.h"
+#include "../Public/Widgets/DMUserWidget.h"
 
 // Set the owning actor of this widget
 void UDMUserWidget::SetOwner(AActor* newOwner)

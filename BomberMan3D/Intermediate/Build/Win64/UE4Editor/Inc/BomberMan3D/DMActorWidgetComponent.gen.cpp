@@ -5,7 +5,7 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "BomberMan3D/DMActorWidgetComponent.h"
+#include "BomberMan3D/Public/Widgets/DMActorWidgetComponent.h"
 #ifdef _MSC_VER
 #pragma warning (push)
 #pragma warning (disable : 4883)
@@ -44,8 +44,8 @@ void EmptyLinkFunctionForGeneratedCodeDMActorWidgetComponent() {}
 		{ "ClassGroupNames", "DM" },
 		{ "Comment", "/*\n\x09""Extension of the WidgetComponent to make it easy to have owning Actor context to the Widget. Commonly used to display health bars, names, and interaction panels above Actors.\n\x09""Automatically calls SetOwningActor on the widget if the correct type of widget is used (ActorAttachWidget)\n*/" },
 		{ "HideCategories", "Object Activation Components|Activation Sockets Base Lighting LOD Mesh Mobility Trigger" },
-		{ "IncludePath", "DMActorWidgetComponent.h" },
-		{ "ModuleRelativePath", "DMActorWidgetComponent.h" },
+		{ "IncludePath", "Widgets/DMActorWidgetComponent.h" },
+		{ "ModuleRelativePath", "Public/Widgets/DMActorWidgetComponent.h" },
 		{ "ToolTip", "Extension of the WidgetComponent to make it easy to have owning Actor context to the Widget. Commonly used to display health bars, names, and interaction panels above Actors.\nAutomatically calls SetOwningActor on the widget if the correct type of widget is used (ActorAttachWidget)" },
 	};
 #endif
@@ -76,7 +76,7 @@ void EmptyLinkFunctionForGeneratedCodeDMActorWidgetComponent() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(UDMActorWidgetComponent, 3940912819);
+	IMPLEMENT_CLASS(UDMActorWidgetComponent, 3965265434);
 	template<> BOMBERMAN3D_API UClass* StaticClass<UDMActorWidgetComponent>()
 	{
 		return UDMActorWidgetComponent::StaticClass();

@@ -1,8 +1,8 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "BomberMan3DGameStateBase.h"
-#include "BomberMan3DGameInstance.h"
+#include "../Public/Game/BomberMan3DGameStateBase.h"
+#include "../Public/Game/BomberMan3DGameInstance.h"
 
 ABomberMan3DGameStateBase::ABomberMan3DGameStateBase() :
 	score({ 0,0 }),

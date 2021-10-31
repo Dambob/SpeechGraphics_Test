@@ -5,7 +5,7 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "BomberMan3D/BomberMan3DGameStateBase.h"
+#include "BomberMan3D/Public/Game/BomberMan3DGameStateBase.h"
 #ifdef _MSC_VER
 #pragma warning (push)
 #pragma warning (disable : 4883)
@@ -52,8 +52,8 @@ void EmptyLinkFunctionForGeneratedCodeBomberMan3DGameStateBase() {}
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABomberMan3DGameStateBase_Statics::Class_MetaDataParams[] = {
 		{ "Comment", "/**\n * \n */" },
 		{ "HideCategories", "Input Movement Collision Rendering Utilities|Transformation" },
-		{ "IncludePath", "BomberMan3DGameStateBase.h" },
-		{ "ModuleRelativePath", "BomberMan3DGameStateBase.h" },
+		{ "IncludePath", "Game/BomberMan3DGameStateBase.h" },
+		{ "ModuleRelativePath", "Public/Game/BomberMan3DGameStateBase.h" },
 		{ "ShowCategories", "Input|MouseInput Input|TouchInput" },
 	};
 #endif
@@ -61,14 +61,14 @@ void EmptyLinkFunctionForGeneratedCodeBomberMan3DGameStateBase() {}
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABomberMan3DGameStateBase_Statics::NewProp_score_MetaData[] = {
 		{ "Category", "BomberMan3DGameStateBase" },
-		{ "ModuleRelativePath", "BomberMan3DGameStateBase.h" },
+		{ "ModuleRelativePath", "Public/Game/BomberMan3DGameStateBase.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UClass_ABomberMan3DGameStateBase_Statics::NewProp_score = { "score", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ABomberMan3DGameStateBase, score), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UClass_ABomberMan3DGameStateBase_Statics::NewProp_score_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ABomberMan3DGameStateBase_Statics::NewProp_score_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABomberMan3DGameStateBase_Statics::NewProp_result_MetaData[] = {
 		{ "Category", "BomberMan3DGameStateBase" },
-		{ "ModuleRelativePath", "BomberMan3DGameStateBase.h" },
+		{ "ModuleRelativePath", "Public/Game/BomberMan3DGameStateBase.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FStrPropertyParams Z_Construct_UClass_ABomberMan3DGameStateBase_Statics::NewProp_result = { "result", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ABomberMan3DGameStateBase, result), METADATA_PARAMS(Z_Construct_UClass_ABomberMan3DGameStateBase_Statics::NewProp_result_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ABomberMan3DGameStateBase_Statics::NewProp_result_MetaData)) };
@@ -104,7 +104,7 @@ void EmptyLinkFunctionForGeneratedCodeBomberMan3DGameStateBase() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ABomberMan3DGameStateBase, 3143649594);
+	IMPLEMENT_CLASS(ABomberMan3DGameStateBase, 2217217221);
 	template<> BOMBERMAN3D_API UClass* StaticClass<ABomberMan3DGameStateBase>()
 	{
 		return ABomberMan3DGameStateBase::StaticClass();

@@ -5,7 +5,7 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "BomberMan3D/BomberMan3DGameModeBase.h"
+#include "BomberMan3D/Public/Game/BomberMan3DGameModeBase.h"
 #ifdef _MSC_VER
 #pragma warning (push)
 #pragma warning (disable : 4883)
@@ -86,7 +86,7 @@ void EmptyLinkFunctionForGeneratedCodeBomberMan3DGameModeBase() {}
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ABomberMan3DGameModeBase_GetBombCount_Statics::Function_MetaDataParams[] = {
 		{ "Category", "Player" },
 		{ "Comment", "/* Return the player bomb count based on ID. */" },
-		{ "ModuleRelativePath", "BomberMan3DGameModeBase.h" },
+		{ "ModuleRelativePath", "Public/Game/BomberMan3DGameModeBase.h" },
 		{ "ToolTip", "Return the player bomb count based on ID." },
 	};
 #endif
@@ -121,7 +121,7 @@ void EmptyLinkFunctionForGeneratedCodeBomberMan3DGameModeBase() {}
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ABomberMan3DGameModeBase_GetRemainingTime_Statics::Function_MetaDataParams[] = {
 		{ "Category", "Timer" },
 		{ "Comment", "/* Return the round time remaining. */" },
-		{ "ModuleRelativePath", "BomberMan3DGameModeBase.h" },
+		{ "ModuleRelativePath", "Public/Game/BomberMan3DGameModeBase.h" },
 		{ "ToolTip", "Return the round time remaining." },
 	};
 #endif
@@ -160,7 +160,7 @@ void EmptyLinkFunctionForGeneratedCodeBomberMan3DGameModeBase() {}
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ABomberMan3DGameModeBase_GetScore_Statics::Function_MetaDataParams[] = {
 		{ "Category", "Score" },
 		{ "Comment", "/* Return the player score based on ID. */" },
-		{ "ModuleRelativePath", "BomberMan3DGameModeBase.h" },
+		{ "ModuleRelativePath", "Public/Game/BomberMan3DGameModeBase.h" },
 		{ "ToolTip", "Return the player score based on ID." },
 	};
 #endif
@@ -199,7 +199,7 @@ void EmptyLinkFunctionForGeneratedCodeBomberMan3DGameModeBase() {}
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ABomberMan3DGameModeBase_SetScore_Statics::Function_MetaDataParams[] = {
 		{ "Category", "Score" },
 		{ "Comment", "/* Set the player score based on ID. */" },
-		{ "ModuleRelativePath", "BomberMan3DGameModeBase.h" },
+		{ "ModuleRelativePath", "Public/Game/BomberMan3DGameModeBase.h" },
 		{ "ToolTip", "Set the player score based on ID." },
 	};
 #endif
@@ -237,17 +237,17 @@ void EmptyLinkFunctionForGeneratedCodeBomberMan3DGameModeBase() {}
 		(UObject* (*)())Z_Construct_UPackage__Script_BomberMan3D,
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_ABomberMan3DGameModeBase_Statics::FuncInfo[] = {
-		{ &Z_Construct_UFunction_ABomberMan3DGameModeBase_GetBombCount, "GetBombCount" }, // 378671625
-		{ &Z_Construct_UFunction_ABomberMan3DGameModeBase_GetRemainingTime, "GetRemainingTime" }, // 2197040782
-		{ &Z_Construct_UFunction_ABomberMan3DGameModeBase_GetScore, "GetScore" }, // 393965031
-		{ &Z_Construct_UFunction_ABomberMan3DGameModeBase_SetScore, "SetScore" }, // 941023620
+		{ &Z_Construct_UFunction_ABomberMan3DGameModeBase_GetBombCount, "GetBombCount" }, // 453507452
+		{ &Z_Construct_UFunction_ABomberMan3DGameModeBase_GetRemainingTime, "GetRemainingTime" }, // 371619516
+		{ &Z_Construct_UFunction_ABomberMan3DGameModeBase_GetScore, "GetScore" }, // 1197673089
+		{ &Z_Construct_UFunction_ABomberMan3DGameModeBase_SetScore, "SetScore" }, // 2778836581
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABomberMan3DGameModeBase_Statics::Class_MetaDataParams[] = {
 		{ "Comment", "/**\n * \n */" },
 		{ "HideCategories", "Info Rendering MovementReplication Replication Actor Input Movement Collision Rendering Utilities|Transformation" },
-		{ "IncludePath", "BomberMan3DGameModeBase.h" },
-		{ "ModuleRelativePath", "BomberMan3DGameModeBase.h" },
+		{ "IncludePath", "Game/BomberMan3DGameModeBase.h" },
+		{ "ModuleRelativePath", "Public/Game/BomberMan3DGameModeBase.h" },
 		{ "ShowCategories", "Input|MouseInput Input|TouchInput" },
 	};
 #endif
@@ -255,7 +255,7 @@ void EmptyLinkFunctionForGeneratedCodeBomberMan3DGameModeBase() {}
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABomberMan3DGameModeBase_Statics::NewProp_roundTime_MetaData[] = {
 		{ "Category", "Game" },
 		{ "Comment", "// Time per round\n" },
-		{ "ModuleRelativePath", "BomberMan3DGameModeBase.h" },
+		{ "ModuleRelativePath", "Public/Game/BomberMan3DGameModeBase.h" },
 		{ "ToolTip", "Time per round" },
 	};
 #endif
@@ -290,7 +290,7 @@ void EmptyLinkFunctionForGeneratedCodeBomberMan3DGameModeBase() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ABomberMan3DGameModeBase, 3798620494);
+	IMPLEMENT_CLASS(ABomberMan3DGameModeBase, 3294256534);
 	template<> BOMBERMAN3D_API UClass* StaticClass<ABomberMan3DGameModeBase>()
 	{
 		return ABomberMan3DGameModeBase::StaticClass();

@@ -1,10 +1,10 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "PlayerCharacter.h"
+#include "../Public/Players/PlayerCharacter.h"
 #include "Kismet/GameplayStatics.h"
 #include "Camera/CameraActor.h"
-#include "DMActorWidgetComponent.h"
+#include "../Public/Widgets/DMActorWidgetComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
 
 // Sets default values

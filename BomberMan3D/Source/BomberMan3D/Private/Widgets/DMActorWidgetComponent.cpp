@@ -1,7 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
-#include "DMActorWidgetComponent.h"
-#include "DMUserWidget.h"
+#include "../Public/Widgets/DMActorWidgetComponent.h"
+#include "../Public/Widgets/DMUserWidget.h"
 
 UDMActorWidgetComponent::UDMActorWidgetComponent()
 {

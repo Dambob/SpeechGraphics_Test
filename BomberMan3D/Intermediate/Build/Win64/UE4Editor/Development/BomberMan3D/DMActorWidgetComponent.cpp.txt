@@ -1,5 +1,5 @@
 D:\Users\Damien\Documents\Development\SpeechGraphics_Test\BomberMan3D\Intermediate\Build\Win64\UE4Editor\Development\BomberMan3D\Definitions.BomberMan3D.h
-D:\Users\Damien\Documents\Development\SpeechGraphics_Test\BomberMan3D\Source\BomberMan3D\DMActorWidgetComponent.h
+D:\Users\Damien\Documents\Development\SpeechGraphics_Test\BomberMan3D\Source\BomberMan3D\Private\../Public/Widgets/DMActorWidgetComponent.h
 D:\Program Files\Epic Games\UE_4.26\Engine\Source\Runtime\UMG\Public\Components/WidgetComponent.h
 D:\Program Files\Epic Games\UE_4.26\Engine\Source\Runtime\UMG\Public\Blueprint/UserWidget.h
 D:\Program Files\Epic Games\UE_4.26\Engine\Source\Runtime\UMG\Public\Components/SlateWrapperTypes.h
@@ -102,5 +102,5 @@ D:\Program Files\Epic Games\UE_4.26\Engine\Intermediate\Build\Win64\UE4Editor\In
 D:\Program Files\Epic Games\UE_4.26\Engine\Intermediate\Build\Win64\UE4Editor\Inc\UMG\UserWidget.generated.h
 D:\Program Files\Epic Games\UE_4.26\Engine\Intermediate\Build\Win64\UE4Editor\Inc\UMG\WidgetComponent.generated.h
 D:\Users\Damien\Documents\Development\SpeechGraphics_Test\BomberMan3D\Intermediate\Build\Win64\UE4Editor\Inc\BomberMan3D\DMActorWidgetComponent.generated.h
-D:\Users\Damien\Documents\Development\SpeechGraphics_Test\BomberMan3D\Source\BomberMan3D\DMUserWidget.h
+D:\Users\Damien\Documents\Development\SpeechGraphics_Test\BomberMan3D\Source\BomberMan3D\Private\../Public/Widgets/DMUserWidget.h
 D:\Users\Damien\Documents\Development\SpeechGraphics_Test\BomberMan3D\Intermediate\Build\Win64\UE4Editor\Inc\BomberMan3D\DMUserWidget.generated.h

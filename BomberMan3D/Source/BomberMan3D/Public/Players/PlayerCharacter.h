@@ -4,8 +4,8 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
-#include "Bomb.h"
-#include "Pickup.h"
+#include "../Public/Actors/Bomb.h"
+#include "../Public/Actors/Pickup.h"
 #include "PlayerCharacter.generated.h"
 
 // Forward declarations

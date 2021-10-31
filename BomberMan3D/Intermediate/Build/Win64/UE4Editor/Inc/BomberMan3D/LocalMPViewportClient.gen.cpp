@@ -5,7 +5,7 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "BomberMan3D/LocalMPViewportClient.h"
+#include "BomberMan3D/Public/Game/LocalMPViewportClient.h"
 #include "Engine/Classes/Engine/Engine.h"
 #ifdef _MSC_VER
 #pragma warning (push)
@@ -42,8 +42,8 @@ void EmptyLinkFunctionForGeneratedCodeLocalMPViewportClient() {}
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ULocalMPViewportClient_Statics::Class_MetaDataParams[] = {
 		{ "Comment", "/*\n\x09""Allow local multiplayer to occur on single keyboard\n*/" },
-		{ "IncludePath", "LocalMPViewportClient.h" },
-		{ "ModuleRelativePath", "LocalMPViewportClient.h" },
+		{ "IncludePath", "Game/LocalMPViewportClient.h" },
+		{ "ModuleRelativePath", "Public/Game/LocalMPViewportClient.h" },
 		{ "ToolTip", "Allow local multiplayer to occur on single keyboard" },
 	};
 #endif
@@ -74,7 +74,7 @@ void EmptyLinkFunctionForGeneratedCodeLocalMPViewportClient() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ULocalMPViewportClient, 4124316663);
+	IMPLEMENT_CLASS(ULocalMPViewportClient, 1004014811);
 	template<> BOMBERMAN3D_API UClass* StaticClass<ULocalMPViewportClient>()
 	{
 		return ULocalMPViewportClient::StaticClass();

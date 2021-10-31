@@ -1,7 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "Block.h"
+#include "../Public/Actors/Block.h"
 
 // Sets default values
 ABlock::ABlock(const FObjectInitializer& ObjectInitializer)

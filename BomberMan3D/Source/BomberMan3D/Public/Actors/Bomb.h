@@ -4,7 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include "Explosion.h"
+#include "../Public/Actors/Explosion.h"
 #include "Bomb.generated.h"
 
 UCLASS()

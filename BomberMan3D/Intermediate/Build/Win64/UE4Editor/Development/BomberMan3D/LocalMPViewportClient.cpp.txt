@@ -1,3 +1,3 @@
 D:\Users\Damien\Documents\Development\SpeechGraphics_Test\BomberMan3D\Intermediate\Build\Win64\UE4Editor\Development\BomberMan3D\Definitions.BomberMan3D.h
-D:\Users\Damien\Documents\Development\SpeechGraphics_Test\BomberMan3D\Source\BomberMan3D\LocalMPViewportClient.h
+D:\Users\Damien\Documents\Development\SpeechGraphics_Test\BomberMan3D\Source\BomberMan3D\Private\../Public/Game/LocalMPViewportClient.h
 D:\Users\Damien\Documents\Development\SpeechGraphics_Test\BomberMan3D\Intermediate\Build\Win64\UE4Editor\Inc\BomberMan3D\LocalMPViewportClient.generated.h

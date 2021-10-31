@@ -13,10 +13,10 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define BOMBERMAN3D_LocalMPViewportClient_generated_h
 
-#define BomberMan3D_Source_BomberMan3D_LocalMPViewportClient_h_15_SPARSE_DATA
-#define BomberMan3D_Source_BomberMan3D_LocalMPViewportClient_h_15_RPC_WRAPPERS
-#define BomberMan3D_Source_BomberMan3D_LocalMPViewportClient_h_15_RPC_WRAPPERS_NO_PURE_DECLS
-#define BomberMan3D_Source_BomberMan3D_LocalMPViewportClient_h_15_INCLASS_NO_PURE_DECLS \
+#define BomberMan3D_Source_BomberMan3D_Public_Game_LocalMPViewportClient_h_15_SPARSE_DATA
+#define BomberMan3D_Source_BomberMan3D_Public_Game_LocalMPViewportClient_h_15_RPC_WRAPPERS
+#define BomberMan3D_Source_BomberMan3D_Public_Game_LocalMPViewportClient_h_15_RPC_WRAPPERS_NO_PURE_DECLS
+#define BomberMan3D_Source_BomberMan3D_Public_Game_LocalMPViewportClient_h_15_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesULocalMPViewportClient(); \
 	friend struct Z_Construct_UClass_ULocalMPViewportClient_Statics; \
@@ -25,7 +25,7 @@ public: \
 	DECLARE_SERIALIZER(ULocalMPViewportClient)
 
 
-#define BomberMan3D_Source_BomberMan3D_LocalMPViewportClient_h_15_INCLASS \
+#define BomberMan3D_Source_BomberMan3D_Public_Game_LocalMPViewportClient_h_15_INCLASS \
 private: \
 	static void StaticRegisterNativesULocalMPViewportClient(); \
 	friend struct Z_Construct_UClass_ULocalMPViewportClient_Statics; \
@@ -34,7 +34,7 @@ public: \
 	DECLARE_SERIALIZER(ULocalMPViewportClient)
 
 
-#define BomberMan3D_Source_BomberMan3D_LocalMPViewportClient_h_15_STANDARD_CONSTRUCTORS \
+#define BomberMan3D_Source_BomberMan3D_Public_Game_LocalMPViewportClient_h_15_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API ULocalMPViewportClient(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(ULocalMPViewportClient) \
@@ -47,7 +47,7 @@ private: \
 public:
 
 
-#define BomberMan3D_Source_BomberMan3D_LocalMPViewportClient_h_15_ENHANCED_CONSTRUCTORS \
+#define BomberMan3D_Source_BomberMan3D_Public_Game_LocalMPViewportClient_h_15_ENHANCED_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API ULocalMPViewportClient(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()) : Super(ObjectInitializer) { }; \
 private: \
@@ -60,28 +60,28 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(ULocalMPViewportClient); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(ULocalMPViewportClient)
 
 
-#define BomberMan3D_Source_BomberMan3D_LocalMPViewportClient_h_15_PRIVATE_PROPERTY_OFFSET
-#define BomberMan3D_Source_BomberMan3D_LocalMPViewportClient_h_12_PROLOG
-#define BomberMan3D_Source_BomberMan3D_LocalMPViewportClient_h_15_GENERATED_BODY_LEGACY \
+#define BomberMan3D_Source_BomberMan3D_Public_Game_LocalMPViewportClient_h_15_PRIVATE_PROPERTY_OFFSET
+#define BomberMan3D_Source_BomberMan3D_Public_Game_LocalMPViewportClient_h_12_PROLOG
+#define BomberMan3D_Source_BomberMan3D_Public_Game_LocalMPViewportClient_h_15_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	BomberMan3D_Source_BomberMan3D_LocalMPViewportClient_h_15_PRIVATE_PROPERTY_OFFSET \
-	BomberMan3D_Source_BomberMan3D_LocalMPViewportClient_h_15_SPARSE_DATA \
-	BomberMan3D_Source_BomberMan3D_LocalMPViewportClient_h_15_RPC_WRAPPERS \
-	BomberMan3D_Source_BomberMan3D_LocalMPViewportClient_h_15_INCLASS \
-	BomberMan3D_Source_BomberMan3D_LocalMPViewportClient_h_15_STANDARD_CONSTRUCTORS \
+	BomberMan3D_Source_BomberMan3D_Public_Game_LocalMPViewportClient_h_15_PRIVATE_PROPERTY_OFFSET \
+	BomberMan3D_Source_BomberMan3D_Public_Game_LocalMPViewportClient_h_15_SPARSE_DATA \
+	BomberMan3D_Source_BomberMan3D_Public_Game_LocalMPViewportClient_h_15_RPC_WRAPPERS \
+	BomberMan3D_Source_BomberMan3D_Public_Game_LocalMPViewportClient_h_15_INCLASS \
+	BomberMan3D_Source_BomberMan3D_Public_Game_LocalMPViewportClient_h_15_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define BomberMan3D_Source_BomberMan3D_LocalMPViewportClient_h_15_GENERATED_BODY \
+#define BomberMan3D_Source_BomberMan3D_Public_Game_LocalMPViewportClient_h_15_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	BomberMan3D_Source_BomberMan3D_LocalMPViewportClient_h_15_PRIVATE_PROPERTY_OFFSET \
-	BomberMan3D_Source_BomberMan3D_LocalMPViewportClient_h_15_SPARSE_DATA \
-	BomberMan3D_Source_BomberMan3D_LocalMPViewportClient_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
-	BomberMan3D_Source_BomberMan3D_LocalMPViewportClient_h_15_INCLASS_NO_PURE_DECLS \
-	BomberMan3D_Source_BomberMan3D_LocalMPViewportClient_h_15_ENHANCED_CONSTRUCTORS \
+	BomberMan3D_Source_BomberMan3D_Public_Game_LocalMPViewportClient_h_15_PRIVATE_PROPERTY_OFFSET \
+	BomberMan3D_Source_BomberMan3D_Public_Game_LocalMPViewportClient_h_15_SPARSE_DATA \
+	BomberMan3D_Source_BomberMan3D_Public_Game_LocalMPViewportClient_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
+	BomberMan3D_Source_BomberMan3D_Public_Game_LocalMPViewportClient_h_15_INCLASS_NO_PURE_DECLS \
+	BomberMan3D_Source_BomberMan3D_Public_Game_LocalMPViewportClient_h_15_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -89,7 +89,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> BOMBERMAN3D_API UClass* StaticClass<class ULocalMPViewportClient>();
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID BomberMan3D_Source_BomberMan3D_LocalMPViewportClient_h
+#define CURRENT_FILE_ID BomberMan3D_Source_BomberMan3D_Public_Game_LocalMPViewportClient_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

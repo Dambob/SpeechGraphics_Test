@@ -5,7 +5,7 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "BomberMan3D/BlockDestructible.h"
+#include "BomberMan3D/Public/Actors/BlockDestructible.h"
 #ifdef _MSC_VER
 #pragma warning (push)
 #pragma warning (disable : 4883)
@@ -53,8 +53,8 @@ void EmptyLinkFunctionForGeneratedCodeBlockDestructible() {}
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABlockDestructible_Statics::Class_MetaDataParams[] = {
 		{ "Comment", "/**\n * \n */" },
-		{ "IncludePath", "BlockDestructible.h" },
-		{ "ModuleRelativePath", "BlockDestructible.h" },
+		{ "IncludePath", "Actors/BlockDestructible.h" },
+		{ "ModuleRelativePath", "Public/Actors/BlockDestructible.h" },
 		{ "ObjectInitializerConstructorDeclared", "" },
 	};
 #endif
@@ -64,7 +64,7 @@ void EmptyLinkFunctionForGeneratedCodeBlockDestructible() {}
 		{ "AllowPrivateAccess", "true" },
 		{ "Category", "Pickups" },
 		{ "Comment", "// Reference BP Asset in the Editor\n//TSubclassOf<APickup> pickupBPClass;\n" },
-		{ "ModuleRelativePath", "BlockDestructible.h" },
+		{ "ModuleRelativePath", "Public/Actors/BlockDestructible.h" },
 		{ "ToolTip", "Reference BP Asset in the Editor\nTSubclassOf<APickup> pickupBPClass;" },
 	};
 #endif
@@ -72,7 +72,7 @@ void EmptyLinkFunctionForGeneratedCodeBlockDestructible() {}
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABlockDestructible_Statics::NewProp_dropChance_MetaData[] = {
 		{ "Category", "Pickups" },
-		{ "ModuleRelativePath", "BlockDestructible.h" },
+		{ "ModuleRelativePath", "Public/Actors/BlockDestructible.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ABlockDestructible_Statics::NewProp_dropChance = { "dropChance", nullptr, (EPropertyFlags)0x0020080000000005, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ABlockDestructible, dropChance), METADATA_PARAMS(Z_Construct_UClass_ABlockDestructible_Statics::NewProp_dropChance_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ABlockDestructible_Statics::NewProp_dropChance_MetaData)) };
@@ -108,7 +108,7 @@ void EmptyLinkFunctionForGeneratedCodeBlockDestructible() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ABlockDestructible, 692331888);
+	IMPLEMENT_CLASS(ABlockDestructible, 3675756326);
 	template<> BOMBERMAN3D_API UClass* StaticClass<ABlockDestructible>()
 	{
 		return ABlockDestructible::StaticClass();

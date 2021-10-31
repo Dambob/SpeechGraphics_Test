@@ -5,7 +5,7 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "BomberMan3D/Block.h"
+#include "BomberMan3D/Public/Actors/Block.h"
 #ifdef _MSC_VER
 #pragma warning (push)
 #pragma warning (disable : 4883)
@@ -51,8 +51,8 @@ void EmptyLinkFunctionForGeneratedCodeBlock() {}
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABlock_Statics::Class_MetaDataParams[] = {
-		{ "IncludePath", "Block.h" },
-		{ "ModuleRelativePath", "Block.h" },
+		{ "IncludePath", "Actors/Block.h" },
+		{ "ModuleRelativePath", "Public/Actors/Block.h" },
 		{ "ObjectInitializerConstructorDeclared", "" },
 	};
 #endif
@@ -62,7 +62,7 @@ void EmptyLinkFunctionForGeneratedCodeBlock() {}
 		{ "Category", "Components" },
 		{ "Comment", "/**\n\x09* Root component of the Block\n\x09*/" },
 		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "Block.h" },
+		{ "ModuleRelativePath", "Public/Actors/Block.h" },
 		{ "ToolTip", "Root component of the Block" },
 	};
 #endif
@@ -72,7 +72,7 @@ void EmptyLinkFunctionForGeneratedCodeBlock() {}
 		{ "Category", "Components" },
 		{ "Comment", "/**\n\x09* Contains the mesh of this block\n\x09*/" },
 		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "Block.h" },
+		{ "ModuleRelativePath", "Public/Actors/Block.h" },
 		{ "ToolTip", "Contains the mesh of this block" },
 	};
 #endif
@@ -108,7 +108,7 @@ void EmptyLinkFunctionForGeneratedCodeBlock() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ABlock, 694639092);
+	IMPLEMENT_CLASS(ABlock, 4186397214);
 	template<> BOMBERMAN3D_API UClass* StaticClass<ABlock>()
 	{
 		return ABlock::StaticClass();

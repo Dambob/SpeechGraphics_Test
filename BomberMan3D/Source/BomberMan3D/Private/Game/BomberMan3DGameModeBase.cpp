@@ -1,12 +1,12 @@
 // Copyright Epic Games, Inc. All Rights Reserved.
 
 
-#include "BomberMan3DGameModeBase.h"
+#include "../Public/Game/BomberMan3DGameModeBase.h"
 #include "Kismet/GameplayStatics.h"
 #include "Engine/World.h"
-#include "PlayerCharacter.h"
-#include "BomberMan3DGameStateBase.h"
-#include "Explosion.h"
+#include "../Public/Players/PlayerCharacter.h"
+#include "../Public/Game/BomberMan3DGameStateBase.h"
+#include "../Public/Actors/Explosion.h"
 #include <math.h>
 
 ABomberMan3DGameModeBase::ABomberMan3DGameModeBase() :

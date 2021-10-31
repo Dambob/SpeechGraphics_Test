@@ -14,7 +14,7 @@ class AActor;
 #endif
 #define BOMBERMAN3D_DMUserWidget_generated_h
 
-#define BomberMan3D_Source_BomberMan3D_DMUserWidget_h_10_DELEGATE \
+#define BomberMan3D_Source_BomberMan3D_Public_Widgets_DMUserWidget_h_10_DELEGATE \
 struct _Script_BomberMan3D_eventOnOwningActorChanged_Parms \
 { \
 	AActor* NewOwner; \
@@ -27,22 +27,22 @@ static inline void FOnOwningActorChanged_DelegateWrapper(const FMulticastScriptD
 }
 
 
-#define BomberMan3D_Source_BomberMan3D_DMUserWidget_h_16_SPARSE_DATA
-#define BomberMan3D_Source_BomberMan3D_DMUserWidget_h_16_RPC_WRAPPERS \
+#define BomberMan3D_Source_BomberMan3D_Public_Widgets_DMUserWidget_h_16_SPARSE_DATA
+#define BomberMan3D_Source_BomberMan3D_Public_Widgets_DMUserWidget_h_16_RPC_WRAPPERS \
  \
 	DECLARE_FUNCTION(execSetOwner); \
 	DECLARE_FUNCTION(execGetOwner); \
 	DECLARE_FUNCTION(execGetName);
 
 
-#define BomberMan3D_Source_BomberMan3D_DMUserWidget_h_16_RPC_WRAPPERS_NO_PURE_DECLS \
+#define BomberMan3D_Source_BomberMan3D_Public_Widgets_DMUserWidget_h_16_RPC_WRAPPERS_NO_PURE_DECLS \
  \
 	DECLARE_FUNCTION(execSetOwner); \
 	DECLARE_FUNCTION(execGetOwner); \
 	DECLARE_FUNCTION(execGetName);
 
 
-#define BomberMan3D_Source_BomberMan3D_DMUserWidget_h_16_INCLASS_NO_PURE_DECLS \
+#define BomberMan3D_Source_BomberMan3D_Public_Widgets_DMUserWidget_h_16_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUDMUserWidget(); \
 	friend struct Z_Construct_UClass_UDMUserWidget_Statics; \
@@ -51,7 +51,7 @@ public: \
 	DECLARE_SERIALIZER(UDMUserWidget)
 
 
-#define BomberMan3D_Source_BomberMan3D_DMUserWidget_h_16_INCLASS \
+#define BomberMan3D_Source_BomberMan3D_Public_Widgets_DMUserWidget_h_16_INCLASS \
 private: \
 	static void StaticRegisterNativesUDMUserWidget(); \
 	friend struct Z_Construct_UClass_UDMUserWidget_Statics; \
@@ -60,7 +60,7 @@ public: \
 	DECLARE_SERIALIZER(UDMUserWidget)
 
 
-#define BomberMan3D_Source_BomberMan3D_DMUserWidget_h_16_STANDARD_CONSTRUCTORS \
+#define BomberMan3D_Source_BomberMan3D_Public_Widgets_DMUserWidget_h_16_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API UDMUserWidget(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(UDMUserWidget) \
@@ -73,7 +73,7 @@ private: \
 public:
 
 
-#define BomberMan3D_Source_BomberMan3D_DMUserWidget_h_16_ENHANCED_CONSTRUCTORS \
+#define BomberMan3D_Source_BomberMan3D_Public_Widgets_DMUserWidget_h_16_ENHANCED_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API UDMUserWidget(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()) : Super(ObjectInitializer) { }; \
 private: \
@@ -86,32 +86,32 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UDMUserWidget); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(UDMUserWidget)
 
 
-#define BomberMan3D_Source_BomberMan3D_DMUserWidget_h_16_PRIVATE_PROPERTY_OFFSET \
+#define BomberMan3D_Source_BomberMan3D_Public_Widgets_DMUserWidget_h_16_PRIVATE_PROPERTY_OFFSET \
 	FORCEINLINE static uint32 __PPO__widgetName() { return STRUCT_OFFSET(UDMUserWidget, widgetName); } \
 	FORCEINLINE static uint32 __PPO__owner() { return STRUCT_OFFSET(UDMUserWidget, owner); }
 
 
-#define BomberMan3D_Source_BomberMan3D_DMUserWidget_h_13_PROLOG
-#define BomberMan3D_Source_BomberMan3D_DMUserWidget_h_16_GENERATED_BODY_LEGACY \
+#define BomberMan3D_Source_BomberMan3D_Public_Widgets_DMUserWidget_h_13_PROLOG
+#define BomberMan3D_Source_BomberMan3D_Public_Widgets_DMUserWidget_h_16_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	BomberMan3D_Source_BomberMan3D_DMUserWidget_h_16_PRIVATE_PROPERTY_OFFSET \
-	BomberMan3D_Source_BomberMan3D_DMUserWidget_h_16_SPARSE_DATA \
-	BomberMan3D_Source_BomberMan3D_DMUserWidget_h_16_RPC_WRAPPERS \
-	BomberMan3D_Source_BomberMan3D_DMUserWidget_h_16_INCLASS \
-	BomberMan3D_Source_BomberMan3D_DMUserWidget_h_16_STANDARD_CONSTRUCTORS \
+	BomberMan3D_Source_BomberMan3D_Public_Widgets_DMUserWidget_h_16_PRIVATE_PROPERTY_OFFSET \
+	BomberMan3D_Source_BomberMan3D_Public_Widgets_DMUserWidget_h_16_SPARSE_DATA \
+	BomberMan3D_Source_BomberMan3D_Public_Widgets_DMUserWidget_h_16_RPC_WRAPPERS \
+	BomberMan3D_Source_BomberMan3D_Public_Widgets_DMUserWidget_h_16_INCLASS \
+	BomberMan3D_Source_BomberMan3D_Public_Widgets_DMUserWidget_h_16_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define BomberMan3D_Source_BomberMan3D_DMUserWidget_h_16_GENERATED_BODY \
+#define BomberMan3D_Source_BomberMan3D_Public_Widgets_DMUserWidget_h_16_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	BomberMan3D_Source_BomberMan3D_DMUserWidget_h_16_PRIVATE_PROPERTY_OFFSET \
-	BomberMan3D_Source_BomberMan3D_DMUserWidget_h_16_SPARSE_DATA \
-	BomberMan3D_Source_BomberMan3D_DMUserWidget_h_16_RPC_WRAPPERS_NO_PURE_DECLS \
-	BomberMan3D_Source_BomberMan3D_DMUserWidget_h_16_INCLASS_NO_PURE_DECLS \
-	BomberMan3D_Source_BomberMan3D_DMUserWidget_h_16_ENHANCED_CONSTRUCTORS \
+	BomberMan3D_Source_BomberMan3D_Public_Widgets_DMUserWidget_h_16_PRIVATE_PROPERTY_OFFSET \
+	BomberMan3D_Source_BomberMan3D_Public_Widgets_DMUserWidget_h_16_SPARSE_DATA \
+	BomberMan3D_Source_BomberMan3D_Public_Widgets_DMUserWidget_h_16_RPC_WRAPPERS_NO_PURE_DECLS \
+	BomberMan3D_Source_BomberMan3D_Public_Widgets_DMUserWidget_h_16_INCLASS_NO_PURE_DECLS \
+	BomberMan3D_Source_BomberMan3D_Public_Widgets_DMUserWidget_h_16_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -119,7 +119,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> BOMBERMAN3D_API UClass* StaticClass<class UDMUserWidget>();
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID BomberMan3D_Source_BomberMan3D_DMUserWidget_h
+#define CURRENT_FILE_ID BomberMan3D_Source_BomberMan3D_Public_Widgets_DMUserWidget_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
