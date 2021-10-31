@@ -48,6 +48,24 @@ APlayerCharacter::APlayerCharacter() :
 	}
 }
 
+float APlayerCharacter::GetRemotePowerTimer() const
+{
+	float result = 0.0f;
+
+	result = GetWorldTimerManager().GetTimerRemaining(remotePowerTimerHandle);
+
+	// Cap result
+	if (result < 0.0f)
+	{
+		result = 0.0f;
+	}
+
+	// Round for output
+	result = roundf(result);
+
+	return result;
+}
+
 // Called when the game starts or when spawned
 void APlayerCharacter::BeginPlay()
 {

@@ -28,6 +28,13 @@ void EmptyLinkFunctionForGeneratedCodePlayerCharacter() {}
 		P_THIS->BindBombExploded();
 		P_NATIVE_END;
 	}
+	DEFINE_FUNCTION(APlayerCharacter::execGetRemotePowerTimer)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		*(float*)Z_Param__Result=P_THIS->GetRemotePowerTimer();
+		P_NATIVE_END;
+	}
 	DEFINE_FUNCTION(APlayerCharacter::execHasRemotePower)
 	{
 		P_FINISH;
@@ -101,6 +108,7 @@ void EmptyLinkFunctionForGeneratedCodePlayerCharacter() {}
 			{ "DetonateBomb", &APlayerCharacter::execDetonateBomb },
 			{ "GetBombCount", &APlayerCharacter::execGetBombCount },
 			{ "GetName", &APlayerCharacter::execGetName },
+			{ "GetRemotePowerTimer", &APlayerCharacter::execGetRemotePowerTimer },
 			{ "HasRangePower", &APlayerCharacter::execHasRangePower },
 			{ "HasRemotePower", &APlayerCharacter::execHasRemotePower },
 			{ "HasSpeedPower", &APlayerCharacter::execHasSpeedPower },
@@ -220,6 +228,39 @@ void EmptyLinkFunctionForGeneratedCodePlayerCharacter() {}
 		if (!ReturnFunction)
 		{
 			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_APlayerCharacter_GetName_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_APlayerCharacter_GetRemotePowerTimer_Statics
+	{
+		struct PlayerCharacter_eventGetRemotePowerTimer_Parms
+		{
+			float ReturnValue;
+		};
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_ReturnValue;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_APlayerCharacter_GetRemotePowerTimer_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(PlayerCharacter_eventGetRemotePowerTimer_Parms, ReturnValue), METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_APlayerCharacter_GetRemotePowerTimer_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_APlayerCharacter_GetRemotePowerTimer_Statics::NewProp_ReturnValue,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_APlayerCharacter_GetRemotePowerTimer_Statics::Function_MetaDataParams[] = {
+		{ "Category", "Player|Powers" },
+		{ "ModuleRelativePath", "PlayerCharacter.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_APlayerCharacter_GetRemotePowerTimer_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_APlayerCharacter, nullptr, "GetRemotePowerTimer", nullptr, nullptr, sizeof(PlayerCharacter_eventGetRemotePowerTimer_Parms), Z_Construct_UFunction_APlayerCharacter_GetRemotePowerTimer_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_APlayerCharacter_GetRemotePowerTimer_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x54020400, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_APlayerCharacter_GetRemotePowerTimer_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_APlayerCharacter_GetRemotePowerTimer_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_APlayerCharacter_GetRemotePowerTimer()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_APlayerCharacter_GetRemotePowerTimer_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -473,6 +514,7 @@ void EmptyLinkFunctionForGeneratedCodePlayerCharacter() {}
 		{ &Z_Construct_UFunction_APlayerCharacter_DetonateBomb, "DetonateBomb" }, // 1993486748
 		{ &Z_Construct_UFunction_APlayerCharacter_GetBombCount, "GetBombCount" }, // 3566956837
 		{ &Z_Construct_UFunction_APlayerCharacter_GetName, "GetName" }, // 4041814545
+		{ &Z_Construct_UFunction_APlayerCharacter_GetRemotePowerTimer, "GetRemotePowerTimer" }, // 1442074327
 		{ &Z_Construct_UFunction_APlayerCharacter_HasRangePower, "HasRangePower" }, // 1209027002
 		{ &Z_Construct_UFunction_APlayerCharacter_HasRemotePower, "HasRemotePower" }, // 924291530
 		{ &Z_Construct_UFunction_APlayerCharacter_HasSpeedPower, "HasSpeedPower" }, // 1856897134
@@ -563,7 +605,7 @@ void EmptyLinkFunctionForGeneratedCodePlayerCharacter() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(APlayerCharacter, 2326810451);
+	IMPLEMENT_CLASS(APlayerCharacter, 601396324);
 	template<> BOMBERMAN3D_API UClass* StaticClass<APlayerCharacter>()
 	{
 		return APlayerCharacter::StaticClass();

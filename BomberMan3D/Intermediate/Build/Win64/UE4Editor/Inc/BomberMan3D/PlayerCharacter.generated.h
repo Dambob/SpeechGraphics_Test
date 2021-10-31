@@ -17,6 +17,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define BomberMan3D_Source_BomberMan3D_PlayerCharacter_h_17_RPC_WRAPPERS \
  \
 	DECLARE_FUNCTION(execBindBombExploded); \
+	DECLARE_FUNCTION(execGetRemotePowerTimer); \
 	DECLARE_FUNCTION(execHasRemotePower); \
 	DECLARE_FUNCTION(execHasRangePower); \
 	DECLARE_FUNCTION(execHasSpeedPower); \
@@ -31,6 +32,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define BomberMan3D_Source_BomberMan3D_PlayerCharacter_h_17_RPC_WRAPPERS_NO_PURE_DECLS \
  \
 	DECLARE_FUNCTION(execBindBombExploded); \
+	DECLARE_FUNCTION(execGetRemotePowerTimer); \
 	DECLARE_FUNCTION(execHasRemotePower); \
 	DECLARE_FUNCTION(execHasRangePower); \
 	DECLARE_FUNCTION(execHasSpeedPower); \

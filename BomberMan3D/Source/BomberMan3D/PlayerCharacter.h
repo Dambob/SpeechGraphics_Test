@@ -67,6 +67,9 @@ public:
 
 	UFUNCTION(BlueprintPure, Category = "Player|Powers")
 	virtual bool HasRemotePower() const { return remoteBombPower; };
+
+	UFUNCTION(BlueprintPure, Category = "Player|Powers")
+	virtual float GetRemotePowerTimer() const;
 	
 protected:
 	// Called when the game starts or when spawned

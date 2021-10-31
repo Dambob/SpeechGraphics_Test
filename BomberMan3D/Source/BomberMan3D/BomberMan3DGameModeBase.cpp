@@ -154,7 +154,7 @@ float ABomberMan3DGameModeBase::GetRemainingTime() const
 		}
 	}
 
-	// Round to 2DF for output
+	// Round for output
 	result = roundf(result);
 
 	return result;
