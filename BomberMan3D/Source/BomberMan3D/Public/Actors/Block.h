@@ -6,6 +6,9 @@
 #include "GameFramework/Actor.h"
 #include "Block.generated.h"
 
+/*
+* Standard wall block.
+*/
 UCLASS()
 class BOMBERMAN3D_API ABlock : public AActor
 {
@@ -18,15 +21,11 @@ public:
 	virtual ~ABlock() = default;
 
 protected:
-	/**
-	* Root component of the Block
-	*/
+	// Root component of the Block
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"), Category = "Components")
 	USceneComponent* DefaultSceneRoot;
 
-	/**
-	* Contains the mesh of this block
-	*/
+	// Contains the mesh of this block
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
 	UStaticMeshComponent* BlockMesh;
 };

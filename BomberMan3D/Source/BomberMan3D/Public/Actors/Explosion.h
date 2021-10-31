@@ -5,10 +5,12 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include "Components/BoxComponent.h"
-//#include "Niagara/Public/NiagaraComponent.h"
 #include "NiagaraComponent.h"
 #include "Explosion.generated.h"
 
+/*
+* Bomb explosion. Moves forward until hitting wall or reaching max range.
+*/
 UCLASS()
 class BOMBERMAN3D_API AExplosion : public AActor
 {
@@ -32,21 +34,15 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-	/**
-	* Root component of the Block
-	*/
+	//Root component of the Block
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"), Category = "Components")
 	USceneComponent* DefaultSceneRoot;
 
-	/**
-	* Contains the collision of this block
-	*/
+	// Contains the collision of this block
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
 	UBoxComponent* CollisionBox;
 
-	/**
-	* Contains the effect
-	*/
+	// Contains the effect
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
 	UNiagaraComponent* SmokeFX;
 
@@ -62,6 +58,7 @@ protected:
 
 	void CheckCollisions();
 
+	// Overlapped with object
 	UFUNCTION()
 	void OnBeginOverlap(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
 };

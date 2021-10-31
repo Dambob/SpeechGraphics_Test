@@ -73,7 +73,7 @@ void EmptyLinkFunctionForGeneratedCodeBomberMan3DGameInstance() {}
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UBomberMan3DGameInstance_Load_Statics::Function_MetaDataParams[] = {
-		{ "Comment", "/* Load Game */" },
+		{ "Comment", "// Load Game\n" },
 		{ "ModuleRelativePath", "Public/Game/BomberMan3DGameInstance.h" },
 		{ "ToolTip", "Load Game" },
 	};
@@ -97,7 +97,7 @@ void EmptyLinkFunctionForGeneratedCodeBomberMan3DGameInstance() {}
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UBomberMan3DGameInstance_Reset_Statics::Function_MetaDataParams[] = {
-		{ "Comment", "/* Reset game instance to start a new game */" },
+		{ "Comment", "// Reset game instance to start a new game\n" },
 		{ "ModuleRelativePath", "Public/Game/BomberMan3DGameInstance.h" },
 		{ "ToolTip", "Reset game instance to start a new game" },
 	};
@@ -136,9 +136,9 @@ void EmptyLinkFunctionForGeneratedCodeBomberMan3DGameInstance() {}
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UBomberMan3DGameInstance_Save_Statics::Function_MetaDataParams[] = {
-		{ "Comment", "/* Save game. */" },
+		{ "Comment", "// Save game\n" },
 		{ "ModuleRelativePath", "Public/Game/BomberMan3DGameInstance.h" },
-		{ "ToolTip", "Save game." },
+		{ "ToolTip", "Save game" },
 	};
 #endif
 	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_UBomberMan3DGameInstance_Save_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UBomberMan3DGameInstance, nullptr, "Save", nullptr, nullptr, sizeof(BomberMan3DGameInstance_eventSave_Parms), Z_Construct_UFunction_UBomberMan3DGameInstance_Save_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UBomberMan3DGameInstance_Save_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020400, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UBomberMan3DGameInstance_Save_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UBomberMan3DGameInstance_Save_Statics::Function_MetaDataParams)) };
@@ -176,15 +176,16 @@ void EmptyLinkFunctionForGeneratedCodeBomberMan3DGameInstance() {}
 		(UObject* (*)())Z_Construct_UPackage__Script_BomberMan3D,
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_UBomberMan3DGameInstance_Statics::FuncInfo[] = {
-		{ &Z_Construct_UFunction_UBomberMan3DGameInstance_Load, "Load" }, // 1957224820
-		{ &Z_Construct_UFunction_UBomberMan3DGameInstance_Reset, "Reset" }, // 3094168763
-		{ &Z_Construct_UFunction_UBomberMan3DGameInstance_Save, "Save" }, // 3488732003
+		{ &Z_Construct_UFunction_UBomberMan3DGameInstance_Load, "Load" }, // 709291709
+		{ &Z_Construct_UFunction_UBomberMan3DGameInstance_Reset, "Reset" }, // 3448591147
+		{ &Z_Construct_UFunction_UBomberMan3DGameInstance_Save, "Save" }, // 2218513276
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UBomberMan3DGameInstance_Statics::Class_MetaDataParams[] = {
-		{ "Comment", "/**\n * \n */" },
+		{ "Comment", "/**\n * Holds game state information for entire play session. Handles saving/loading state to/from disk.\n */" },
 		{ "IncludePath", "Game/BomberMan3DGameInstance.h" },
 		{ "ModuleRelativePath", "Public/Game/BomberMan3DGameInstance.h" },
+		{ "ToolTip", "Holds game state information for entire play session. Handles saving/loading state to/from disk." },
 	};
 #endif
 	const UE4CodeGen_Private::FUnsizedIntPropertyParams Z_Construct_UClass_UBomberMan3DGameInstance_Statics::NewProp_score_Inner = { "score", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, METADATA_PARAMS(nullptr, 0) };
@@ -226,7 +227,7 @@ void EmptyLinkFunctionForGeneratedCodeBomberMan3DGameInstance() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(UBomberMan3DGameInstance, 3967263137);
+	IMPLEMENT_CLASS(UBomberMan3DGameInstance, 3194430588);
 	template<> BOMBERMAN3D_API UClass* StaticClass<UBomberMan3DGameInstance>()
 	{
 		return UBomberMan3DGameInstance::StaticClass();

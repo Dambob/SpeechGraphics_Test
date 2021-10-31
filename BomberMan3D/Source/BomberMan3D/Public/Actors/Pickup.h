@@ -7,6 +7,9 @@
 #include "GameFramework/RotatingMovementComponent.h"
 #include "Pickup.generated.h"
 
+/*
+* Types of pickup
+*/
 UENUM()
 enum PickupType
 {
@@ -17,6 +20,10 @@ enum PickupType
 	Remote UMETA(DisplayName = "Remote")
 };
 
+
+/*
+* Objects that can be picked up by players walking into them.
+*/
 UCLASS()
 class BOMBERMAN3D_API APickup : public AActor
 {
@@ -37,36 +44,27 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-	/**
-	* Root component of the Pickup
-	*/
+	// Root component of the Pickup
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"), Category = "Components")
 	USceneComponent* DefaultSceneRoot;
 	
-	/**
-	* Contains the rotator
-	*/
+	// Contains the rotator
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
 	URotatingMovementComponent* RotatingMovement;
 	
-	/**
-	* Contains the mesh of this pickup
-	*/
+	// Contains the mesh of this pickup
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
 	UStaticMeshComponent* Mesh;
 
+	// Called when object collides with pickup
 	UFUNCTION()
 	void OnBeginOverlap(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
 
-	/**
-	* Contains the type of pickup
-	*/
+	// Contains the type of pickup
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Pickup")
 	TEnumAsByte<PickupType> type;
 
-	/**
-	* Contains the value of pickup
-	*/
+	// Contains the value of pickup
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Pickup")
 	float value;
 };

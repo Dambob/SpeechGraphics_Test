@@ -7,7 +7,7 @@
 #include "BomberMan3DGameStateBase.generated.h"
 
 /**
- * 
+ * Game state that is held for the map. Wiped when map changed.
  */
 UCLASS()
 class BOMBERMAN3D_API ABomberMan3DGameStateBase : public AGameStateBase

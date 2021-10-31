@@ -32,10 +32,7 @@ public:
 	UFUNCTION()
 	void MoveRight(float value);
 
-	//Camera Actor which the Actor Volume blends to
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	TSubclassOf<ACameraActor> camera;
-
+	// Get Player name
 	UFUNCTION()
 	FText GetName() { return name; };
 
@@ -55,19 +52,23 @@ public:
 
 	virtual void PowerUp(PickupType type, float value);
 
-	/* Return the Bomb count. */
+	// Return the Bomb count.
 	UFUNCTION(BlueprintPure, Category = "Player")
 	virtual int GetBombCount() const;
 
+	// If player has the speed powerup
 	UFUNCTION(BlueprintPure, Category = "Player|Powers")
 	virtual bool HasSpeedPower() const { return speedPower; };
 
+	// If player has the range powerup
 	UFUNCTION(BlueprintPure, Category = "Player|Powers")
 	virtual bool HasRangePower() const { return rangePower; };
 
+	// If player has the remote bomb powerup
 	UFUNCTION(BlueprintPure, Category = "Player|Powers")
 	virtual bool HasRemotePower() const { return remoteBombPower; };
 
+	// Amount of time left on remote bomb
 	UFUNCTION(BlueprintPure, Category = "Player|Powers")
 	virtual float GetRemotePowerTimer() const;
 	

@@ -7,6 +7,9 @@
 #include "../Public/Actors/Explosion.h"
 #include "Bomb.generated.h"
 
+/*
+* Placeable bomb. Creates explosions when detonated.
+*/
 UCLASS()
 class BOMBERMAN3D_API ABomb : public AActor
 {

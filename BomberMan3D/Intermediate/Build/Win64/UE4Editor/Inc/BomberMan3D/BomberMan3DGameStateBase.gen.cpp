@@ -50,11 +50,12 @@ void EmptyLinkFunctionForGeneratedCodeBomberMan3DGameStateBase() {}
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABomberMan3DGameStateBase_Statics::Class_MetaDataParams[] = {
-		{ "Comment", "/**\n * \n */" },
+		{ "Comment", "/**\n * Game state that is held for the map. Wiped when map changed.\n */" },
 		{ "HideCategories", "Input Movement Collision Rendering Utilities|Transformation" },
 		{ "IncludePath", "Game/BomberMan3DGameStateBase.h" },
 		{ "ModuleRelativePath", "Public/Game/BomberMan3DGameStateBase.h" },
 		{ "ShowCategories", "Input|MouseInput Input|TouchInput" },
+		{ "ToolTip", "Game state that is held for the map. Wiped when map changed." },
 	};
 #endif
 	const UE4CodeGen_Private::FUnsizedIntPropertyParams Z_Construct_UClass_ABomberMan3DGameStateBase_Statics::NewProp_score_Inner = { "score", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, METADATA_PARAMS(nullptr, 0) };
@@ -104,7 +105,7 @@ void EmptyLinkFunctionForGeneratedCodeBomberMan3DGameStateBase() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ABomberMan3DGameStateBase, 2217217221);
+	IMPLEMENT_CLASS(ABomberMan3DGameStateBase, 3201298018);
 	template<> BOMBERMAN3D_API UClass* StaticClass<ABomberMan3DGameStateBase>()
 	{
 		return ABomberMan3DGameStateBase::StaticClass();

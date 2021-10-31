@@ -17,8 +17,6 @@ void EmptyLinkFunctionForGeneratedCodePlayerCharacter() {}
 	BOMBERMAN3D_API UClass* Z_Construct_UClass_APlayerCharacter();
 	ENGINE_API UClass* Z_Construct_UClass_ACharacter();
 	UPackage* Z_Construct_UPackage__Script_BomberMan3D();
-	COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
-	ENGINE_API UClass* Z_Construct_UClass_ACameraActor_NoRegister();
 	BOMBERMAN3D_API UClass* Z_Construct_UClass_UDMActorWidgetComponent_NoRegister();
 // End Cross Module References
 	DEFINE_FUNCTION(APlayerCharacter::execBindBombExploded)
@@ -184,7 +182,7 @@ void EmptyLinkFunctionForGeneratedCodePlayerCharacter() {}
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_APlayerCharacter_GetBombCount_Statics::Function_MetaDataParams[] = {
 		{ "Category", "Player" },
-		{ "Comment", "/* Return the Bomb count. */" },
+		{ "Comment", "// Return the Bomb count.\n" },
 		{ "ModuleRelativePath", "Public/Players/PlayerCharacter.h" },
 		{ "ToolTip", "Return the Bomb count." },
 	};
@@ -218,7 +216,9 @@ void EmptyLinkFunctionForGeneratedCodePlayerCharacter() {}
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_APlayerCharacter_GetName_Statics::Function_MetaDataParams[] = {
+		{ "Comment", "// Get Player name\n" },
 		{ "ModuleRelativePath", "Public/Players/PlayerCharacter.h" },
+		{ "ToolTip", "Get Player name" },
 	};
 #endif
 	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_APlayerCharacter_GetName_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_APlayerCharacter, nullptr, "GetName", nullptr, nullptr, sizeof(PlayerCharacter_eventGetName_Parms), Z_Construct_UFunction_APlayerCharacter_GetName_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_APlayerCharacter_GetName_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_APlayerCharacter_GetName_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_APlayerCharacter_GetName_Statics::Function_MetaDataParams)) };
@@ -251,7 +251,9 @@ void EmptyLinkFunctionForGeneratedCodePlayerCharacter() {}
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_APlayerCharacter_GetRemotePowerTimer_Statics::Function_MetaDataParams[] = {
 		{ "Category", "Player|Powers" },
+		{ "Comment", "// Amount of time left on remote bomb\n" },
 		{ "ModuleRelativePath", "Public/Players/PlayerCharacter.h" },
+		{ "ToolTip", "Amount of time left on remote bomb" },
 	};
 #endif
 	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_APlayerCharacter_GetRemotePowerTimer_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_APlayerCharacter, nullptr, "GetRemotePowerTimer", nullptr, nullptr, sizeof(PlayerCharacter_eventGetRemotePowerTimer_Parms), Z_Construct_UFunction_APlayerCharacter_GetRemotePowerTimer_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_APlayerCharacter_GetRemotePowerTimer_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x54020400, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_APlayerCharacter_GetRemotePowerTimer_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_APlayerCharacter_GetRemotePowerTimer_Statics::Function_MetaDataParams)) };
@@ -289,7 +291,9 @@ void EmptyLinkFunctionForGeneratedCodePlayerCharacter() {}
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_APlayerCharacter_HasRangePower_Statics::Function_MetaDataParams[] = {
 		{ "Category", "Player|Powers" },
+		{ "Comment", "// If player has the range powerup\n" },
 		{ "ModuleRelativePath", "Public/Players/PlayerCharacter.h" },
+		{ "ToolTip", "If player has the range powerup" },
 	};
 #endif
 	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_APlayerCharacter_HasRangePower_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_APlayerCharacter, nullptr, "HasRangePower", nullptr, nullptr, sizeof(PlayerCharacter_eventHasRangePower_Parms), Z_Construct_UFunction_APlayerCharacter_HasRangePower_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_APlayerCharacter_HasRangePower_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x54020400, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_APlayerCharacter_HasRangePower_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_APlayerCharacter_HasRangePower_Statics::Function_MetaDataParams)) };
@@ -327,7 +331,9 @@ void EmptyLinkFunctionForGeneratedCodePlayerCharacter() {}
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_APlayerCharacter_HasRemotePower_Statics::Function_MetaDataParams[] = {
 		{ "Category", "Player|Powers" },
+		{ "Comment", "// If player has the remote bomb powerup\n" },
 		{ "ModuleRelativePath", "Public/Players/PlayerCharacter.h" },
+		{ "ToolTip", "If player has the remote bomb powerup" },
 	};
 #endif
 	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_APlayerCharacter_HasRemotePower_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_APlayerCharacter, nullptr, "HasRemotePower", nullptr, nullptr, sizeof(PlayerCharacter_eventHasRemotePower_Parms), Z_Construct_UFunction_APlayerCharacter_HasRemotePower_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_APlayerCharacter_HasRemotePower_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x54020400, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_APlayerCharacter_HasRemotePower_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_APlayerCharacter_HasRemotePower_Statics::Function_MetaDataParams)) };
@@ -365,7 +371,9 @@ void EmptyLinkFunctionForGeneratedCodePlayerCharacter() {}
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_APlayerCharacter_HasSpeedPower_Statics::Function_MetaDataParams[] = {
 		{ "Category", "Player|Powers" },
+		{ "Comment", "// If player has the speed powerup\n" },
 		{ "ModuleRelativePath", "Public/Players/PlayerCharacter.h" },
+		{ "ToolTip", "If player has the speed powerup" },
 	};
 #endif
 	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_APlayerCharacter_HasSpeedPower_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_APlayerCharacter, nullptr, "HasSpeedPower", nullptr, nullptr, sizeof(PlayerCharacter_eventHasSpeedPower_Parms), Z_Construct_UFunction_APlayerCharacter_HasSpeedPower_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_APlayerCharacter_HasSpeedPower_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x54020400, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_APlayerCharacter_HasSpeedPower_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_APlayerCharacter_HasSpeedPower_Statics::Function_MetaDataParams)) };
@@ -482,10 +490,6 @@ void EmptyLinkFunctionForGeneratedCodePlayerCharacter() {}
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
 #if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_camera_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FClassPropertyParams NewProp_camera;
-#if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_nameplate_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_nameplate;
@@ -512,12 +516,12 @@ void EmptyLinkFunctionForGeneratedCodePlayerCharacter() {}
 	const FClassFunctionLinkInfo Z_Construct_UClass_APlayerCharacter_Statics::FuncInfo[] = {
 		{ &Z_Construct_UFunction_APlayerCharacter_BindBombExploded, "BindBombExploded" }, // 1017234455
 		{ &Z_Construct_UFunction_APlayerCharacter_DetonateBomb, "DetonateBomb" }, // 2851530023
-		{ &Z_Construct_UFunction_APlayerCharacter_GetBombCount, "GetBombCount" }, // 1925354122
-		{ &Z_Construct_UFunction_APlayerCharacter_GetName, "GetName" }, // 3090475144
-		{ &Z_Construct_UFunction_APlayerCharacter_GetRemotePowerTimer, "GetRemotePowerTimer" }, // 4132745604
-		{ &Z_Construct_UFunction_APlayerCharacter_HasRangePower, "HasRangePower" }, // 1695589460
-		{ &Z_Construct_UFunction_APlayerCharacter_HasRemotePower, "HasRemotePower" }, // 3214775909
-		{ &Z_Construct_UFunction_APlayerCharacter_HasSpeedPower, "HasSpeedPower" }, // 2256522898
+		{ &Z_Construct_UFunction_APlayerCharacter_GetBombCount, "GetBombCount" }, // 886550609
+		{ &Z_Construct_UFunction_APlayerCharacter_GetName, "GetName" }, // 651827790
+		{ &Z_Construct_UFunction_APlayerCharacter_GetRemotePowerTimer, "GetRemotePowerTimer" }, // 2785047312
+		{ &Z_Construct_UFunction_APlayerCharacter_HasRangePower, "HasRangePower" }, // 1790245083
+		{ &Z_Construct_UFunction_APlayerCharacter_HasRemotePower, "HasRemotePower" }, // 2594779084
+		{ &Z_Construct_UFunction_APlayerCharacter_HasSpeedPower, "HasSpeedPower" }, // 539226179
 		{ &Z_Construct_UFunction_APlayerCharacter_MoveRight, "MoveRight" }, // 4028283210
 		{ &Z_Construct_UFunction_APlayerCharacter_MoveUpward, "MoveUpward" }, // 102933370
 		{ &Z_Construct_UFunction_APlayerCharacter_PlaceBomb, "PlaceBomb" }, // 691861850
@@ -529,15 +533,6 @@ void EmptyLinkFunctionForGeneratedCodePlayerCharacter() {}
 		{ "ModuleRelativePath", "Public/Players/PlayerCharacter.h" },
 	};
 #endif
-#if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_APlayerCharacter_Statics::NewProp_camera_MetaData[] = {
-		{ "Category", "PlayerCharacter" },
-		{ "Comment", "//Camera Actor which the Actor Volume blends to\n" },
-		{ "ModuleRelativePath", "Public/Players/PlayerCharacter.h" },
-		{ "ToolTip", "Camera Actor which the Actor Volume blends to" },
-	};
-#endif
-	const UE4CodeGen_Private::FClassPropertyParams Z_Construct_UClass_APlayerCharacter_Statics::NewProp_camera = { "camera", nullptr, (EPropertyFlags)0x0014000000000005, UE4CodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(APlayerCharacter, camera), Z_Construct_UClass_ACameraActor_NoRegister, Z_Construct_UClass_UClass, METADATA_PARAMS(Z_Construct_UClass_APlayerCharacter_Statics::NewProp_camera_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_APlayerCharacter_Statics::NewProp_camera_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_APlayerCharacter_Statics::NewProp_nameplate_MetaData[] = {
 		{ "Category", "Widgets" },
@@ -572,7 +567,6 @@ void EmptyLinkFunctionForGeneratedCodePlayerCharacter() {}
 #endif
 	const UE4CodeGen_Private::FUnsizedIntPropertyParams Z_Construct_UClass_APlayerCharacter_Statics::NewProp_bombRange = { "bombRange", nullptr, (EPropertyFlags)0x0020080000000005, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(APlayerCharacter, bombRange), METADATA_PARAMS(Z_Construct_UClass_APlayerCharacter_Statics::NewProp_bombRange_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_APlayerCharacter_Statics::NewProp_bombRange_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_APlayerCharacter_Statics::PropPointers[] = {
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APlayerCharacter_Statics::NewProp_camera,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APlayerCharacter_Statics::NewProp_nameplate,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APlayerCharacter_Statics::NewProp_name,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APlayerCharacter_Statics::NewProp_bombCount,
@@ -605,7 +599,7 @@ void EmptyLinkFunctionForGeneratedCodePlayerCharacter() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(APlayerCharacter, 12858008);
+	IMPLEMENT_CLASS(APlayerCharacter, 2447660670);
 	template<> BOMBERMAN3D_API UClass* StaticClass<APlayerCharacter>()
 	{
 		return APlayerCharacter::StaticClass();

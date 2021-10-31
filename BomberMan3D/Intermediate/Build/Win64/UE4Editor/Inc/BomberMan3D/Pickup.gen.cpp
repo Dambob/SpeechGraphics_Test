@@ -39,7 +39,7 @@ void EmptyLinkFunctionForGeneratedCodePickup() {}
 		return PickupType_StaticEnum();
 	}
 	static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_PickupType(PickupType_StaticEnum, TEXT("/Script/BomberMan3D"), TEXT("PickupType"), false, nullptr, nullptr);
-	uint32 Get_Z_Construct_UEnum_BomberMan3D_PickupType_Hash() { return 3103981687U; }
+	uint32 Get_Z_Construct_UEnum_BomberMan3D_PickupType_Hash() { return 2976097474U; }
 	UEnum* Z_Construct_UEnum_BomberMan3D_PickupType()
 	{
 #if WITH_HOT_RELOAD
@@ -61,6 +61,7 @@ void EmptyLinkFunctionForGeneratedCodePickup() {}
 			const UE4CodeGen_Private::FMetaDataPairParam Enum_MetaDataParams[] = {
 				{ "BombCount.DisplayName", "Bomb Count" },
 				{ "BombCount.Name", "BombCount" },
+				{ "Comment", "/*\n* Types of pickup\n*/" },
 				{ "ModuleRelativePath", "Public/Actors/Pickup.h" },
 				{ "None.DisplayName", "None" },
 				{ "None.Name", "None" },
@@ -70,6 +71,7 @@ void EmptyLinkFunctionForGeneratedCodePickup() {}
 				{ "Remote.Name", "Remote" },
 				{ "Speed.DisplayName", "Speed" },
 				{ "Speed.Name", "Speed" },
+				{ "ToolTip", "* Types of pickup" },
 			};
 #endif
 			static const UE4CodeGen_Private::FEnumParams EnumParams = {
@@ -178,7 +180,9 @@ void EmptyLinkFunctionForGeneratedCodePickup() {}
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_APickup_OnBeginOverlap_Statics::Function_MetaDataParams[] = {
+		{ "Comment", "// Called when object collides with pickup\n" },
 		{ "ModuleRelativePath", "Public/Actors/Pickup.h" },
+		{ "ToolTip", "Called when object collides with pickup" },
 	};
 #endif
 	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_APickup_OnBeginOverlap_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_APickup, nullptr, "OnBeginOverlap", nullptr, nullptr, sizeof(Pickup_eventOnBeginOverlap_Parms), Z_Construct_UFunction_APickup_OnBeginOverlap_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_APickup_OnBeginOverlap_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00480401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_APickup_OnBeginOverlap_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_APickup_OnBeginOverlap_Statics::Function_MetaDataParams)) };
@@ -231,20 +235,22 @@ void EmptyLinkFunctionForGeneratedCodePickup() {}
 		(UObject* (*)())Z_Construct_UPackage__Script_BomberMan3D,
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_APickup_Statics::FuncInfo[] = {
-		{ &Z_Construct_UFunction_APickup_OnBeginOverlap, "OnBeginOverlap" }, // 1748975498
+		{ &Z_Construct_UFunction_APickup_OnBeginOverlap, "OnBeginOverlap" }, // 654916521
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_APickup_Statics::Class_MetaDataParams[] = {
+		{ "Comment", "/*\n* Objects that can be picked up by players walking into them.\n*/" },
 		{ "IncludePath", "Actors/Pickup.h" },
 		{ "ModuleRelativePath", "Public/Actors/Pickup.h" },
 		{ "ObjectInitializerConstructorDeclared", "" },
+		{ "ToolTip", "* Objects that can be picked up by players walking into them." },
 	};
 #endif
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_APickup_Statics::NewProp_DefaultSceneRoot_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
 		{ "Category", "Components" },
-		{ "Comment", "/**\n\x09* Root component of the Pickup\n\x09*/" },
+		{ "Comment", "// Root component of the Pickup\n" },
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "Public/Actors/Pickup.h" },
 		{ "ToolTip", "Root component of the Pickup" },
@@ -254,7 +260,7 @@ void EmptyLinkFunctionForGeneratedCodePickup() {}
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_APickup_Statics::NewProp_RotatingMovement_MetaData[] = {
 		{ "Category", "Components" },
-		{ "Comment", "/**\n\x09* Contains the rotator\n\x09*/" },
+		{ "Comment", "// Contains the rotator\n" },
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "Public/Actors/Pickup.h" },
 		{ "ToolTip", "Contains the rotator" },
@@ -264,7 +270,7 @@ void EmptyLinkFunctionForGeneratedCodePickup() {}
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_APickup_Statics::NewProp_Mesh_MetaData[] = {
 		{ "Category", "Components" },
-		{ "Comment", "/**\n\x09* Contains the mesh of this pickup\n\x09*/" },
+		{ "Comment", "// Contains the mesh of this pickup\n" },
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "Public/Actors/Pickup.h" },
 		{ "ToolTip", "Contains the mesh of this pickup" },
@@ -274,7 +280,7 @@ void EmptyLinkFunctionForGeneratedCodePickup() {}
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_APickup_Statics::NewProp_type_MetaData[] = {
 		{ "Category", "Pickup" },
-		{ "Comment", "/**\n\x09* Contains the type of pickup\n\x09*/" },
+		{ "Comment", "// Contains the type of pickup\n" },
 		{ "ModuleRelativePath", "Public/Actors/Pickup.h" },
 		{ "ToolTip", "Contains the type of pickup" },
 	};
@@ -283,7 +289,7 @@ void EmptyLinkFunctionForGeneratedCodePickup() {}
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_APickup_Statics::NewProp_value_MetaData[] = {
 		{ "Category", "Pickup" },
-		{ "Comment", "/**\n\x09* Contains the value of pickup\n\x09*/" },
+		{ "Comment", "// Contains the value of pickup\n" },
 		{ "ModuleRelativePath", "Public/Actors/Pickup.h" },
 		{ "ToolTip", "Contains the value of pickup" },
 	};
@@ -323,7 +329,7 @@ void EmptyLinkFunctionForGeneratedCodePickup() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(APickup, 4157001952);
+	IMPLEMENT_CLASS(APickup, 616642002);
 	template<> BOMBERMAN3D_API UClass* StaticClass<APickup>()
 	{
 		return APickup::StaticClass();

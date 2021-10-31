@@ -10,7 +10,7 @@
 class APlayerCharacter;
 
 /**
- * 
+ * Controller of game logic.
  */
 UCLASS()
 class BOMBERMAN3D_API ABomberMan3DGameModeBase : public AGameModeBase
@@ -28,19 +28,19 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-	/* Return the player score based on ID. */
+	// Return the player score based on ID.
 	UFUNCTION(BlueprintPure, Category = "Score")
 	virtual int GetScore(int playerID) const;
 
-	/* Set the player score based on ID. */
+	// Set the player score based on ID.
 	UFUNCTION(BlueprintCallable, Category = "Score")
 	virtual void SetScore(int playerID, int newScore);
 
-	/* Return the round time remaining. */
+	// Return the round time remaining.
 	UFUNCTION(BlueprintPure, Category = "Timer")
 	virtual float GetRemainingTime() const;
 
-	/* Return the player bomb count based on ID. */
+	// Return the player bomb count based on ID.
 	UFUNCTION(BlueprintPure, Category = "Player")
 	virtual int GetBombCount(int playerID) const;
 

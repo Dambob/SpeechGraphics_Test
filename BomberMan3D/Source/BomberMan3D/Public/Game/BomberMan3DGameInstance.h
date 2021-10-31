@@ -7,7 +7,7 @@
 #include "BomberMan3DGameInstance.generated.h"
 
 /**
- * 
+ * Holds game state information for entire play session. Handles saving/loading state to/from disk.
  */
 UCLASS()
 class BOMBERMAN3D_API UBomberMan3DGameInstance : public UGameInstance
@@ -23,15 +23,15 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	TArray<int> score;
 
-	/* Reset game instance to start a new game */
+	// Reset game instance to start a new game
 	UFUNCTION(BlueprintCallable)
 	virtual void Reset();
 
-	/* Save game. */
+	// Save game
 	UFUNCTION(BlueprintCallable)
 	virtual bool Save();
 
-	/* Load Game */
+	// Load Game
 	UFUNCTION(BlueprintCallable)
 	virtual bool Load();
 };

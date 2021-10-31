@@ -78,8 +78,10 @@ void EmptyLinkFunctionForGeneratedCodeBomb() {}
 #endif //WITH_EDITOR
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABomb_Statics::Class_MetaDataParams[] = {
+		{ "Comment", "/*\n* Placeable bomb. Creates explosions when detonated.\n*/" },
 		{ "IncludePath", "Actors/Bomb.h" },
 		{ "ModuleRelativePath", "Public/Actors/Bomb.h" },
+		{ "ToolTip", "* Placeable bomb. Creates explosions when detonated." },
 	};
 #endif
 #if WITH_METADATA
@@ -119,7 +121,7 @@ void EmptyLinkFunctionForGeneratedCodeBomb() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ABomb, 3145643609);
+	IMPLEMENT_CLASS(ABomb, 3158693328);
 	template<> BOMBERMAN3D_API UClass* StaticClass<ABomb>()
 	{
 		return ABomb::StaticClass();

@@ -51,16 +51,18 @@ void EmptyLinkFunctionForGeneratedCodeBlock() {}
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABlock_Statics::Class_MetaDataParams[] = {
+		{ "Comment", "/*\n* Standard wall block.\n*/" },
 		{ "IncludePath", "Actors/Block.h" },
 		{ "ModuleRelativePath", "Public/Actors/Block.h" },
 		{ "ObjectInitializerConstructorDeclared", "" },
+		{ "ToolTip", "* Standard wall block." },
 	};
 #endif
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABlock_Statics::NewProp_DefaultSceneRoot_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
 		{ "Category", "Components" },
-		{ "Comment", "/**\n\x09* Root component of the Block\n\x09*/" },
+		{ "Comment", "// Root component of the Block\n" },
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "Public/Actors/Block.h" },
 		{ "ToolTip", "Root component of the Block" },
@@ -70,7 +72,7 @@ void EmptyLinkFunctionForGeneratedCodeBlock() {}
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABlock_Statics::NewProp_BlockMesh_MetaData[] = {
 		{ "Category", "Components" },
-		{ "Comment", "/**\n\x09* Contains the mesh of this block\n\x09*/" },
+		{ "Comment", "// Contains the mesh of this block\n" },
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "Public/Actors/Block.h" },
 		{ "ToolTip", "Contains the mesh of this block" },
@@ -108,7 +110,7 @@ void EmptyLinkFunctionForGeneratedCodeBlock() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ABlock, 4186397214);
+	IMPLEMENT_CLASS(ABlock, 2224553453);
 	template<> BOMBERMAN3D_API UClass* StaticClass<ABlock>()
 	{
 		return ABlock::StaticClass();

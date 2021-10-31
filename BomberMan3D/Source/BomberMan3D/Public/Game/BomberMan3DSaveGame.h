@@ -7,7 +7,7 @@
 #include "BomberMan3DSaveGame.generated.h"
 
 /**
- * 
+ * Save game file contents.
  */
 UCLASS()
 class BOMBERMAN3D_API UBomberMan3DSaveGame : public USaveGame

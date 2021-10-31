@@ -113,7 +113,9 @@ void EmptyLinkFunctionForGeneratedCodeExplosion() {}
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AExplosion_OnBeginOverlap_Statics::Function_MetaDataParams[] = {
+		{ "Comment", "// Overlapped with object\n" },
 		{ "ModuleRelativePath", "Public/Actors/Explosion.h" },
+		{ "ToolTip", "Overlapped with object" },
 	};
 #endif
 	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_AExplosion_OnBeginOverlap_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AExplosion, nullptr, "OnBeginOverlap", nullptr, nullptr, sizeof(Explosion_eventOnBeginOverlap_Parms), Z_Construct_UFunction_AExplosion_OnBeginOverlap_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AExplosion_OnBeginOverlap_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00480401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AExplosion_OnBeginOverlap_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AExplosion_OnBeginOverlap_Statics::Function_MetaDataParams)) };
@@ -166,20 +168,22 @@ void EmptyLinkFunctionForGeneratedCodeExplosion() {}
 		(UObject* (*)())Z_Construct_UPackage__Script_BomberMan3D,
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_AExplosion_Statics::FuncInfo[] = {
-		{ &Z_Construct_UFunction_AExplosion_OnBeginOverlap, "OnBeginOverlap" }, // 942280861
+		{ &Z_Construct_UFunction_AExplosion_OnBeginOverlap, "OnBeginOverlap" }, // 1541267620
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AExplosion_Statics::Class_MetaDataParams[] = {
+		{ "Comment", "/*\n* Bomb explosion. Moves forward until hitting wall or reaching max range.\n*/" },
 		{ "IncludePath", "Actors/Explosion.h" },
 		{ "ModuleRelativePath", "Public/Actors/Explosion.h" },
 		{ "ObjectInitializerConstructorDeclared", "" },
+		{ "ToolTip", "* Bomb explosion. Moves forward until hitting wall or reaching max range." },
 	};
 #endif
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AExplosion_Statics::NewProp_DefaultSceneRoot_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
 		{ "Category", "Components" },
-		{ "Comment", "/**\n\x09* Root component of the Block\n\x09*/" },
+		{ "Comment", "//Root component of the Block\n" },
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "Public/Actors/Explosion.h" },
 		{ "ToolTip", "Root component of the Block" },
@@ -189,7 +193,7 @@ void EmptyLinkFunctionForGeneratedCodeExplosion() {}
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AExplosion_Statics::NewProp_CollisionBox_MetaData[] = {
 		{ "Category", "Components" },
-		{ "Comment", "/**\n\x09* Contains the collision of this block\n\x09*/" },
+		{ "Comment", "// Contains the collision of this block\n" },
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "Public/Actors/Explosion.h" },
 		{ "ToolTip", "Contains the collision of this block" },
@@ -199,7 +203,7 @@ void EmptyLinkFunctionForGeneratedCodeExplosion() {}
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AExplosion_Statics::NewProp_SmokeFX_MetaData[] = {
 		{ "Category", "Components" },
-		{ "Comment", "/**\n\x09* Contains the effect\n\x09*/" },
+		{ "Comment", "// Contains the effect\n" },
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "Public/Actors/Explosion.h" },
 		{ "ToolTip", "Contains the effect" },
@@ -254,7 +258,7 @@ void EmptyLinkFunctionForGeneratedCodeExplosion() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AExplosion, 2907908315);
+	IMPLEMENT_CLASS(AExplosion, 2702135985);
 	template<> BOMBERMAN3D_API UClass* StaticClass<AExplosion>()
 	{
 		return AExplosion::StaticClass();

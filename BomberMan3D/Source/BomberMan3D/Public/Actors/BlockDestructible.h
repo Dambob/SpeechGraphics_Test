@@ -8,7 +8,7 @@
 #include "BlockDestructible.generated.h"
 
 /**
- * 
+ * Wall block that can be destroyed by taking damage.
  */
 UCLASS()
 class BOMBERMAN3D_API ABlockDestructible : public ABlock
@@ -23,9 +23,7 @@ public:
 	float TakeDamage(float Damage, FDamageEvent const& DamageEvent, AController* EventInstigator, AActor* DamageCauser) override;
 	
 protected:
-	// Reference BP Asset in the Editor
-	//TSubclassOf<APickup> pickupBPClass;
-
+	// Reference BP Assets in the Editor
 	UPROPERTY(EditAnywhere, Category = "Pickups", meta = (AllowPrivateAccess = "true"))
 	TArray<TSubclassOf<APickup>> DropClasses;
 
