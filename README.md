@@ -1,14 +1,16 @@
 # SpeechGraphics_Test
 
-OptionalContainer
+## OptionalContainer
+
+### Features:
 - Container Template class for optional values
 - Stores value and flag to confirm value is set
 - Gets value or specified "empty" value of same type
 - Thread saftey via mutex and scoped lock
 
-BomberMan3D
+## BomberMan3D
  
-Features:
+### Features:
 - Topdown View
 - Maps
   - Menu map
@@ -36,7 +38,7 @@ Features:
   - When no players are alive or timer runs out, draw
   - When 1 player is alive and no explosions are remaining, it's a win for that player
 
-Controls:
+### Controls:
 - Player 1
   - Up - W
   - Down - S
@@ -52,7 +54,7 @@ Controls:
   - Place Bomb - Right Control
   - Detonate Bomb (remote) - Right Shift
 
-Known Issues:
+### Known Issues:
 - Inconsistent error when running in PIE mode ([#2][i2])
 
 [i2]: https://github.com/Dambob/SpeechGraphics_Test/issues/2
