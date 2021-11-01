@@ -1,4 +1,10 @@
 # SpeechGraphics_Test
+
+OptionalContainer
+- Container Template class for optional values
+- Stores value and flag to confirm value is set
+- Gets value or specified "empty" value of same type
+- Thread saftey via mutex and scoped lock
  
 Features:
 - Topdown View
