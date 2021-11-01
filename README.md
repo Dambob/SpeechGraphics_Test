@@ -5,6 +5,8 @@ OptionalContainer
 - Stores value and flag to confirm value is set
 - Gets value or specified "empty" value of same type
 - Thread saftey via mutex and scoped lock
+
+BomberMan3D
  
 Features:
 - Topdown View
